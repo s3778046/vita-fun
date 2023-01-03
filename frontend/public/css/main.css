@@ -98,7 +98,6 @@ nav li a {
     display: none;
     flex-direction: column;
     position: absolute;
-    height: 70vh;
     width: 80%;
     left: 10%;
     top: 8vh;
@@ -250,8 +249,8 @@ section h1{
 
 #show-circus-character #score {
     text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: bold;
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 1.5rem;
     color: var(--purple);
 }
 
@@ -272,14 +271,34 @@ section h1{
 }
 
 #circus-img {
-    height: 400px;
+    height: 350px;
     box-shadow: 2px 2px 5px black;
-    border-radius: 7px;
+    border-radius: 200px;
+    margin-bottom: 15px;
 }
 
 #a1, #a2, #a3, #a4, #a5 {
-    color: rgb(255, 0, 0);
+    color: var(--purple);
+    font-family: 'Bubblegum Sans', cursive;
     display: inline;
+}
+
+@media only screen and (max-width: 600px){
+    #circus-img {
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    #circus-img {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 300px){
+    #circus-img {
+        height: 150px;
+    }
 }
 
 /* Footer styling */

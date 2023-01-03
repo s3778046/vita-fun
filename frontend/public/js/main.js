@@ -68,11 +68,11 @@ function loadQuestions() {
 
 // Get all elements and change innerHTML to the answers from the quiz.
 function getAnswersList() {
-    document.querySelector('#a1').innerHTML = "Answer 1: " + answerList[0] + ","
-    document.querySelector('#a2').innerHTML = "Answer 2: " + answerList[1] + ","
-    document.querySelector('#a3').innerHTML = "Answer 3: " + answerList[2] + ","
-    document.querySelector('#a4').innerHTML = "Answer 4: " + answerList[3] + ","
-    document.querySelector('#a5').innerHTML = "Answer 5: " + answerList[4]
+    document.querySelector('#a1').innerHTML = "1: " + answerList[0];
+    document.querySelector('#a2').innerHTML = "2: " + answerList[1];
+    document.querySelector('#a3').innerHTML = "3: " + answerList[2];
+    document.querySelector('#a4').innerHTML = "4: " + answerList[3];
+    document.querySelector('#a5').innerHTML = "5: " + answerList[4];
 }
 
 // Get the value of the answer and add it to the array of answers.
