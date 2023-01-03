@@ -4,12 +4,12 @@ const answerList = [];
 let quizScore = 0;
 
 // Get nav link elements and store in variables.
-const homeLink= document.querySelector(".home");
-const aboutLink = document.querySelector(".about");
-const quizLink = document.querySelector(".quiz");
-const circusLink = document.querySelector(".superfood-circus");
-const recipesLink = document.querySelector(".recipes");
-const vitafreshLink = document.querySelector(".vitafresh");
+const homeLink= document.querySelector(".home a");
+const aboutLink = document.querySelector(".about a");
+const quizLink = document.querySelector(".quiz a");
+const circusLink = document.querySelector(".superfood-circus a");
+const recipesLink = document.querySelector(".recipes a");
+const vitafreshLink = document.querySelector(".vitafresh a");
 
 
 // Get answer element and store in a variable
@@ -128,6 +128,17 @@ function addCircusImage() {
     } else if (quizScore > 36) {
         img.setAttribute('src', 'img/strongman.jpg');
     } 
+}
+
+
+// Open dropdown menu.
+function openMenu() {
+    document.querySelector('#dropdown-menu').style.display = "flex";
+}
+
+// Close dropdown menu.
+function closeMenu() {
+    document.querySelector('#dropdown-menu').style.display = "none";
 }
 
 

@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="css/main.css">
     <title>VitaFun</title>
 </head>
 <body>
     <nav>
-        <ul>
 
-            <!-- Image -->
-            <a href="/"><img src="img/logo.png" alt="Logo"></a>
-
+        <!-- Image -->
+        <a href="/"><img src="img/vitafun-logo.png" alt="Logo"></a>
+        <ul id="menu">
             <!-- Link to home -->
             <li class="link home"><a href="/">home</a></li>
 
@@ -32,4 +32,36 @@
             <!-- Link to vitafresh -->
             <li class="link vitafresh"><a href="/vitafresh">vitafresh</a></li>
         </ul>
+
+        <ul id="dropdown-menu">
+
+            <div class="close" onclick="closeMenu()">X</div>
+            <!-- Link to home -->
+            <li class="link home"><a href="/">home</a></li>
+
+            <!-- Link to about -->
+            <li class="link about "><a href="/about">about</a></li>
+
+            <!-- Link to quiz -->
+            <li class="link quiz"><a href="/quiz">quiz</a></li>
+
+            <!-- Link to superfood circus -->
+            <li class="link superfood-circus"><a href="/superfoodcircus">superfood circus</a></li>
+
+            <!-- Link to recipes -->
+            <li class="link recipes"><a href="/recipes">recipes</a></li>
+
+            <!-- Link to vitafresh -->
+            <li class="link vitafresh"><a href="/vitafresh">vitafresh</a></li>
+        </ul>
+
+        <!-- Menu icon -->
+        <div id="menu-icon" onclick="openMenu()">
+            <svg class="menu-svg" viewBox="0 0 100 80" width="40" height="40">
+                <rect width="100" height="13" fill="white"></rect>
+                <rect y="30" width="100" height="13" fill="white"></rect>
+                <rect y="60" width="100" height="13" fill="white"></rect>
+            </svg>
+        </div>
+        
     </nav>
