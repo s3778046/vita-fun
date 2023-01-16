@@ -15,55 +15,43 @@
       <ul id="menu">
         <!-- Link to home -->
         <li class="link home"><a href="/">home</a></li>
-
         <!-- Link to about -->
         <li class="link about"><a href="/#about">about</a></li>
-
         <!-- Link to quiz -->
         <li class="link quiz"><a href="/quiz">quiz</a></li>
-
         <!-- Link to superfood circus -->
         <li class="link superfood-circus">
           <a href="/superfoodcircus">superfood circus</a>
         </li>
-
         <!-- Link to recipes -->
         <li class="link recipes"><a href="/recipes">recipes</a></li>
-
         <!-- Link to vitafresh -->
         <li class="link vitafresh"><a href="/vitafresh">vitafresh</a></li>
       </ul>
 
-      <ul id="dropdown-menu">
-        <div class="close" onclick="closeMenu()">X</div>
-        <!-- Link to home -->
-        <li class="link home"><a href="/">home</a></li>
-
-        <!-- Link to about -->
-        <li class="link about"><a href="/#about">about</a></li>
-
-        <!-- Link to quiz -->
-        <li class="link quiz"><a href="/quiz">quiz</a></li>
-
-        <!-- Link to superfood circus -->
-        <li class="link superfood-circus">
-          <a href="/superfoodcircus">superfood circus</a>
-        </li>
-
-        <!-- Link to recipes -->
-        <li class="link recipes"><a href="/recipes">recipes</a></li>
-
-        <!-- Link to vitafresh -->
-        <li class="link vitafresh"><a href="/vitafresh">vitafresh</a></li>
-      </ul>
-
-      <!-- Menu icon -->
-      <div id="menu-icon" onclick="openMenu()">
-        <svg class="menu-svg" viewBox="0 0 100 80" width="40" height="40">
-          <rect width="100" height="13" fill="white"></rect>
-          <rect y="30" width="100" height="13" fill="white"></rect>
-          <rect y="60" width="100" height="13" fill="white"></rect>
-        </svg>
+      <div>
+        <!-- Menu icon -->
+        <div id="menu-icon" onclick="toggleHamburgerMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <!-- Menu links -->
+        <ul id="dropdown-menu">
+          <!-- Link to home -->
+          <li class="link home"><a href="/">home</a></li>
+          <!-- Link to about -->
+          <li class="link about"><a href="/#about">about</a></li>
+          <!-- Link to quiz -->
+          <li class="link quiz"><a href="/quiz">quiz</a></li>
+          <!-- Link to superfood circus -->
+          <li class="link superfood-circus">
+            <a href="/superfoodcircus">superfood circus</a>
+          </li>
+          <!-- Link to recipes -->
+          <li class="link recipes"><a href="/recipes">recipes</a></li>
+          <!-- Link to vitafresh -->
+          <li class="link vitafresh"><a href="/vitafresh">vitafresh</a></li>
+        </ul>
       </div>
     </nav>
-
