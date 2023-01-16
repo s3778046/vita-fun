@@ -2,7 +2,7 @@
 <div class="page-content">
   <!-- Questions and answers  -->
   <div class="question-wrapper">
-    <section id="questions-flex">
+    <div id="questions-flex">
       <div class="answer1">
         <p
           id="answer-left"
@@ -18,35 +18,35 @@
           onclick="loadQuestions(), addAnswerToList('answer-right'), calculateQuizScore()"
         ></p>
       </div>
-    </section>
+    </div>
 
     <!-- Restart button -->
     <div class="restart-quiz">
-      <a href="/quiz"><button>restart quiz</button></a>
+      <a href="/quiz">restart quiz</a>
     </div>
   </div>
 
   <!-- Display list of answers -->
-  <section id="show-circus-character">
+  <div id="show-circus-character">
     <div class="list-wrapper">
       <!-- Image -->
       <img id="circus-img" src="" alt="Circus Character" />
       <ul>
         <li id="score"></li>
-        <br />
+
         <li id="a1"></li>
-        <br />
+
         <li id="a2"></li>
-        <br />
+
         <li id="a3"></li>
-        <br />
+
         <li id="a4"></li>
-        <br />
+
         <li id="a5"></li>
       </ul>
     </div>
-    <a href="/quiz"><button>Close window</button></a>
-  </section>
+    <a href="/quiz">Close window</a>
+  </div>
 </div>
 
 <%- include('components/footer') %>
