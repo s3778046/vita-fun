@@ -1,0 +1,19 @@
+/* Vars */
+
+:root {
+  /* base */
+  --base-txt-color: rgb(255, 255, 255);
+  --base-font-family: "Mulish", sans-serif;
+  --base-box-shadow: 0px 3px 6px rgba(15, 3, 52, 0.16);
+
+  /* headings */
+  --heading-font-family: "Bubblegum Sans", cursive;
+
+  /* colours */
+  --background-blue: #2518bd;
+  --vita-watermelon: #ff5964;
+  --vita-yellow: #ffe74c;
+  --vita-blue: #35a7ff;
+  --vita-purple: #974ee8;
+  --vita-green: #6bf178;
+}
