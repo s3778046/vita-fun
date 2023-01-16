@@ -6,25 +6,51 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   color: var(--base-txt-color);
   font-family: var(--base-font-family);
-  font-weight: 300;
+  font-weight: 400;
   background: var(--background-blue);
-  height: 100vh;
 }
 
+/* Headings */
+h1 {
+  margin-top: 20vh;
+  font-family: var(--heading-font-family);
+  font-size: 2em;
+}
+
+h2 {
+  font-family: var(--heading-font-family);
+  font-size: 1.2em;
+}
+
+/* Links and Buttons */
 a {
   text-transform: uppercase;
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--vita-yellow);
+}
+
 /* Header styling */
 nav {
-  background-color: var(--background-blue);
   height: 80px;
   padding: 5px 150px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--base-box-shadow);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 nav ul {
@@ -40,14 +66,13 @@ nav img {
 
 #menu li {
   list-style: none;
-  text-transform: uppercase;
   padding: 0px 20px;
 }
 
 nav li a {
-  font-family: "Bubblegum Sans", cursive;
+  font-family: var(--heading-font-family);
   line-height: 85px;
-  font-size: 0.8rem;
+  font-size: 0.9em;
   color: white;
 }
 
@@ -57,7 +82,7 @@ nav li a {
 }
 
 .active {
-  color: yellow;
+  color: var(--vita-watermelon);
 }
 
 /* Menu-icon styling */
@@ -73,21 +98,11 @@ nav li a {
   }
 
   #menu li a {
-    font-size: 0.7rem;
+    font-size: 0.8em;
   }
 }
 
-@media only screen and (max-width: 1025px) {
-  nav {
-    padding: 5px 30px;
-  }
-
-  #menu li a {
-    font-size: 0.6rem;
-  }
-}
-
-@media only screen and (max-width: 685px) {
+@media only screen and (max-width: 740px) {
   #menu {
     display: none;
   }
@@ -106,7 +121,7 @@ nav li a {
   left: 10%;
   top: 8vh;
   background-color: white;
-  box-shadow: 2px 2px 5px black;
+  box-shadow: var(--base-box-shadow);
   padding: 20px;
   list-style: none;
 }
@@ -143,26 +158,18 @@ nav li a {
 }
 
 /*  Main content styling */
+.page-content {
+  min-height: 100vh;
+}
+
 section {
   text-align: center;
   margin-top: 50px;
 }
 
-section h1 {
-  margin-top: 20vh;
-  font-family: "Bubblegum Sans", cursive;
-  color: var(--background-blue);
-}
-
 /* Footer styling */
 footer {
-  background-color: var(--background-blue);
-  font-family: "Bubblegum Sans", cursive;
-  color: white;
-  width: 100vw;
   text-align: center;
-  min-height: 50px;
-  line-height: 50px;
-  position: fixed;
-  bottom: 0px;
 }
+
+/* loading screen styling */
