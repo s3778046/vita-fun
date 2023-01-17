@@ -1,8 +1,10 @@
-const mongoose = require('mongoose')
+// Imports
+const mongoose = require('mongoose');
 
 // helps with mongoose deprecation
-mongoose.set('strictQuery', false)
+mongoose.set('strictQuery', false);
 
+// Create database scheme for collection
 const questionSchema = mongoose.Schema( {
    
     question: {
@@ -19,6 +21,7 @@ const questionSchema = mongoose.Schema( {
         type: String,
         required: true,
     }
-})
+});
 
-module.exports = mongoose.model('Question', questionSchema)
+// Export model
+module.exports = mongoose.model('Question', questionSchema);
