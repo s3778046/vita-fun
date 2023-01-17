@@ -1,8 +1,8 @@
 // Import mongoose
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 // Set strictQuery option to false to prepare for new mongoose release.
-mongoose.set('strictQuery', false)
+mongoose.set('strictQuery', false);
 
 // Craete connection to MongoDB database using mongoose methods.
 const connectDB = async () => {
@@ -11,7 +11,7 @@ const connectDB = async () => {
     try {
         
         //Createconnection and store in variable called conn.
-        const conn = await mongoose.connect(process.env.DB_URI)
+        const conn = await mongoose.connect(process.env.DB_URI);
 
         // Console log connection successmessage
         console.log(`MongoDB Connected: ${ conn.connection.host }`.green.underline);
@@ -21,9 +21,9 @@ const connectDB = async () => {
 
         // Conole.log error message
         console.log(error);
-        process.exit(1)
+        process.exit(1);
     }
 }
 
 // Export connection.
-module.exports = connectDB
+module.exports = connectDB;

@@ -1,13 +1,15 @@
 // Imports
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
+
+// Access controller
 const{
     getQuestions,
     setQuestions,
-} = require('../controllers/questionsController')
+} = require('../controllers/questionsController');
 
+router.get('/', getQuestions);
+router.post('/', setQuestions);
 
-router.get('/', getQuestions)
-router.post('/', setQuestions)
-
-module.exports = router
+// Export router
+module.exports = router;
