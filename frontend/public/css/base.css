@@ -149,7 +149,7 @@ nav li a {
   flex-direction: column;
   box-shadow: var(--base-box-shadow);
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #3a2ec0;
   border-radius: 20px;
   position: absolute;
   top: 10px;
@@ -172,7 +172,6 @@ nav li a {
 
 #dropdown-menu li a {
   font-size: 1em;
-  color: var(--background-blue);
   line-height: 50px;
 }
 
