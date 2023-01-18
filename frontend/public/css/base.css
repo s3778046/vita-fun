@@ -1,5 +1,4 @@
 /* Base */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -45,6 +44,97 @@ a:hover {
   color: var(--vita-yellow);
 }
 
+.primary-btn {
+  font-family: var(--heading-font-family);
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: var(--vita-watermelon) solid 2px;
+  margin: 20px 0;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.primary-btn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    var(--vita-watermelon),
+    var(--vita-yellow),
+    var(--vita-green),
+    var(--vita-blue),
+    var(--vita-purple),
+    var(--vita-watermelon)
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  border-radius: 10px;
+}
+
+.primary-btn:after {
+  content: "";
+  z-index: -1;
+  top: 50px;
+  right: -20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #3a2ec0;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  padding-right: 50px;
+  padding-left: 10px;
+}
+
+.arrow {
+  position: absolute;
+  top: 5px;
+  right: -30px;
+  transition: 0.5s;
+  font-size: 25px;
+  visibility: hidden;
+}
+
+.arrow-box {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.show-arrow {
+  right: 10px;
+  visibility: visible;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
 /* Header styling */
 nav {
   height: 80px;
@@ -56,6 +146,7 @@ nav {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 900;
 }
 
 nav ul {
@@ -92,7 +183,7 @@ nav li a {
 }
 
 #menu-icon div {
-  background-color: var(--vita-watermelon);
+  background-color: var(--vita-yellow);
   width: 38px;
   height: 5px;
   border-radius: 30px;
@@ -163,7 +254,7 @@ nav li a {
 
 #dropdown-menu hr {
   border: none;
-  border-top: solid 1px #dddddd;
+  border-top: solid 1px #6c60f5;
 }
 
 #dropdown-menu li {
@@ -197,6 +288,7 @@ nav li a {
 
 section {
   text-align: center;
+  min-height: 100vh;
 }
 
 /* Footer styling */

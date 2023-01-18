@@ -13,6 +13,10 @@ const vitafreshLink = document.querySelectorAll(".vitafresh a");
 const menuLinks = document.querySelector("#dropdown-menu");
 const menuButton = document.querySelector("#menu-icon");
 
+// Get primary button elements and store in variable.
+const primaryBtn = document.querySelector(".primary-btn");
+const arrow = document.querySelector(".arrow");
+
 // Get answer element and store in a variable
 const selectAnswerLeft = document.querySelector("#select-answer-left");
 const selectAnswerRight = document.querySelector("#select-answer-right");
@@ -148,3 +152,12 @@ var onresize = function (e) {
   }
 };
 window.addEventListener("resize", onresize);
+
+// show arrow in primary button upon hover only
+primaryBtn.addEventListener("mouseover", () => {
+  arrow.classList.add("show-arrow");
+});
+
+primaryBtn.addEventListener("mouseout", () => {
+  arrow.classList.remove("show-arrow");
+});
