@@ -283,12 +283,20 @@ nav li a {
 /*  Main content styling */
 .page-content {
   min-height: 100vh;
-  padding-top: 100px;
 }
 
 section {
-  text-align: center;
   min-height: 100vh;
+  padding-top: 100px;
+}
+
+.hangings {
+  position: fixed;
+  top: 70px;
+  left: 50px;
+  width: 300px;
+  height: auto;
+  z-index: 3;
 }
 
 /* Footer styling */
