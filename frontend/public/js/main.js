@@ -4,14 +4,18 @@ const answerList = [];
 let quizScore = 0;
 
 // Get nav link elements and store in variables.
-const homeLink = document.querySelector(".home a");
-const aboutLink = document.querySelector(".about a");
-const quizLink = document.querySelector(".quiz a");
-const circusLink = document.querySelector(".superfood-circus a");
-const recipesLink = document.querySelector(".recipes a");
-const vitafreshLink = document.querySelector(".vitafresh a");
+const homeLink = document.querySelectorAll(".home a");
+const aboutLink = document.querySelectorAll(".about a");
+const quizLink = document.querySelectorAll(".quiz a");
+const circusLink = document.querySelectorAll(".superfood-circus a");
+const recipesLink = document.querySelectorAll(".recipes a");
+const vitafreshLink = document.querySelectorAll(".vitafresh a");
 const menuLinks = document.querySelector("#dropdown-menu");
 const menuButton = document.querySelector("#menu-icon");
+
+// Get primary button elements and store in variable.
+const primaryBtn = document.querySelector(".primary-btn");
+const arrow = document.querySelector(".arrow");
 
 // Get answer element and store in a variable
 const selectAnswerLeft = document.querySelector("#select-answer-left");
@@ -22,17 +26,17 @@ const url = window.location.href;
 
 // Set the current page nav link to active.
 if (url.substring(url.length - 1) == "/") {
-  homeLink.className += " active";
+  homeLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("about")) {
-  aboutLink.className += " active";
+  aboutLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("quiz")) {
-  quizLink.className += " active";
+  quizLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("superfoodcircus")) {
-  circusLink.className += " active";
+  circusLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("recipes")) {
-  recipesLink.className += " active";
+  recipesLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("vitafresh")) {
-  vitafreshLink.className += " active";
+  vitafreshLink.forEach((element) => (element.className += " active"));
 }
 
 // Load the question data into the correct fields on window load
@@ -145,7 +149,15 @@ var onresize = function (e) {
   if (width >= 780) {
     menuLinks.classList.remove("expanded");
     menuButton.classList.remove("expanded");
-    console.log(width);
   }
 };
 window.addEventListener("resize", onresize);
+
+// show arrow in primary button upon hover only
+primaryBtn.addEventListener("mouseover", () => {
+  arrow.classList.add("show-arrow");
+});
+
+primaryBtn.addEventListener("mouseout", () => {
+  arrow.classList.remove("show-arrow");
+});
