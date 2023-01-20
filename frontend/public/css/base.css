@@ -14,6 +14,7 @@ body {
   font-family: var(--base-font-family);
   font-weight: 400;
   background: var(--background-blue);
+  overflow-x: hidden;
 }
 
 ul {
@@ -149,6 +150,7 @@ nav {
   height: 80px;
   padding: 5px 150px;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.5s ease;
   backdrop-filter: blur(10px);
   box-shadow: var(--base-box-shadow);
   position: fixed;
@@ -156,6 +158,11 @@ nav {
   right: 0;
   left: 0;
   z-index: 900;
+}
+
+nav:hover {
+  transition: background-color 0.5s ease;
+  background-color: #3a2ec0;
 }
 
 nav ul {
@@ -180,6 +187,13 @@ nav li a {
 
 .active {
   color: var(--vita-watermelon);
+}
+
+@media only screen and (min-width: 1500px) and (min-height: 600px) {
+  .hangings {
+    width: 400px;
+    left: 10px;
+  }
 }
 
 /* Menu-icon styling */
@@ -302,7 +316,7 @@ section {
 /*  glowing circles styling */
 .circle-gradient {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   opacity: 0.6;
   position: absolute;
