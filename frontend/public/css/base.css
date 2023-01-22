@@ -196,6 +196,12 @@ nav li a {
   }
 }
 
+@media only screen and (max-width: 1000px) and (max-height: 540px) {
+  .hangings {
+    display: none;
+  }
+}
+
 /* Menu-icon styling */
 #menu-icon {
   display: none;
@@ -320,6 +326,7 @@ section {
   border-radius: 50%;
   opacity: 0.6;
   position: absolute;
+  transition: ease-in-out 0.5s;
 }
 
 .circle-gradient.purple {

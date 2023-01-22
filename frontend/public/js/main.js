@@ -1,9 +1,40 @@
-// Declare variables.
+// Declare variables
 let count = 0;
 const answerList = [];
 let quizScore = 0;
+let front = "";
+let back = "";
+let glow = "";
+let number = 2;
 
-// Get nav link elements and store in variables.
+const characters = [
+  "clown-juggling-fruits",
+  "acrobat",
+  "human-cannonball",
+  "magician",
+  "strongboy",
+  "tightrope-walker",
+];
+
+const superfoods = [
+  "avocado",
+  "brocolli",
+  "cacao",
+  "eggs",
+  "tofu",
+  "watermelon",
+];
+
+const colors = [
+  "purple",
+  "green",
+  "watermelon",
+  "yellow",
+  "blue",
+  "watermelon",
+];
+
+// Get nav link elements and store in variables
 const homeLink = document.querySelectorAll(".home a");
 const aboutLink = document.querySelectorAll(".about a");
 const quizLink = document.querySelectorAll(".quiz a");
@@ -13,16 +44,22 @@ const vitafreshLink = document.querySelectorAll(".vitafresh a");
 const menuLinks = document.querySelector("#dropdown-menu");
 const menuButton = document.querySelector("#menu-icon");
 
-// Get primary button elements and store in variable.
+// Get primary button elements and store in variables
 const primaryBtn = document.querySelector(".primary-btn");
 const arrow = document.querySelector(".arrow");
 
-// Get answer element and store in a variable
+// Get answer elements and store in  variables
 const selectAnswerLeft = document.querySelector("#select-answer-left");
 const selectAnswerRight = document.querySelector("#select-answer-right");
 
-// Get url string.
+// Get url string
 const url = window.location.href;
+
+// Get card elements and store in varibles
+const cards = document.querySelectorAll(".card");
+const fronts = document.querySelectorAll(".front");
+const backs = document.querySelectorAll(".back");
+const glows = document.querySelectorAll(".circle-gradient");
 
 // Set the current page nav link to active.
 if (url.substring(url.length - 1) == "/") {
@@ -121,7 +158,7 @@ function calculateQuizScore() {
 
 // Add circus image to page determined by quiz score.
 function addCircusImage() {
-  var img = document.querySelector("#circus-img");
+  let img = document.querySelector("#circus-img");
   console.log(img);
 
   if (quizScore <= 18) {
@@ -144,7 +181,7 @@ function toggleHamburgerMenu(menuButton) {
 }
 
 // Close opened dropdown menu if screen is enlargened
-var onresize = function (e) {
+let onresize = function (e) {
   width = e.target.innerWidth;
   if (width >= 780) {
     menuLinks.classList.remove("expanded");
@@ -161,3 +198,48 @@ primaryBtn.addEventListener("mouseover", () => {
 primaryBtn.addEventListener("mouseout", () => {
   arrow.classList.remove("show-arrow");
 });
+
+// Add event listeners on the card elements
+cards.forEach((element) =>
+  element.addEventListener("click", function () {
+    animateCard(element);
+  })
+);
+
+// change card images and glow colours
+function animateCard(element) {
+  let imgPath = "";
+
+  // Toggle card classList
+  element.classList.toggle("flip");
+
+  // Create imgPath variable and concatenate imgPath string
+  if (element.classList.contains("character")) {
+    imgPath = "../img/" + characters[number] + ".png";
+    front = fronts[0];
+    back = backs[0];
+    glow = glows[0];
+  } else if (element.classList.contains("food")) {
+    imgPath = "../img/" + superfoods[number] + ".png";
+    front = fronts[1];
+    back = backs[1];
+    glow = glows[1];
+  }
+
+  // If number is even, change back element image, if not, change front element image.
+  if (number == 0 || number == 2 || number == 4 || number == 6) {
+    back.style.backgroundImage = "url('" + imgPath + "')";
+  } else {
+    front.style.backgroundImage = "url('" + imgPath + "')";
+  }
+
+  // Increment or restart number
+  if (number < 5) {
+    number++;
+  } else {
+    number = 0;
+  }
+
+  // Change colour of glow
+  glow.className = "circle-gradient " + colors[number];
+}
