@@ -243,3 +243,5 @@ function animateCard(element) {
   // Change colour of glow
   glow.className = "circle-gradient " + colors[number];
 }
+
+AOS.init();
