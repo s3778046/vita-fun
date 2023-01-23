@@ -189,16 +189,11 @@ nav li a {
   color: var(--vita-watermelon);
 }
 
+/*  Responsive - larger desktop screens */
 @media only screen and (min-width: 1500px) and (min-height: 600px) {
   .hangings {
     width: 400px;
     left: 10px;
-  }
-}
-
-@media only screen and (max-width: 1000px) and (max-height: 540px) {
-  .hangings {
-    display: none;
   }
 }
 
@@ -243,6 +238,7 @@ nav li a {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
+/*  Responsive - smaller (mobile/tablet) screens */
 @media only screen and (max-width: 1025px) {
   nav {
     padding: 5px 50px;
@@ -300,6 +296,7 @@ nav li a {
   visibility: visible;
 }
 
+/*  Responsive - smaller (mobile/tablet) screens */
 @media only screen and (max-width: 350px) {
   #dropdown-menu {
     width: 100%;
@@ -317,6 +314,25 @@ nav li a {
 section {
   min-height: 100vh;
   padding-top: 100px;
+}
+
+/*  Responsive - smaller (mobile/tablet) screens */
+@media only screen and (max-width: 750px) {
+  section {
+    padding-top: 200px;
+  }
+}
+
+@media only screen and (max-width: 500px),
+  only screen and (max-width: 1000px) and (max-height: 540px) {
+  section {
+    padding-top: 100px;
+  }
+
+  .hangings {
+    position: static;
+    padding-top: 80px;
+  }
 }
 
 /*  glowing circles styling */
