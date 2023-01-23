@@ -32,6 +32,8 @@ h1 {
 h2 {
   font-family: var(--heading-font-family);
   font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 /* Links and Buttons */
@@ -309,23 +311,23 @@ nav li a {
 /*  Main content styling */
 .page-content {
   min-height: 100vh;
+  padding-top: 100px;
 }
 
 section {
   min-height: 100vh;
-  padding-top: 100px;
 }
 
 /*  Responsive - smaller (mobile/tablet) screens */
 @media only screen and (max-width: 750px) {
-  section {
+  .page-content {
     padding-top: 200px;
   }
 }
 
 @media only screen and (max-width: 500px),
   only screen and (max-width: 1000px) and (max-height: 540px) {
-  section {
+  .page-content {
     padding-top: 100px;
   }
 

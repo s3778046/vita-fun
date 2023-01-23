@@ -45,8 +45,8 @@ const menuLinks = document.querySelector("#dropdown-menu");
 const menuButton = document.querySelector("#menu-icon");
 
 // Get primary button elements and store in variables
-const primaryBtn = document.querySelector(".primary-btn");
-const arrow = document.querySelector(".arrow");
+const primaryBtns = document.querySelectorAll(".primary-btn");
+const arrows = document.querySelectorAll(".arrow");
 
 // Get answer elements and store in  variables
 const selectAnswerLeft = document.querySelector("#select-answer-left");
@@ -190,14 +190,30 @@ let onresize = function (e) {
 };
 window.addEventListener("resize", onresize);
 
-// show arrow in primary button upon hover only
-primaryBtn.addEventListener("mouseover", () => {
-  arrow.classList.add("show-arrow");
-});
+// Add event listeners on the primary buttons
+primaryBtns.forEach((element) =>
+  element.addEventListener("mouseover", function () {
+    showArrow(element);
+  })
+);
 
-primaryBtn.addEventListener("mouseout", () => {
+primaryBtns.forEach((element) =>
+  element.addEventListener("mouseout", function () {
+    hideArrow(element);
+  })
+);
+
+// show arrow in primary button upon hover
+function showArrow(element) {
+  let arrow = element.querySelector(".arrow");
+  arrow.classList.add("show-arrow");
+}
+
+// hide arrow in primary button upon mouse-out
+function hideArrow(element) {
+  let arrow = element.querySelector(".arrow");
   arrow.classList.remove("show-arrow");
-});
+}
 
 // Add event listeners on the card elements
 cards.forEach((element) =>
