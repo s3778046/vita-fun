@@ -43,9 +43,11 @@ const recipesLink = document.querySelectorAll(".recipes a");
 const menuLinks = document.querySelector("#dropdown-menu");
 const menuButton = document.querySelector("#menu-icon");
 
-// Get primary button elements and store in variables
+// Get primary button + other button elements and store in variables
 const primaryBtns = document.querySelectorAll(".primary-btn");
 const arrows = document.querySelectorAll(".arrow");
+const roundTexts = document.querySelectorAll(".text p");
+const socialMediaBtns = document.querySelectorAll(".circle");
 
 // Get answer elements and store in  variables
 const selectAnswerLeft = document.querySelector("#select-answer-left");
@@ -65,7 +67,6 @@ if (url.substring(url.length - 1) == "/") {
   homeLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("about")) {
   aboutLink.forEach((element) => (element.className += " active"));
-  console.log("done");
 } else if (url.includes("quiz")) {
   quizLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("superfoodcircus")) {
@@ -189,17 +190,15 @@ let onresize = function (e) {
 window.addEventListener("resize", onresize);
 
 // Add event listeners on the primary buttons
-primaryBtns.forEach((element) =>
+
+primaryBtns.forEach((element) => {
   element.addEventListener("mouseover", function () {
     showArrow(element);
-  })
-);
-
-primaryBtns.forEach((element) =>
+  });
   element.addEventListener("mouseout", function () {
     hideArrow(element);
-  })
-);
+  });
+});
 
 // show arrow in primary button upon hover
 function showArrow(element) {
@@ -258,4 +257,44 @@ function animateCard(element) {
   glow.className = "circle-gradient " + colors[number];
 }
 
+// Add event listeners on the social media buttons
+socialMediaBtns.forEach((element) => {
+  let icon = element.querySelector(".neon-icon");
+  icon.addEventListener("mouseover", function () {
+    showText(element);
+  });
+  icon.addEventListener("mouseout", function () {
+    hideText(element);
+  });
+});
+
+// split the inner HTML text and store each letter in a separate span element
+roundTexts.forEach(
+  (element) =>
+    (element.innerHTML = element.innerText
+      .split("")
+      .map(
+        (char, i) =>
+          `<span style="transform:rotate(${i * 15.5}deg")>${char}</span>`
+      )
+      .join(""))
+);
+
+//show rotating text upon hover
+function showText(element) {
+  let text = element.querySelector(".text");
+  text.classList.add("show-text");
+  let icon = element.querySelector(".bx");
+  icon.classList.add("bx-tada");
+}
+
+//hide rotating text upon mouseout
+function hideText(element) {
+  let text = element.querySelector(".text");
+  text.classList.remove("show-text");
+  let icon = element.querySelector(".bx");
+  icon.classList.remove("bx-tada");
+}
+
+// initialise AOS
 AOS.init();

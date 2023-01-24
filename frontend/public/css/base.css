@@ -59,7 +59,7 @@ a:hover {
   cursor: pointer;
 }
 
-.primary-btn:before {
+.btn:before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -79,10 +79,13 @@ a:hover {
   width: calc(100% + 4px);
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
+}
+
+.primary-btn:before {
   border-radius: 10px;
 }
 
-.primary-btn:after {
+.btn:after {
   content: "";
   z-index: -1;
   top: 50px;
@@ -93,8 +96,11 @@ a:hover {
   background: #3a2ec0;
   left: 0;
   top: 0;
-  border-radius: 10px;
   cursor: pointer;
+}
+
+.primary-btn:after {
+  border-radius: 10px;
 }
 
 .primary-btn:hover {
