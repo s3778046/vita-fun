@@ -40,7 +40,6 @@ const aboutLink = document.querySelectorAll(".about a");
 const quizLink = document.querySelectorAll(".quiz a");
 const circusLink = document.querySelectorAll(".superfood-circus a");
 const recipesLink = document.querySelectorAll(".recipes a");
-const vitafreshLink = document.querySelectorAll(".vitafresh a");
 const menuLinks = document.querySelector("#dropdown-menu");
 const menuButton = document.querySelector("#menu-icon");
 
@@ -66,14 +65,13 @@ if (url.substring(url.length - 1) == "/") {
   homeLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("about")) {
   aboutLink.forEach((element) => (element.className += " active"));
+  console.log("done");
 } else if (url.includes("quiz")) {
   quizLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("superfoodcircus")) {
   circusLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("recipes")) {
   recipesLink.forEach((element) => (element.className += " active"));
-} else if (url.includes("vitafresh")) {
-  vitafreshLink.forEach((element) => (element.className += " active"));
 }
 
 // Load the question data into the correct fields on window load
