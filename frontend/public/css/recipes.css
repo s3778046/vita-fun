@@ -4,10 +4,35 @@
     margin: auto;
     width: 50%;
     text-align: center;
+    color: #26FF60;
 
 } 
 
 .recipes {
-    
     text-align: center;
 }
+
+.eggs{
+    height: 100px;
+    width: auto;
+    position: relative;
+    float: right;
+    padding-right: 30%;
+}
+
+.frittata{
+    height: 200px;
+    width: auto;
+    position: relative;
+    float: left;
+    padding-left: 20%;
+}
+
+.green-power{
+    height: 420px;
+    width: auto;
+    position: relative;
+    float: right;
+}
+
+
