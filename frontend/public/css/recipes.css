@@ -1,1 +1,13 @@
 /*  Recipes page styling */
+
+#recipe-1 h1{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+
+} 
+
+.recipes {
+    
+    text-align: center;
+}
