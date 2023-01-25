@@ -15,6 +15,7 @@ body {
   font-weight: 400;
   background: var(--background-blue);
   cursor: url(../img/magic-ball.png), auto;
+  overflow-x: hidden;
 }
 
 ul {
