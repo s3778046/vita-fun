@@ -298,3 +298,43 @@ function hideText(element) {
 
 // initialise AOS
 AOS.init();
+
+// get cursor position
+let cursorX = 0;
+let cursorY = 0;
+
+// get wand and sparkles elements
+const wand = document.getElementById("wand");
+const sparkles = document.getElementById("sparkles");
+
+// move wand on mouse move
+document.addEventListener("mousemove", (e) => {
+  cursorX = e.clientX;
+  cursorY = e.clientY;
+  wand.style.left = cursorX + "px";
+  wand.style.top = cursorY + "px";
+});
+
+let isMouseMoving = false;
+
+document.addEventListener("mousemove", (e) => {
+  isMouseMoving = true;
+  cursorX = e.clientX;
+  cursorY = e.clientY;
+});
+
+setInterval(() => {
+  if (isMouseMoving) {
+    // create sparkles and append to sparkles element
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.style.left = cursorX + "px";
+    sparkle.style.top = cursorY + "px";
+    sparkles.appendChild(sparkle);
+    // remove sparkles after 1s
+    setTimeout(() => {
+      sparkle.remove();
+    }, 1000);
+    isMouseMoving = false;
+  }
+}, 70);

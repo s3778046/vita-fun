@@ -14,6 +14,7 @@ body {
   font-family: var(--base-font-family);
   font-weight: 400;
   background: var(--background-blue);
+  cursor: url(../img/magic-ball.png), auto;
 }
 
 ul {
@@ -365,4 +366,38 @@ footer {
   text-align: center;
 }
 
-/* loading screen styling */
+/* custom cursor styling */
+
+/* sparkles styles */
+#sparkles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99998;
+  pointer-events: none;
+}
+
+/* sparkle animation */
+.sparkle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: url(../img/sparkle-yellow.png);
+  animation: sparkle 1s ease-in-out forwards;
+}
+
+/* keyframes animation */
+@keyframes sparkle {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
