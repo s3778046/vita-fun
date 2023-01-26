@@ -62,17 +62,26 @@ const fronts = document.querySelectorAll(".front");
 const backs = document.querySelectorAll(".back");
 const glows = document.querySelectorAll(".circle-gradient");
 
-// Set the current page nav link to active.
+// get sparkles elements for cursor
+const sparkles = document.querySelector("#sparkles");
+
+// Get footer element and store in variable
+const footer = document.querySelector("footer");
+
+// Set the current page nav link to active and hide footer for pages other than the homepage.
 if (url.substring(url.length - 1) == "/") {
   homeLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("about")) {
   aboutLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("quiz")) {
   quizLink.forEach((element) => (element.className += " active"));
+  footer.style.display = "none";
 } else if (url.includes("superfoodcircus")) {
   circusLink.forEach((element) => (element.className += " active"));
+  footer.style.display = "none";
 } else if (url.includes("recipes")) {
   recipesLink.forEach((element) => (element.className += " active"));
+  footer.style.display = "none";
 }
 
 // Load the question data into the correct fields on window load
@@ -302,18 +311,6 @@ AOS.init();
 // get cursor position
 let cursorX = 0;
 let cursorY = 0;
-
-// get wand and sparkles elements
-const wand = document.getElementById("wand");
-const sparkles = document.getElementById("sparkles");
-
-// move wand on mouse move
-document.addEventListener("mousemove", (e) => {
-  cursorX = e.clientX;
-  cursorY = e.clientY;
-  wand.style.left = cursorX + "px";
-  wand.style.top = cursorY + "px";
-});
 
 let isMouseMoving = false;
 
