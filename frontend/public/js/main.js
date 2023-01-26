@@ -40,13 +40,14 @@ const aboutLink = document.querySelectorAll(".about a");
 const quizLink = document.querySelectorAll(".quiz a");
 const circusLink = document.querySelectorAll(".superfood-circus a");
 const recipesLink = document.querySelectorAll(".recipes a");
-const vitafreshLink = document.querySelectorAll(".vitafresh a");
 const menuLinks = document.querySelector("#dropdown-menu");
 const menuButton = document.querySelector("#menu-icon");
 
-// Get primary button elements and store in variables
-const primaryBtn = document.querySelector(".primary-btn");
-const arrow = document.querySelector(".arrow");
+// Get primary button + other button elements and store in variables
+const primaryBtns = document.querySelectorAll(".primary-btn");
+const arrows = document.querySelectorAll(".arrow");
+const roundTexts = document.querySelectorAll(".text p");
+const socialMediaBtns = document.querySelectorAll(".circle");
 
 // Get answer elements and store in  variables
 const selectAnswerLeft = document.querySelector("#select-answer-left");
@@ -72,8 +73,6 @@ if (url.substring(url.length - 1) == "/") {
   circusLink.forEach((element) => (element.className += " active"));
 } else if (url.includes("recipes")) {
   recipesLink.forEach((element) => (element.className += " active"));
-} else if (url.includes("vitafresh")) {
-  vitafreshLink.forEach((element) => (element.className += " active"));
 }
 
 // Load the question data into the correct fields on window load
@@ -190,14 +189,28 @@ let onresize = function (e) {
 };
 window.addEventListener("resize", onresize);
 
-// show arrow in primary button upon hover only
-primaryBtn.addEventListener("mouseover", () => {
-  arrow.classList.add("show-arrow");
+// Add event listeners on the primary buttons
+
+primaryBtns.forEach((element) => {
+  element.addEventListener("mouseover", function () {
+    showArrow(element);
+  });
+  element.addEventListener("mouseout", function () {
+    hideArrow(element);
+  });
 });
 
-primaryBtn.addEventListener("mouseout", () => {
+// show arrow in primary button upon hover
+function showArrow(element) {
+  let arrow = element.querySelector(".arrow");
+  arrow.classList.add("show-arrow");
+}
+
+// hide arrow in primary button upon mouse-out
+function hideArrow(element) {
+  let arrow = element.querySelector(".arrow");
   arrow.classList.remove("show-arrow");
-});
+}
 
 // Add event listeners on the card elements
 cards.forEach((element) =>
@@ -244,4 +257,84 @@ function animateCard(element) {
   glow.className = "circle-gradient " + colors[number];
 }
 
+// Add event listeners on the social media buttons
+socialMediaBtns.forEach((element) => {
+  let icon = element.querySelector(".neon-icon");
+  icon.addEventListener("mouseover", function () {
+    showText(element);
+  });
+  icon.addEventListener("mouseout", function () {
+    hideText(element);
+  });
+});
+
+// split the inner HTML text and store each letter in a separate span element
+roundTexts.forEach(
+  (element) =>
+    (element.innerHTML = element.innerText
+      .split("")
+      .map(
+        (char, i) =>
+          `<span style="transform:rotate(${i * 15.5}deg")>${char}</span>`
+      )
+      .join(""))
+);
+
+//show rotating text upon hover
+function showText(element) {
+  let text = element.querySelector(".text");
+  text.classList.add("show-text");
+  let icon = element.querySelector(".bx");
+  icon.classList.add("bx-tada");
+}
+
+//hide rotating text upon mouseout
+function hideText(element) {
+  let text = element.querySelector(".text");
+  text.classList.remove("show-text");
+  let icon = element.querySelector(".bx");
+  icon.classList.remove("bx-tada");
+}
+
+// initialise AOS
 AOS.init();
+
+// get cursor position
+let cursorX = 0;
+let cursorY = 0;
+
+// get wand and sparkles elements
+const wand = document.getElementById("wand");
+const sparkles = document.getElementById("sparkles");
+
+// move wand on mouse move
+document.addEventListener("mousemove", (e) => {
+  cursorX = e.clientX;
+  cursorY = e.clientY;
+  wand.style.left = cursorX + "px";
+  wand.style.top = cursorY + "px";
+});
+
+let isMouseMoving = false;
+
+document.addEventListener("mousemove", (e) => {
+  isMouseMoving = true;
+  cursorX = e.clientX;
+  cursorY = e.clientY;
+});
+
+setInterval(() => {
+  if (isMouseMoving) {
+    // create sparkles and append to sparkles element
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.style.left = cursorX + "px";
+    sparkle.style.top = cursorY + "px";
+    sparkles.appendChild(sparkle);
+    // remove sparkles after 1s
+    setTimeout(() => {
+      sparkle.remove();
+    }, 1000);
+    isMouseMoving = false;
+  }
+}, 70);
