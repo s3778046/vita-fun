@@ -11,17 +11,27 @@
     margin: auto;
     width: 50%;
     text-align: center;
+    color: var(--vita-yellow);
+    /*
     color: #26FF60;
+    */
 
 } 
-/*
-.recipes {
-    text-align: center;
-} */
+
+#recipe-1 .recipes1{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /*
+    padding-top: 20px; */
+}
 
 .eggs{
+    max-width: 25%;
+    height: auto;
+    /*
     height: 75px;
-    width: auto;
+    width: auto; */
     grid-column: 4;
     grid-row: 1/5;
     /*
@@ -31,19 +41,24 @@
 }
 
 .tightrope-power{
+    max-width: 80%;
+    height: auto;
+    /*
     height: 250px;
-    width: auto;
+    width: auto; */
     grid-column: 4;
     grid-row: 5/5;
-    padding-right: -20px;
     /*
     position: relative;
     float: right; */
 }
 
 .frittata{
+    max-width: 85%;
+    height: auto;
+    /*
     height: 150px;
-    width: auto;
+    width: auto; */
     grid-column: 2;
     grid-row: 5/5;
     /*
@@ -63,7 +78,7 @@
     margin: auto;
     width: 50%;
     text-align: center;
-    color: #26FF60;
+    color: var(--vita-purple);
 
 } 
 
@@ -72,23 +87,31 @@
 }
 
 .chocolate{
+    max-width: 25%;
+    height: auto;
+    /*
     height: 65px;
-    width: auto;
+    width: auto; */
     grid-column: 4;
     grid-row: 1/5;
 }
 
 .cannonball-power{
+    max-width: 80%;
+    height: auto;
+    /*
     height: 250px;
-    width: auto;
+    width: auto; */
     grid-column: 4;
     grid-row: 5/5;
-    padding-right: -20px;
 }
 
 .waffle{
+    max-width: 100%;
+    height: auto;
+    /*
     height: 130px;
-    width: auto;
+    width: auto; */
     grid-column: 2;
     grid-row: 5/5;
 }
