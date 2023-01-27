@@ -19,6 +19,11 @@ const setRecipes = asyncHandler(async (req, res) => {
     }
 
     // If no data is entered, display error message
+    if((!req.body.description)) {
+        res.status(400).json({message: "Please add a name"});
+    }
+
+    // If no data is entered, display error message
     if((!req.body.ingredients)) {
         res.status(400).json({message: "Please add ingredients"}); 
     }
@@ -29,15 +34,47 @@ const setRecipes = asyncHandler(async (req, res) => {
     }
 
     // If no data is entered, display error message
-    if((!req.body.image)) {
-        res.status(400).json({message: "Please add an image"}); 
+    if((!req.body.backgroundImg)) {
+        res.status(400).json({message: "Please add a background image"}); 
     }
+
+    // If no data is entered, display error message
+    if((!req.body.recipeImg)) {
+        res.status(400).json({message: "Please add a recipe image"}); 
+    }
+
+    // If no data is entered, display error message
+    if((!req.body.superfood)) {
+        res.status(400).json({message: "Please add a superfood"}); 
+    }
+
+    // If no data is entered, display error message
+    if((!req.body.superfoodImg)) {
+        res.status(400).json({message: "Please add a superfood image"}); 
+    }
+
+    // If no data is entered, display error message
+    if((!req.body.character)) {
+        res.status(400).json({message: "Please add a character"}); 
+    }
+
+    // If no data is entered, display error message
+    if((!req.body.characterImg)) {
+        res.status(400).json({message: "Please add a character image"}); 
+    }
+
 
     const goal = await Recipes.create({
         name: req.body.name,
+        description: req.body.description,
         ingredients: req.body.ingredients,
         method: req.body.method,
-        image: req.body.image,
+        backgroundImg: req.body.backgroundImg,
+        recipeImg: req.body.recipeImg,
+        superfood: req.body.superfood,
+        superfoodImg: req.body.superfoodImg,
+        character: req.body.character,
+        characterImg: req.body.characterImg,
     });
 
     // Display success message
