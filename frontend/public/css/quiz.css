@@ -5,6 +5,7 @@
   align-items: center;
   gap: 20px;
   width: 100%;
+  margin-top: 150px;
 }
 
 .question {
@@ -17,11 +18,13 @@
   font-weight: bold;
   box-shadow: 2px 2px 5px rgb(0, 0, 0);
   text-transform: capitalize;
+  text-align: center;
 }
 
 .answer1,
 .answer2 {
   flex-basis: 20%;
+  text-align: center;
 }
 
 .answer1 p,
@@ -33,13 +36,6 @@
   font-weight: bold;
   box-shadow: 2px 2px 5px rgb(0, 0, 0);
   text-transform: capitalize;
-}
-
-.answer1 span,
-.answer2 span {
-  font-size: 1.5em;
-  font-weight: bold;
-  padding: 0px 10px;
 }
 
 .answer1:hover,
@@ -54,21 +50,14 @@
   margin-top: 50px;
 }
 
-.restart-quiz button {
-  padding: 20px;
-  background-color: var(--background-blue);
-  font-family: "Bubblegum Sans", cursive;
+.restart-quiz a {
+  padding: 10px;
+  background-color: white;
   border-radius: 5px;
-  color: white;
+  color: var(--background-blue);
   font-weight: bold;
   box-shadow: 2px 2px 5px rgb(0, 0, 0);
   text-transform: uppercase;
-  margin-top: 50px;
-}
-
-.restart-quiz button:hover {
-  opacity: 0.85;
-  cursor: pointer;
 }
 
 @media only screen and (max-width: 685px) {
@@ -88,10 +77,16 @@
 }
 
 /* Show results styling */
+
+.list-wrapper {
+  margin-bottom: 50px;
+}
+
 #show-circus-character {
   padding: 0px 50px;
   text-align: center;
   display: none;
+  margin-top: 50px;
 }
 
 #show-circus-character li {
@@ -101,22 +96,23 @@
 #show-circus-character #score {
   text-transform: uppercase;
   font-family: "Bubblegum Sans", cursive;
-  font-size: 1.5rem;
-  color: var(--background-blue);
+  font-size: 1.9rem;
+  color: white;
+  margin: 20px 0;
 }
 
-#show-circus-character button {
-  padding: 20px;
-  background-color: var(--background-blue);
+#show-circus-character a {
+  padding: 10px;
+  background-color: white;
   border-radius: 5px;
-  color: white;
+  color: var(--background-blue);
   font-weight: bold;
   box-shadow: 2px 2px 5px rgb(0, 0, 0);
   text-transform: uppercase;
-  margin-top: 50px;
 }
 
-#show-circus-character button:hover {
+
+#show-circus-character a:hover {
   opacity: 0.9;
   cursor: pointer;
 }
@@ -124,7 +120,7 @@
 #circus-img {
   height: 350px;
   box-shadow: 2px 2px 5px black;
-  border-radius: 200px;
+  border-radius: 25%;
   margin-bottom: 15px;
 }
 
@@ -133,9 +129,9 @@
 #a3,
 #a4,
 #a5 {
-  color: var(--background-blue);
-  font-family: "Bubblegum Sans", cursive;
-  display: inline;
+  color: white;
+  padding-top: 5px;
+  text-transform: uppercase;
 }
 
 @media only screen and (max-width: 600px) {
