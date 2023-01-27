@@ -12,17 +12,47 @@ const recipeSchema = mongoose.Schema( {
         required: true,
     },
 
-    ingredients: {
+    description: {
         type: String,
+        required: true,
+    },
+
+    ingredients: {
+        type: Array,
         required: true,
     },
 
     method: {
+        type: Array,
+        required: true,
+    },
+
+    backgroundImg: {
         type: String,
         required: true,
     },
 
-    image: {
+    recipeImg: {
+        type: String,
+        required: true,
+    },
+
+    superfood: {
+        type: String,
+        required: true,
+    },
+
+    superfoodImg: {
+        type: String,
+        required: true,
+    },
+
+    character: {
+        type: String,
+        required: true,
+    },
+
+    characterImg: {
         type: String,
         required: true,
     }
