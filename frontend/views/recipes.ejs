@@ -30,4 +30,14 @@
   </section>
 </div>
 
+<section id="recipe-2">
+    <% let count = 1 %> 
+      <% recipes.forEach(function(recipe)  { %>
+        <p>Recipe <%= count %> </p>
+        <p>Name: <%= " " + recipe.name %></p>
+        <p>Description: <%= " " + recipe.description %></p><br>
+      <% count++ %> 
+    <% }); %> 
+</section>
+
 <%- include('components/footer') %>
