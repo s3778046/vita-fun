@@ -32,8 +32,10 @@ function loadQuestions() {
     // Work around for connection to API form either localhost or aws server.
     if (url.includes("localhost")) {
       xhttp.open("GET", "http://localhost:5000/api/questions", true);
-    } else {
+    } else if (url.includes("vita-fun-a2")){
       xhttp.open("GET", "https://vita-fun-a2.onrender.com/api/questions", true);
+    } else {
+      xhttp.open("GET", "https://vita-fun.onrender.com/api/questions", true);
     }
     xhttp.send();
   }
