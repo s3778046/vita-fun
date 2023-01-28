@@ -1,12 +1,8 @@
 <%- include('components/header') %>
 
 <div class="recipes">
-
   <section id="recipe-1">
-
-
     <h1>TIGHTROPE POWER FRITTATA</h1>
-
 
     <div class="recipes1" style="background-image: url('../public/img/bg-recipes.png');">
 
@@ -25,7 +21,6 @@
       </ol>
 
 
-  
     <div class="grid-container">
 
 
@@ -37,28 +32,36 @@
 
     </div>
 
+
     </div>
   </section>
 
   <section id="recipe-2">
-    
     <h1>CHOCOLATE CANNONBALL WAFFLES</h1>
     <div class="recipes">
-
       <div class="grid-container-2">
+        <img src="../public/img/cacao.png" alt="" class="chocolate" />
 
-      <img src="../public/img/cacao.png" alt="" class="chocolate"/>
+        <img src="../public/img/chocolate-waffles.png" alt="" class="waffle" />
 
-      <img src="../public/img/chocolate-waffles.png" alt="" class="waffle"/>
-
-      <img src="../public/img/human-cannonball.png" alt="" class="cannonball-power"/>
-
-    </div>
+        <img
+          src="../public/img/human-cannonball.png"
+          alt=""
+          class="cannonball-power"
+        />
+      </div>
     </div>
   </section>
-
-
 </div>
-</div>
+
+<section id="recipe-2">
+    <% let count = 1 %> 
+      <% recipes.forEach(function(recipe)  { %>
+        <p>Recipe <%= count %> </p>
+        <p>Name: <%= " " + recipe.name %></p>
+        <p>Description: <%= " " + recipe.description %></p><br>
+      <% count++ %> 
+    <% }); %> 
+</section>
 
 <%- include('components/footer') %>

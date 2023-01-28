@@ -279,13 +279,13 @@ nav li a {
   transition: all 0.4s ease-in-out;
 }
 
-#dropdown-menu hr {
-  border: none;
-  border-top: solid 1px #6c60f5;
-}
-
 #dropdown-menu li {
   text-align: center;
+  border-bottom: solid 1px #6c60f5;
+}
+
+#dropdown-menu li:nth-child(6) {
+  border-bottom: none;
 }
 
 #dropdown-menu li a {

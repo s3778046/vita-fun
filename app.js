@@ -2,6 +2,7 @@
 const express = require('express');
 const colors = require('colors');
 const dotenv = require('dotenv').config();
+const Recipes = require('./backend/models/recipesModel');
 
 // Create database connection
 const connectDB = require('./backend/db/dbConnect');
@@ -55,7 +56,13 @@ app.get('/superfoodcircus', (req, res) => {
 
 // Get recipes uri and render the response.
 app.get('/recipes', (req, res) => {
-    res.render('recipes');
+
+    // Get recipe data and pass it to the recipe view.
+    Recipes.find().then((result) => {
+        res.render('recipes', {recipes: result});
+    }).catch((err) => {
+        console.log(err);
+    });
 });
 
 // Get vitafresh uri and render the response.
