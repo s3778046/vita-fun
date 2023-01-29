@@ -121,3 +121,103 @@
     grid-column: 2;
     grid-row: 5/5;
 }
+
+
+
+/* Styling for html elements instead of backgroung images */
+
+
+
+.recipe {
+    text-align: center;
+    position: relative;
+    min-height: 90vh;
+    padding-bottom: 50px;
+}
+
+.recipe h1 {
+    text-transform: uppercase;
+    font-family: var(--heading-font-family);
+    font-size: 2.5em;
+}
+
+.recipe h2 {
+    padding: 10px 0 30px 0;
+    color: var(--vita-yellow);
+}
+
+.recipe h3 {
+    color: var(--vita-purple);
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 1.4em;
+}
+
+.post-it {
+    position: absolute;
+    min-height: 300px;
+    width: 270px;
+    background-color: var(--vita-yellow);
+    left: 20vw;
+    box-shadow: 5px 5px 17px rgba(0, 0, 0, 0.7);
+    padding: 50px 10px 10px 10px;
+    border-radius: 5px;
+    transform: SkewX(2deg);
+    transform-origin: top left;
+}
+
+.post-it h2 {
+    color: black;
+}
+
+.post-it p {
+    color: black;
+}
+
+.pin {
+    width: 35px;
+    position: absolute;
+    left: 48%;
+    top: 0;
+}
+
+.method-board {
+    min-height: 70vh;
+    width: 35vw;
+    padding: 20px 80px;
+    background-color: white;
+    margin: auto;
+    text-align: left;
+}
+
+.method-board p{
+    color: black;
+    font-family: var(--heading-font-family);
+    font-size: 2em;
+}
+
+.superfood-img {
+    position: absolute;
+    height: 150px;
+    right: 25%;
+}
+
+.character-img {
+    position: absolute;
+    height: 400px;
+    top: 40%;
+    right: 10%;
+}
+
+.recipe-img {
+    position: absolute;
+    height: 150px;
+    bottom: 10%;
+    left: 20%;
+}
+
+
+
+
+ 
+
