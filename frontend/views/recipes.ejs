@@ -54,14 +54,52 @@
   </section>
 </div>
 
-<section id="recipe-2">
-    <% let count = 1 %> 
-      <% recipes.forEach(function(recipe)  { %>
-        <p>Recipe <%= count %> </p>
-        <p>Name: <%= " " + recipe.name %></p>
-        <p>Description: <%= " " + recipe.description %></p><br>
-      <% count++ %> 
-    <% }); %> 
-</section>
+<!-- Dynamic content retrived from database-->
+<!-- Counter -->
+<% let count = 1 %> 
+
+<!-- Loop to bring in content for all recipes -->
+<% recipes.forEach(function(recipe)  { %>
+    <section class="recipe">
+        <!-- Name and description elements -->
+        <h1> <%= recipe.name %> </h1>
+        <h2> <%= recipe.description %> </h2>
+
+        <!-- Superfood, Character and recipe images -->
+        <img class="superfood-img" src="<%= recipe.superfoodImg %>" alt="Superfood image"/>
+        <img class="recipe-img" src="<%= recipe.recipeImg %>" alt="Recipe image" />
+        <img class="character-img" src="<%= recipe.characterImg %>" alt="Character image"/>
+
+        <!-- Post it note styling -->
+        <div class="post-it">
+            <img class="pin" src="../public/img/pin.png" alt="">
+
+            <h3>Ingredients</h3>
+
+            <!-- Loop to bring in ingredients list -->
+            <% let ingredientsCounter = 0 %> 
+            <% recipe.ingredients.forEach(function(ingredient) { %>
+                <p> <%= ingredient %> </p>
+            <% ingredientsCounter++ %>    
+            <% }); %>
+        </div> 
+
+        <!-- Method board styling -->
+        <div class="method-board">
+
+            <h3>Method</h3>
+
+            <!-- Loop to bring in method list -->
+            <% let methodCounter = 0 %> 
+            <% recipe.method.forEach(function(method) { %>
+                <p> <%= (methodCounter + 1) + ". " + method %> </p>
+            <% methodCounter++ %>    
+            <% }); %>
+
+        </div>
+    </section>
+<!-- Increment counter -->
+<% count++ %> 
+<% }); %> 
 
 <%- include('components/footer') %>
