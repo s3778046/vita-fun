@@ -62,8 +62,20 @@ const glows = document.querySelectorAll(".circle-gradient");
 // get sparkles elements for cursor
 const sparkles = document.querySelector("#sparkles");
 
+// get ingredients and steps for recipes
+// const ingredients = document.querySelectorAll(".ingredient");
+// const steps = document.querySelectorAll(".step");
+
 // Get footer element and store in variable
 const footer = document.querySelector("footer");
+
+//show loading animation while content is loading
+document.addEventListener("DOMContentLoaded", function () {
+  const loading = document.querySelector(".loading");
+  const content = document.querySelector(".page-content");
+  content.style.display = "block";
+  loading.style.display = "none";
+});
 
 // Set the current page nav link to active and hide footer for pages other than the homepage.
 if (url.substring(url.length - 1) == "/") {
@@ -234,3 +246,20 @@ setInterval(() => {
     isMouseMoving = false;
   }
 }, 70);
+
+// toggle 'done' class to ingredients and steps to cross them out on click
+// ingredients.forEach((element) =>
+//   element.addEventListener("click", function () {
+//     crossOut(element);
+//   })
+// );
+
+// steps.forEach((element) =>
+//   element.addEventListener("click", function () {
+//     crossOut(element);
+//   })
+// );
+
+// function crossOut(element) {
+//   element.classList.toggle("done");
+// }
