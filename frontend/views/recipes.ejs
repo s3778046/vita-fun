@@ -1,65 +1,62 @@
-<%- include('components/header') %>
+<%- include('components/header') %> <%- include('components/loading') %>
+<div class="page-content" id="recipe-page">
+  <div class="recipes">
+    <!-- Dynamic content retrived from database-->
+    <!-- Counter -->
+    <% let count = 1 %>
 
-
-<!-- Dynamic content retrived from database-->
-<!-- Counter -->
-<% let count = 1 %> 
-
-<!-- Loop to bring in content for all recipes -->
-<% recipes.forEach(function(recipe)  { %>
+    <!-- Loop to bring in content for all recipes -->
+    <% recipes.forEach(function(recipe) { %>
     <section class="recipe">
-        <!-- Name and description elements -->
-        <h1> <%= recipe.name %> </h1>
-        <h2> <%= recipe.description %> </h2>
+      <!-- Name and description elements -->
+      <h1><%= recipe.name %></h1>
+      <h2><%= recipe.description %></h2>
 
+      <!-- Post it note -->
+      <div class="post-it">
+        <img class="pin" src="../public/img/pin.png" alt="" />
 
-        <div class="grid-container">
-
-        <!-- Superfood, Character and recipe images -->
-        <img class="superfood-img" src="<%= recipe.superfoodImg %>" alt="Superfood image"/>
-        <img class="recipe-img" src="<%= recipe.recipeImg %>" alt="Recipe image" />
-        <img class="character-img" src="<%= recipe.characterImg %>" alt="Character image"/>
-
-        <!-- Post it note styling -->
-        <div class="post-it">
-            <img class="pin" src="../public/img/pin.png" alt="">
-
-            <h3>Ingredients</h3>
-
-            <!-- Loop to bring in ingredients list -->
-            <% let ingredientsCounter = 0 %> 
-            <% recipe.ingredients.forEach(function(ingredient) { %>
-                <p> <%= ingredient %> </p>
-            <% ingredientsCounter++ %>    
-            <% }); %>
-        </div> 
-
-        <!-- Method board styling -->
-
-        
-        <div class="method-board" style="background-image: url('../public/img/bg-images-white-page.png');">
-        
-        <!-- bg image technique attempt -->
-
-            <h3>Method</h3>
-
-            <!-- Loop to bring in method list -->
-            <% let methodCounter = 0 %> 
-            <% recipe.method.forEach(function(method) { %>
-                <p> <%= (methodCounter + 1) + ". " + method %> </p>
-            <% methodCounter++ %>    
-            <% }); %>
-        
-        </div>
-        
-
+        <h3>Ingredients</h3>
+        <ul>
+          <!-- Loop to bring in ingredients list -->
+          <% let ingredientsCounter = 0 %> <%
+          recipe.ingredients.forEach(function(ingredient) { %>
+          <li class="ingredient">👉🏼 <%= ingredient %></li>
+          <% ingredientsCounter++ %> <% }); %>
+        </ul>
       </div>
 
+      <!-- Method board -->
+      <div class="notebook-paper">
+        <img
+          class="superfood-img"
+          src="<%= recipe.superfoodImg %>"
+          alt="Superfood image"
+        />
+        <img
+          class="recipe-img"
+          src="<%= recipe.recipeImg %>"
+          alt="Recipe image"
+        />
+        <div class="heading">
+          <h3>method</h3>
+        </div>
+        <div class="content">
+          <!-- Loop to bring in method list -->
+          <% let methodCounter = 0 %> <% recipe.method.forEach(function(method)
+          { %>
+          <p class="step"><%= (methodCounter + 1) + ". " + method %></p>
+          <% methodCounter++ %> <% }); %>
+        </div>
+      </div>
 
-
+      <img
+        class="character-img"
+        src="<%= recipe.characterImg %>"
+        alt="Character image"
+      />
     </section>
-<!-- Increment counter -->
-<% count++ %> 
-<% }); %> 
-
-<%- include('components/footer') %>
+    <!-- Increment counter -->
+    <% count++ %> <% }); %> <%- include('components/footer') %>
+  </div>
+</div>
