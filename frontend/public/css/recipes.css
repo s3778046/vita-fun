@@ -7,125 +7,9 @@
     margin: 10px;
 }
 
-#recipe-1 h1{
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    color: var(--vita-yellow);
-} 
-
-#recipe-1 .recipes1{
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
-/* Position text over background image */
-
-/*
-.recipes1 h2{
-    position: absolute;
-    color: var(--vita-green);
-    padding-left: 40%;
-    padding-top: 40px;
-}
-*/
-
-.recipes1 ol{
-    position: absolute;
-    color: black;
-    /*padding-left: 40%; */
-    padding-left: 600px;
-    padding-top: 50px;
-}
-
-.recipes1 ol li{
-    width: 220px;
-    /*
-    text-align: center; */
-}
 
 
-.eggs{
-    max-width: 25%;
-    height: auto;
-    /*height: 75px;
-    width: auto; */
-    grid-column: 4;
-    grid-row: 1/5;
-}
-
-.tightrope-power{
-    max-width: 80%;
-    height: auto;
-    /*
-    height: 250px;
-    width: auto; */
-    grid-column: 4;
-    grid-row: 5/5;
-}
-
-.frittata{
-    max-width: 75%;
-    height: auto;
-    /*
-    height: 150px;
-    width: auto; */
-    grid-column: 2;
-    grid-row: 5/5;
-}
-
-.grid-container-2 {
-    display: grid;
-    grid-template-columns: 10% 20% auto 35%;
-    grid-template-rows: repeat(5,auto);
-    margin: 10px;
-}
-
-#recipe-2 h2{
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    color: var(--vita-purple);
-
-} 
-
-.recipes {
-    text-align: center;
-}
-
-.chocolate{
-    max-width: 25%;
-    height: auto;  
-    /*height: 65px;
-    width: auto; */
-    grid-column: 4;
-    grid-row: 1/5;
-}
-
-.cannonball-power{
-    max-width: 80%;
-    height: auto;
-    /*
-    height: 250px;
-    width: auto; */
-    grid-column: 4;
-    grid-row: 5/5;
-}
-
-.waffle{
-    max-width: 100%;
-    height: auto;
-    /* height: 130px;
-    width: auto; */
-    grid-column: 2;
-    grid-row: 5/5;
-}
-
-
-
-/* Styling for html elements instead of backgroung images */
-
+/* Styling for html elements */
 
 
 .recipe {
@@ -188,6 +72,11 @@
     background-color: white;
     margin: auto;
     text-align: left;
+
+    /*
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; */
 }
 
 .method-board p{
@@ -197,23 +86,37 @@
 }
 
 .superfood-img {
+    /*
     position: absolute;
     height: 150px;
-    right: 25%;
+    right: 25%; */
+    max-width: 25%;
+    height: auto;
+    grid-column: 4;
+    grid-row: 1/5;
 }
 
 .character-img {
-    position: absolute;
-    height: 400px;
-    top: 40%;
-    right: 10%;
+    /* position: absolute;
+    height: 400px; */
+    max-width: 80%;
+    height: auto;
+    grid-column: 4;
+    grid-row: 5/5;
+    /* top: 40%;
+    right: 10%; */
 }
 
 .recipe-img {
-    position: absolute;
+    max-width: 100%;
+    height: auto;
+    grid-column: 2;
+    grid-row: 5/5;
+
+    /* position: absolute;
     height: 150px;
     bottom: 10%;
-    left: 20%;
+    left: 20%; */ 
 }
 
 
