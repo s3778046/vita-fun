@@ -15,8 +15,8 @@ const characters = [
 
 const superfoods = [
   "avocado",
-  "brocolli",
-  "cacao",
+  "broccoli",
+  "cocoa",
   "eggs",
   "tofu",
   "watermelon",
