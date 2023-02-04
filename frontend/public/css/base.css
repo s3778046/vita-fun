@@ -442,3 +442,16 @@ footer {
     font-size: 20px;
   }
 }
+
+/* footer styles */
+footer {
+  padding-bottom: 50px;
+}
+
+footer p {
+  padding-bottom: 5px;
+}
+
+footer a {
+  text-decoration: underline;
+}
