@@ -34,6 +34,10 @@
   font-size: 1.4em;
 }
 
+.step-count {
+  font-weight: 800;
+}
+
 .post-it {
   grid-column: 1;
   grid-row: 3;

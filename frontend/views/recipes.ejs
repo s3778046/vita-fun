@@ -45,7 +45,11 @@
           <!-- Loop to bring in method list -->
           <% let methodCounter = 0 %> <% recipe.method.forEach(function(method)
           { %>
-          <p class="step"><%= (methodCounter + 1) + ". " + method %></p>
+          <p>
+            <span class="step-count"><%= (methodCounter + 1) + ". " %></span>
+            <span class="step"><%= method %></span>
+          </p>
+
           <% methodCounter++ %> <% }); %>
         </div>
       </div>
