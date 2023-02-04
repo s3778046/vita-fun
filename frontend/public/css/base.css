@@ -326,6 +326,10 @@ section {
   .page-content {
     padding-top: 200px;
   }
+
+  h1 {
+    font-size: 35px;
+  }
 }
 
 /*  glowing circles styling */
