@@ -50,6 +50,8 @@ a:hover {
   color: var(--vita-yellow);
 }
 
+/* Primary button styles inspired by and re-produced from: https://codepen.io/kocsten/pen/rggjXp 
+and: https://codepen.io/foxeisen/pen/bqZxLa  */
 .primary-btn {
   font-family: var(--heading-font-family);
   padding: 15px 30px;

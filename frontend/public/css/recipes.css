@@ -38,6 +38,7 @@
   font-weight: 800;
 }
 
+/* Post-it styles inspired by and re-produced from: https://codepen.io/jweden/pen/kGBBpM */
 .post-it {
   grid-column: 1;
   grid-row: 3;
@@ -111,6 +112,7 @@
   z-index: 4;
 }
 
+/* Notebook paper styles inspired by and re-produced from: https://codepen.io/designcouch/pen/bGvzKE */
 .notebook-paper {
   width: 650px;
   min-height: fit-content;
