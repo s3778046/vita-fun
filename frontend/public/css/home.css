@@ -12,7 +12,7 @@
 }
 
 #home h1 {
-  font-size: 45px;
+  font-size: 50px;
 }
 #home p {
   padding: 20px 0;
@@ -140,6 +140,10 @@
   #home {
     display: flex;
     flex-direction: column;
+  }
+
+  #home h1 {
+    font-size: 40px;
   }
 
   .item1 {
@@ -273,6 +277,9 @@
 }
 
 /* contact us icons styling */
+
+/* contact us icon styles inspired by and re-produced from: https://codepen.io/salihbenlalla/pen/ExvayVe
+and: https://www.youtube.com/watch?v=zwl3kZPZ8H8  */
 .circle {
   position: relative;
   width: 100px;

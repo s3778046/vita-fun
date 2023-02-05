@@ -1,4 +1,4 @@
-<%- include('components/header') %>
+<%- include('components/header') %> <%- include('components/loading') %>
 <div class="page-content">
   <!-- Questions and answers  -->
   <div class="question-wrapper">
@@ -30,7 +30,11 @@
   <div id="show-circus-character">
     <div class="list-wrapper">
       <!-- Image -->
-      <img id="circus-img" src="" alt="Circus Character" />
+      <img
+        id="circus-img"
+        src="../public/img/unknown-character.png"
+        alt="Circus Character"
+      />
       <ul>
         <li id="score"></li>
 

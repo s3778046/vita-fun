@@ -1,223 +1,304 @@
 /*  Recipes page styling */
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 10% 20% auto 35%;
-    grid-template-rows: repeat(5,auto);
-    margin: 10px;
+#recipe-page {
+  padding-top: 0;
 }
-
-#recipe-1 h1{
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    color: var(--vita-yellow);
-} 
-
-#recipe-1 .recipes1{
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
-/* Position text over background image */
-
-/*
-.recipes1 h2{
-    position: absolute;
-    color: var(--vita-green);
-    padding-left: 40%;
-    padding-top: 40px;
-}
-*/
-
-.recipes1 ol{
-    position: absolute;
-    color: black;
-    /*padding-left: 40%; */
-    padding-left: 600px;
-    padding-top: 50px;
-}
-
-.recipes1 ol li{
-    width: 220px;
-    /*
-    text-align: center; */
-}
-
-
-.eggs{
-    max-width: 25%;
-    height: auto;
-    /*height: 75px;
-    width: auto; */
-    grid-column: 4;
-    grid-row: 1/5;
-}
-
-.tightrope-power{
-    max-width: 80%;
-    height: auto;
-    /*
-    height: 250px;
-    width: auto; */
-    grid-column: 4;
-    grid-row: 5/5;
-}
-
-.frittata{
-    max-width: 75%;
-    height: auto;
-    /*
-    height: 150px;
-    width: auto; */
-    grid-column: 2;
-    grid-row: 5/5;
-}
-
-.grid-container-2 {
-    display: grid;
-    grid-template-columns: 10% 20% auto 35%;
-    grid-template-rows: repeat(5,auto);
-    margin: 10px;
-}
-
-#recipe-2 h2{
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    color: var(--vita-purple);
-
-} 
-
-.recipes {
-    text-align: center;
-}
-
-.chocolate{
-    max-width: 25%;
-    height: auto;  
-    /*height: 65px;
-    width: auto; */
-    grid-column: 4;
-    grid-row: 1/5;
-}
-
-.cannonball-power{
-    max-width: 80%;
-    height: auto;
-    /*
-    height: 250px;
-    width: auto; */
-    grid-column: 4;
-    grid-row: 5/5;
-}
-
-.waffle{
-    max-width: 100%;
-    height: auto;
-    /* height: 130px;
-    width: auto; */
-    grid-column: 2;
-    grid-row: 5/5;
-}
-
-
-
-/* Styling for html elements instead of backgroung images */
-
-
 
 .recipe {
-    text-align: center;
-    position: relative;
-    min-height: 90vh;
-    padding-bottom: 50px;
+  display: grid;
+  grid-template-rows: repeat(2, auto) 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  padding-bottom: 50px;
+}
+
+.recipe h1,
+.recipe h2,
+.recipe h3 {
+  text-align: center;
 }
 
 .recipe h1 {
-    text-transform: uppercase;
-    font-family: var(--heading-font-family);
-    font-size: 2.5em;
+  grid-column: 1/4;
+  grid-row: 1;
 }
 
 .recipe h2 {
-    padding: 10px 0 30px 0;
-    color: var(--vita-yellow);
+  padding: 10px 0 0 0;
+  grid-column: 1/4;
+  grid-row: 2;
 }
 
 .recipe h3 {
-    color: var(--vita-purple);
-    padding: 10px;
-    text-transform: uppercase;
-    font-size: 1.4em;
+  color: var(--vita-purple);
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 1.4em;
 }
 
+.step-count {
+  font-weight: 800;
+}
+
+/* Post-it styles inspired by and re-produced from: https://codepen.io/jweden/pen/kGBBpM */
 .post-it {
-    position: absolute;
-    min-height: 300px;
-    width: 270px;
-    background-color: var(--vita-yellow);
-    left: 20vw;
-    box-shadow: 5px 5px 17px rgba(0, 0, 0, 0.7);
-    padding: 50px 10px 10px 10px;
-    border-radius: 5px;
-    transform: SkewX(2deg);
-    transform-origin: top left;
+  grid-column: 1;
+  grid-row: 3;
+  justify-self: end;
+  width: 320px;
+  height: min-content;
+  position: relative;
+  background: #ffa;
+  overflow: hidden;
+  margin: 70px 30px;
+  padding: 40px 20px 40px 20px;
+  border-radius: 0 0 0 30px/45px;
+  box-shadow: inset 0 -40px 40px rgba(255, 231, 76, 0.4),
+    inset 0 25px 10px rgba(255, 231, 76, 0.4), 0 5px 6px 5px rgba(0, 0, 0, 0.3);
+  transform: rotate(-5deg);
+  color: black;
 }
 
-.post-it h2 {
-    color: black;
+.post-it li {
+  margin-bottom: 5px;
+  font-size: 1.1em;
 }
 
-.post-it p {
-    color: black;
+.post-it:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #ffa;
+  box-shadow: 3px -2px 10px rgba(0, 0, 0, 0.3),
+    inset 15px -15px 15px rgba(255, 231, 76, 0.6);
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  transform: skewX(20deg);
+}
+
+.done {
+  text-decoration: line-through;
 }
 
 .pin {
-    width: 35px;
-    position: absolute;
-    left: 48%;
-    top: 0;
-}
-
-.method-board {
-    min-height: 70vh;
-    width: 35vw;
-    padding: 20px 80px;
-    background-color: white;
-    margin: auto;
-    text-align: left;
-}
-
-.method-board p{
-    color: black;
-    font-family: var(--heading-font-family);
-    font-size: 2em;
+  width: 35px;
+  position: absolute;
+  left: 48%;
+  top: 0;
 }
 
 .superfood-img {
-    position: absolute;
-    height: 150px;
-    right: 25%;
+  position: absolute;
+  width: 200px;
+  right: -80px;
+  top: -80px;
+  z-index: 3;
 }
 
 .character-img {
-    position: absolute;
-    height: 400px;
-    top: 40%;
-    right: 10%;
+  grid-column: 3;
+  grid-row: 3;
+  height: 400px;
+  align-self: end;
+  justify-self: start;
 }
 
 .recipe-img {
-    position: absolute;
-    height: 150px;
-    bottom: 10%;
-    left: 20%;
+  position: absolute;
+  width: 300px;
+  bottom: 0;
+  left: -200px;
+  z-index: 4;
 }
 
+/* Notebook paper styles inspired by and re-produced from: https://codepen.io/designcouch/pen/bGvzKE */
+.notebook-paper {
+  width: 650px;
+  min-height: fit-content;
+  background: linear-gradient(to bottom, white 29px, #00b0d7 1px);
+  margin: 50px auto 0 auto;
+  background-size: 100% 30px;
+  position: relative;
+  padding: 120px 30px 0 120px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
 
+.notebook-paper::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 100px;
+  height: 100%;
+  width: 1px;
+  background: #db4034;
+}
 
+.notebook-paper .heading {
+  height: 88px;
+  width: 100%;
+  background: white;
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+}
 
- 
+.notebook-paper h3 {
+  padding-top: 60px;
+}
 
+.notebook-paper .content {
+  font-size: 1.2em;
+  line-height: 30px;
+  color: black;
+}
+
+.notebook-paper .content p {
+  margin: 0 0 30px 0;
+}
+
+/*  Responsive */
+@media only screen and (max-width: 1600px) {
+  .notebook-paper {
+    width: 550px;
+  }
+
+  .superfood-img {
+    width: 150px;
+    top: -50px;
+  }
+
+  .character-img {
+    height: 300px;
+  }
+
+  .recipe-img {
+    width: 200px;
+    left: -100px;
+  }
+}
+
+@media only screen and (max-width: 1320px) {
+  .notebook-paper .content {
+    font-size: 1.1em;
+  }
+  .post-it li {
+    margin-bottom: 5px;
+    font-size: 1em;
+  }
+
+  .recipe h3 {
+    font-size: 1.2em;
+  }
+
+  .post-it {
+    width: 260px;
+  }
+
+  .notebook-paper {
+    padding-left: 90px;
+  }
+
+  .notebook-paper::before {
+    left: 80px;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .recipe {
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(2, auto);
+    padding-top: 200px;
+  }
+
+  .recipe h1 {
+    grid-column: 1/3;
+    grid-row: 1;
+  }
+
+  .recipe h2 {
+    padding: 10px 0 0 0;
+    grid-column: 1/3;
+    grid-row: 2;
+  }
+
+  .post-it {
+    grid-column: 1;
+    grid-row: 3;
+    margin-bottom: 0;
+  }
+
+  .character-img {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .notebook-paper {
+    grid-column: 1/3;
+    grid-row: 4;
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .superfood-img {
+    right: 0;
+    top: 0;
+  }
+
+  .notebook-paper {
+    width: 90%;
+    padding: 120px 30px 100px 30px;
+  }
+
+  .notebook-paper::before {
+    display: none;
+  }
+
+  .recipe-img {
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .recipe {
+    grid-template-columns: auto;
+  }
+
+  .recipe h1 {
+    grid-column: 1;
+    margin: 0 20px;
+  }
+
+  .recipe h2 {
+    grid-column: 1;
+    margin: 0 20px;
+  }
+
+  .recipe h3 {
+    text-align: left;
+  }
+
+  .notebook-paper h3 {
+    padding-left: 30px;
+  }
+
+  .post-it {
+    width: 90%;
+    transform: rotate(0);
+    justify-self: center;
+  }
+
+  .notebook-paper {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .character-img {
+    display: none;
+  }
+}

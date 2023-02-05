@@ -27,7 +27,8 @@ ul {
 /* Headings */
 h1 {
   font-family: var(--heading-font-family);
-  font-size: 2em;
+  font-size: 2.5em;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -35,6 +36,7 @@ h2 {
   font-size: 1.4em;
   text-transform: uppercase;
   font-weight: 400;
+  color: var(--vita-yellow);
 }
 
 /* Links and Buttons */
@@ -48,6 +50,8 @@ a:hover {
   color: var(--vita-yellow);
 }
 
+/* Primary button styles inspired by and re-produced from: https://codepen.io/kocsten/pen/rggjXp 
+and: https://codepen.io/foxeisen/pen/bqZxLa  */
 .primary-btn {
   font-family: var(--heading-font-family);
   padding: 15px 30px;
@@ -309,6 +313,10 @@ nav li a {
 }
 
 /*  Main content styling */
+.page-content {
+  display: none;
+}
+
 .page-content,
 section {
   min-height: 100vh;
@@ -319,6 +327,10 @@ section {
 @media only screen and (max-width: 750px) {
   .page-content {
     padding-top: 200px;
+  }
+
+  h1 {
+    font-size: 35px;
   }
 }
 
@@ -368,8 +380,6 @@ footer {
 }
 
 /* custom cursor styling */
-
-/* sparkles styles */
 #sparkles {
   position: fixed;
   top: 0;
@@ -380,7 +390,6 @@ footer {
   pointer-events: none;
 }
 
-/* sparkle animation */
 .sparkle {
   position: absolute;
   top: 0;
@@ -391,7 +400,6 @@ footer {
   animation: sparkle 1s ease-in-out forwards;
 }
 
-/* keyframes animation */
 @keyframes sparkle {
   0% {
     transform: scale(0);
@@ -401,4 +409,49 @@ footer {
     transform: scale(2);
     opacity: 0;
   }
+}
+
+/* loading animation styles */
+.loading-anim {
+  width: 500px;
+}
+
+.loading-txt {
+  margin: 50px 0;
+  letter-spacing: 10px;
+  font-family: var(--heading-font-family);
+  font-size: 30px;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+}
+
+@media only screen and (max-height: 600px), only screen and (max-width: 530px) {
+  .loading-anim {
+    width: 300px;
+  }
+
+  .loading-txt {
+    letter-spacing: 5px;
+    font-size: 20px;
+  }
+}
+
+/* footer styles */
+footer {
+  padding-bottom: 50px;
+}
+
+footer p {
+  padding-bottom: 5px;
+}
+
+footer a {
+  text-decoration: underline;
 }

@@ -15,8 +15,8 @@ const characters = [
 
 const superfoods = [
   "avocado",
-  "brocolli",
-  "cacao",
+  "broccoli",
+  "cocoa",
   "eggs",
   "tofu",
   "watermelon",
@@ -65,6 +65,14 @@ const sparkles = document.querySelector("#sparkles");
 // Get footer element and store in variable
 const footer = document.querySelector("footer");
 
+//show loading animation while content is loading
+document.addEventListener("DOMContentLoaded", function () {
+  const loading = document.querySelector(".loading");
+  const content = document.querySelector(".page-content");
+  content.style.display = "block";
+  loading.style.display = "none";
+});
+
 // Set the current page nav link to active and hide footer for pages other than the homepage.
 if (url.substring(url.length - 1) == "/") {
   homeLink.forEach((element) => (element.className += " active"));
@@ -98,7 +106,6 @@ let onresize = function (e) {
 window.addEventListener("resize", onresize);
 
 // Add event listeners on the primary buttons
-
 primaryBtns.forEach((element) => {
   element.addEventListener("mouseover", function () {
     showArrow(element);
@@ -176,6 +183,7 @@ socialMediaBtns.forEach((element) => {
   });
 });
 
+/* The following block of code is reproduced from: https://www.youtube.com/watch?v=zwl3kZPZ8H8   */
 // split the inner HTML text and store each letter in a separate span element
 roundTexts.forEach(
   (element) =>
