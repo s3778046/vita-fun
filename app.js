@@ -40,17 +40,17 @@ app.get("", (req, res) => {
   res.render("index", { text: " - home" });
 });
 
-// Get about uri and render the response.
+// Get about url and render the response.
 app.get("/about", (req, res) => {
   res.render("about", { text: " - about" });
 });
 
-// Get quiz uri and render the response.
+// Get quiz url and render the response.
 app.get("/quiz", (req, res) => {
   res.render("quiz");
 });
 
-// Get superfoodcircus uri and render the response.
+// Get superfoodcircus url and render the response.
 app.get("/superfoodcircus", (req, res) => {
    // Get recipe data and pass it to the recipe view.
    Superfoods.find()
@@ -62,7 +62,7 @@ app.get("/superfoodcircus", (req, res) => {
    });
 });
 
-// Get recipes uri and render the response.
+// Get recipes url and render the response.
 app.get("/recipes", (req, res) => {
   // Get recipe data and pass it to the recipe view.
   Recipes.find()
@@ -74,7 +74,23 @@ app.get("/recipes", (req, res) => {
     });
 });
 
-// Get references uri and render the response.
+// Get single recipe url and render the response.
+app.get("/recipe/:id", (req, res) => {
+
+  // Get Id parameter and store in variable
+  const recipeId = req.params.id;
+
+  // Get recipe data and pass it to the recipe view with id.
+  Recipes.find()
+    .then((result) => {
+      res.render("recipe", { recipes: result, id: recipeId });
+    })
+    .catch((err) => {
+      console.log(err);
+    }); 
+});
+
+// Get references url and render the response.
 app.get("/references", (req, res) => {
   res.render("references", { text: " - references" });
 });

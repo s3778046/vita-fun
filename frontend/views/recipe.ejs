@@ -1,0 +1,67 @@
+<%- include('components/header') %>
+
+<!-- For loop to itereate all recipes -->
+<% recipes.forEach(function(recipe) { %>
+   
+    <!-- If id passed through is equal to id of curennent iterations display recipe data -->
+    <% if(id.trim() == recipe.id) { %>
+
+        <!-- Recipe section -->
+        <section class="recipe">
+
+            <!-- Name and description elements -->
+            <h1><%= recipe.name %></h1>
+            <h2><%= recipe.description %></h2>
+      
+            <!-- Post it note -->
+            <div class="post-it">
+              <img class="pin" src="../public/img/pin.png" alt="" />
+      
+              <h3>Ingredients</h3>
+              <ul>
+                <!-- Loop to bring in ingredients list -->
+                <% let ingredientsCounter = 0 %> 
+                <% recipe.ingredients.forEach(function(ingredient) { %>
+                <li class="ingredient">👉🏼 <%= ingredient %></li>
+                <% ingredientsCounter++   }); %>
+              </ul>
+            </div>
+      
+            <!-- Method board -->
+            <div class="notebook-paper">
+                <img
+                    class="superfood-img"
+                    src="<%= recipe.superfoodImg %>"
+                    alt="Superfood image"
+                />
+                <img
+                    class="recipe-img"
+                    src="<%= recipe.recipeImg %>"
+                    alt="Recipe image"
+                />
+                <div class="heading">
+                    <h3>method</h3>
+                </div>
+                <div class="content">
+
+                <!-- Loop to bring in method list -->
+                <% let methodCounter = 0 %> <% recipe.method.forEach(function(method)
+                { %>
+                <p>
+                  <span class="step-count"><%= (methodCounter + 1) + ". " %></span>
+                  <span class="step"><%= method %></span>
+                </p>
+      
+                <% methodCounter++ %> <% }); %>
+              </div>
+            </div>
+      
+            <img
+              class="character-img"
+              src="<%= recipe.characterImg %>"
+              alt="Character image"
+            />
+          </section>
+     <% } %>
+<% }) %>
+<%- include('components/footer') %>
