@@ -1,7 +1,31 @@
 <%- include('components/header') %> <%- include('components/loading') %>
-<div class="page-content">
+
+<div class="page-content" style="text-align: center;">
   <section>
-    <h1>SUPERFOOD CIRCUS</h1>
+
+    <!-- Loop for each superfood -->
+    <% superfoods.forEach(function(superfood) { %>
+
+    <!-- Display name and description -->
+    <h1> <%= superfood.name %> </h1>
+    <h2> <%= superfood.description %> </h2>
+
+    <!-- Display benefits -->
+    <h3>Benefits</h3>
+    <ul>
+      <!-- Loop to bring in benefits list -->
+      <% let benefitsCounter = 0 %>
+      <% superfood.benefits.forEach(function(benefit) { %>
+      <li class="benefits">👉🏼 <%= benefit %></li>
+      <% benefitsCounter++ %> <% }); %>
+    </ul>
+
+    <!-- display superfood image -->
+    <img src="<%= superfood.image %>" alt="Superfood image"/>
+
+    <!-- Breaks between superfood sections -->
+    <br><br><br><br>
+  <% }) %>
   </section>
 </div>
 

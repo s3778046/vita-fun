@@ -24,15 +24,26 @@ const setSuperfoods = asyncHandler(async (req, res) => {
     }
 
     // If no data is entered, display error message
-    if((!req.body.benifits)) {
-        res.status(400).json({message: "Please add benifits"}); 
+    if((!req.body.benefits)) {
+        res.status(400).json({message: "Please add benefits"}); 
+    }
+
+    // If no data is entered, display error message
+    if((!req.body.image)) {
+        res.status(400).json({message: "Please add image"}); 
+    }
+
+    // If no data is entered, display error message
+    if((!req.body.character)) {
+        res.status(400).json({message: "Please add character"}); 
     }
 
     const goal = await Superfoods.create({
         name: req.body.name,
         description: req.body.description,
-        benifits: req.body.benifits,
+        benefits: req.body.benefits,
         image: req.body.image,
+        character: req.body.character,
     });
 
     // Display a success message
