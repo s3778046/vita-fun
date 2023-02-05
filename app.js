@@ -3,6 +3,7 @@ const express = require("express");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
 const Recipes = require("./backend/models/recipesModel");
+const Superfoods = require("./backend/models/superfoodsModel");
 
 // Create database connection
 const connectDB = require("./backend/db/dbConnect");
@@ -51,7 +52,14 @@ app.get("/quiz", (req, res) => {
 
 // Get superfoodcircus uri and render the response.
 app.get("/superfoodcircus", (req, res) => {
-  res.render("superfoodcircus");
+   // Get recipe data and pass it to the recipe view.
+   Superfoods.find()
+   .then((result) => {
+    res.render("superfoodcircus", { superfoods: result });
+   })
+   .catch((err) => {
+     console.log(err);
+   });
 });
 
 // Get recipes uri and render the response.

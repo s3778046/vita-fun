@@ -17,12 +17,17 @@ const superfoodSchema = mongoose.Schema( {
         required: true,
     },
 
-    benifits: {
-        type: String,
+    benefits: {
+        type: Array,
         required: true,
     },
 
     image: {
+        type: String,
+        required: true,
+    },
+
+    character: {
         type: String,
         required: true,
     }
