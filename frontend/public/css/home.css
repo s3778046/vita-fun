@@ -92,7 +92,7 @@
 .character-item:hover,
 .food-item:hover {
   transform: scale(1.1) translateY(20px);
-  cursor: pointer;
+  cursor: var(--pointer-cursor);
 }
 
 .card {
@@ -100,7 +100,7 @@
   height: 100%;
   transition: transform 1s;
   transform-style: preserve-3d;
-  cursor: pointer;
+  cursor: var(--pointer-cursor);
   position: relative;
 }
 

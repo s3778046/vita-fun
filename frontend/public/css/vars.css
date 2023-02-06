@@ -16,4 +16,9 @@
   --vita-blue: #35a7ff;
   --vita-purple: #974ee8;
   --vita-green: #6bf178;
+
+  /* custom cursors */
+  --default-cursor: url(../img/cursor-wand.png), auto;
+  --pointer-cursor: url(../img/pointing-hand.png), pointer;
+  --done-cursor: url(../img/done-icon.png), pointer;
 }

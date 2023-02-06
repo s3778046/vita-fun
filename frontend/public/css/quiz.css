@@ -41,7 +41,7 @@
 .answer1:hover,
 .answer2:hover {
   opacity: 0.85;
-  cursor: pointer;
+  cursor: var(--pointer-cursor);
 }
 
 .restart-quiz {
@@ -111,10 +111,9 @@
   text-transform: uppercase;
 }
 
-
 #show-circus-character a:hover {
   opacity: 0.9;
-  cursor: pointer;
+  cursor: var(--pointer-cursor);
 }
 
 #circus-img {

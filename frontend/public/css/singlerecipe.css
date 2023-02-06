@@ -38,6 +38,14 @@
   font-weight: 800;
 }
 
+.step {
+  cursor: var(--done-cursor);
+}
+
+.done {
+  text-decoration: line-through;
+}
+
 /* Post-it styles inspired by and re-produced from: https://codepen.io/jweden/pen/kGBBpM */
 .post-it {
   grid-column: 1;
