@@ -241,3 +241,13 @@ setInterval(() => {
     isMouseMoving = false;
   }
 }, 70);
+
+// get steps for recipes
+const recipeSteps = document.querySelectorAll(".step");
+
+// toggle 'done' class for recipe steps to cross them out on click
+recipeSteps.forEach((element) =>
+  element.addEventListener("click", function () {
+    element.classList.toggle("done");
+  })
+);
