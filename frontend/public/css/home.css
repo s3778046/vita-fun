@@ -326,7 +326,7 @@ and: https://www.youtube.com/watch?v=zwl3kZPZ8H8  */
 .neon-icon__1 {
   color: var(--vita-watermelon);
   border: var(--vita-watermelon) 0.125em solid;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em --vita-watermelon;
+  text-shadow: 0 0 0.125em rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 0.5em 0 var(--vita-watermelon),
     0 0 0.5em 0 var(--vita-watermelon);
 }
@@ -334,14 +334,14 @@ and: https://www.youtube.com/watch?v=zwl3kZPZ8H8  */
 .neon-icon__2 {
   color: var(--vita-green);
   border: var(--vita-green) 0.125em solid;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em --vita-green;
+  text-shadow: 0 0 0.125em rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 0.5em 0 var(--vita-green), 0 0 0.5em 0 var(--vita-green);
 }
 
 .neon-icon__3 {
   color: var(--vita-purple);
   border: var(--vita-purple) 0.125em solid;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em --vita-purple;
+  text-shadow: 0 0 0.125em rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 0.5em 0 var(--vita-purple),
     0 0 0.5em 0 var(--vita-purple);
 }
@@ -349,7 +349,7 @@ and: https://www.youtube.com/watch?v=zwl3kZPZ8H8  */
 .neon-icon__4 {
   color: var(--vita-yellow);
   border: var(--vita-yellow) 0.125em solid;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em --vita-yellow;
+  text-shadow: 0 0 0.125em rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 0.5em 0 var(--vita-yellow),
     0 0 0.5em 0 var(--vita-yellow);
 }
@@ -357,7 +357,7 @@ and: https://www.youtube.com/watch?v=zwl3kZPZ8H8  */
 .neon-icon__5 {
   color: var(--vita-blue);
   border: var(--vita-blue) 0.125em solid;
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em --vita-blue;
+  text-shadow: 0 0 0.125em rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 0.5em 0 var(--vita-blue), 0 0 0.5em 0 var(--vita-blue);
 }
 
