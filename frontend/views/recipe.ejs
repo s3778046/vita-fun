@@ -1,5 +1,5 @@
 <%- include('components/header') %><%- include('components/loading') %>
-<div class="page-content">
+<div class="page-content" id="recipe-page">
   <!-- For loop to itereate all recipes -->
   <% recipes.forEach(function(recipe) { %>
 
@@ -14,7 +14,7 @@
 
     <!-- Post it note -->
     <div class="post-it">
-      <img class="pin" src="../public/img/pin.png" alt="" />
+      <img class="pin" src="../public/img/pin.png" alt="green-push-pin" />
 
       <h3>Ingredients</h3>
       <ul>
