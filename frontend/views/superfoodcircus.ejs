@@ -1,32 +1,35 @@
 <%- include('components/header') %> <%- include('components/loading') %>
+<div class="page-content" id="superfood-circus-page">
+  <h1>Superfood Circus</h1>
+  <p>
+    Select a superfood to discover its circus superpower and health benefits!
+  </p>
+  <div class="superfood-options">
+    <!-- Dynamic content retrived from database-->
+    <!-- Counter -->
+    <% let count = 1 %> <% let colors = ['blue','watermelon', 'yellow', 'green',
+    'purple'] %>
 
-<div class="page-content" style="text-align: center;">
-  <section>
-
-    <!-- Loop for each superfood -->
+    <!-- Loop to bring in content for all superfoods -->
     <% superfoods.forEach(function(superfood) { %>
+    <div class="superfood-option">
+      <!-- Name and description elements -->
+      <a href="/">
+        <div class="superfood-image">
+          <img
+            class="superfood-option-img"
+            src="<%= superfood.image %>"
+            alt="Superfood image"
+          />
+          <h2><%= superfood.name %></h2>
+        </div>
 
-    <!-- Display name and description -->
-    <h1> <%= superfood.name %> </h1>
-    <h2> <%= superfood.description %> </h2>
+        <div class="circle-gradient <%= colors[count % colors.length] %>"></div>
+      </a>
+    </div>
 
-    <!-- Display benefits -->
-    <h3>Benefits</h3>
-    <ul>
-      <!-- Loop to bring in benefits list -->
-      <% let benefitsCounter = 0 %>
-      <% superfood.benefits.forEach(function(benefit) { %>
-      <li class="benefits">👉🏼 <%= benefit %></li>
-      <% benefitsCounter++ %> <% }); %>
-    </ul>
-
-    <!-- display superfood image -->
-    <img src="<%= superfood.image %>" alt="Superfood image"/>
-
-    <!-- Breaks between superfood sections -->
-    <br><br><br><br>
-  <% }) %>
-  </section>
+    <!-- Increment counter -->
+    <% count++ %> <% }); %>
+  </div>
 </div>
-
 <%- include('components/footer') %>

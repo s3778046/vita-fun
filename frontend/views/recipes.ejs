@@ -9,7 +9,8 @@
   <div class="recipe-options">
     <!-- Dynamic content retrived from database-->
     <!-- Counter -->
-    <% let count = 1 %>
+    <% let count = 1 %> <% let colors = ['blue','watermelon', 'yellow', 'green',
+    'purple'] %>
 
     <!-- Loop to bring in content for all recipes -->
     <% recipes.forEach(function(recipe) { %>
@@ -25,7 +26,7 @@
           <h2><%= recipe.name %></h2>
         </div>
 
-        <div class="circle-gradient watermelon"></div>
+        <div class="circle-gradient <%= colors[count % colors.length] %>"></div>
       </a>
     </div>
 
