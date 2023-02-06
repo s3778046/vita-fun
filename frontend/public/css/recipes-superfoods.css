@@ -23,7 +23,7 @@
   text-align: center;
   position: relative;
   width: 300px;
-  height: 300px;
+  aspect-ratio: 1/1;
 }
 
 .recipe-option .circle-gradient,
@@ -49,4 +49,49 @@
 .recipe-option img,
 .superfood-option img {
   width: 294px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .recipe-option,
+  .superfood-option {
+    width: 200px;
+  }
+
+  .recipe-option .circle-gradient,
+  .superfood-option .circle-gradient {
+    width: 60px;
+  }
+
+  .recipe-option img,
+  .superfood-option img {
+    width: 194px;
+  }
+
+  .recipe-options,
+  .superfood-options {
+    gap: 50px;
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .recipe-options,
+  .superfood-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #recipes-page,
+  #superfood-circus-page {
+    padding-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .recipe-options,
+  .superfood-options {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
