@@ -457,3 +457,23 @@ footer p {
 footer a {
   text-decoration: underline;
 }
+
+/* references page styling */
+.reference-list {
+  padding: 200px 0 100px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.reference-list h2 {
+  padding-top: 40px;
+}
+
+.reference-list p {
+  padding-top: 20px;
+}
+
+.reference-list .note {
+  font-weight: bold;
+  color: var(--vita-watermelon);
+}
