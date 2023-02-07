@@ -52,14 +52,14 @@ app.get("/quiz", (req, res) => {
 
 // Get superfoodcircus url and render the response.
 app.get("/superfoodcircus", (req, res) => {
-   // Get recipe data and pass it to the recipe view.
-   Superfoods.find()
-   .then((result) => {
-    res.render("superfoodcircus", { superfoods: result });
-   })
-   .catch((err) => {
-     console.log(err);
-   });
+  // Get recipe data and pass it to the recipe view.
+  Superfoods.find()
+    .then((result) => {
+      res.render("superfoodcircus", { superfoods: result });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 // Get recipes url and render the response.
@@ -76,7 +76,6 @@ app.get("/recipes", (req, res) => {
 
 // Get single recipe url and render the response.
 app.get("/recipe/:id", (req, res) => {
-
   // Get Id parameter and store in variable
   const recipeId = req.params.id;
 
@@ -87,12 +86,16 @@ app.get("/recipe/:id", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-    }); 
+    });
 });
 
 // Get references url and render the response.
 app.get("/references", (req, res) => {
   res.render("references", { text: " - references" });
+});
+
+app.use(function (req, res, next) {
+  res.status(404).render("fourOfour");
 });
 
 // Listen for port 5000
