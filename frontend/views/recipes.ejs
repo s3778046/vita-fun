@@ -1,65 +1,35 @@
 <%- include('components/header') %> <%- include('components/loading') %>
-<div class="page-content" id="recipe-page">
-  <div class="recipes">
+<div class="page-content" id="recipes-page">
+  <h1>Recipes</h1>
+  <p>
+    Select a recipe and start your kitchen adventure! Click on steps from the
+    recipe to cross them out as you complete them. And don't forget to clean up
+    your kitchen space afterwards!
+  </p>
+  <div class="recipe-options">
     <!-- Dynamic content retrived from database-->
     <!-- Counter -->
-    <% let count = 1 %>
+    <% let count = 1 %> <% let colors = ['blue','watermelon', 'yellow', 'green',
+    'purple'] %>
 
     <!-- Loop to bring in content for all recipes -->
     <% recipes.forEach(function(recipe) { %>
-    <section class="recipe">
+    <div class="recipe-option">
       <!-- Name and description elements -->
-      <h1><a href="/recipe/ <%= recipe.id%>"><%= recipe.name %></a></h1>
-      <h2><%= recipe.description %></h2>
-
-      <!-- Post it note -->
-      <div class="post-it">
-        <img class="pin" src="../public/img/pin.png" alt="" />
-
-        <h3>Ingredients</h3>
-        <ul>
-          <!-- Loop to bring in ingredients list -->
-          <% let ingredientsCounter = 0 %> <%
-          recipe.ingredients.forEach(function(ingredient) { %>
-          <li class="ingredient">👉🏼 <%= ingredient %></li>
-          <% ingredientsCounter++ %> <% }); %>
-        </ul>
-      </div>
-
-      <!-- Method board -->
-      <div class="notebook-paper">
-        <img
-          class="superfood-img"
-          src="<%= recipe.superfoodImg %>"
-          alt="Superfood image"
-        />
-        <img
-          class="recipe-img"
-          src="<%= recipe.recipeImg %>"
-          alt="Recipe image"
-        />
-        <div class="heading">
-          <h3>method</h3>
+      <a href="/recipe/<%= recipe.id%>">
+        <div class="recipe-image">
+          <img
+            class="recipe-option-img"
+            src="<%= recipe.recipeImg %>"
+            alt="Recipe image"
+          />
+          <h2><%= recipe.name %></h2>
         </div>
-        <div class="content">
-          <!-- Loop to bring in method list -->
-          <% let methodCounter = 0 %> <% recipe.method.forEach(function(method)
-          { %>
-          <p>
-            <span class="step-count"><%= (methodCounter + 1) + ". " %></span>
-            <span class="step"><%= method %></span>
-          </p>
 
-          <% methodCounter++ %> <% }); %>
-        </div>
-      </div>
+        <div class="circle-gradient <%= colors[count % colors.length] %>"></div>
+      </a>
+    </div>
 
-      <img
-        class="character-img"
-        src="<%= recipe.characterImg %>"
-        alt="Character image"
-      />
-    </section>
     <!-- Increment counter -->
     <% count++ %> <% }); %>
   </div>

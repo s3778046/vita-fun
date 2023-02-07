@@ -14,7 +14,7 @@ body {
   font-family: var(--base-font-family);
   font-weight: 400;
   background: var(--background-blue);
-  cursor: url(../img/magic-ball.png), auto;
+  cursor: var(--default-cursor);
   overflow-x: hidden;
 }
 
@@ -44,6 +44,7 @@ a {
   text-transform: uppercase;
   text-decoration: none;
   color: var(--base-txt-color);
+  cursor: var(--pointer-cursor);
 }
 
 a:hover {
@@ -62,7 +63,7 @@ and: https://codepen.io/foxeisen/pen/bqZxLa  */
   position: relative;
   transition: 0.5s;
   z-index: 0;
-  cursor: pointer;
+  cursor: var(--pointer-cursor);
 }
 
 .btn:before {
@@ -102,7 +103,7 @@ and: https://codepen.io/foxeisen/pen/bqZxLa  */
   background: #3a2ec0;
   left: 0;
   top: 0;
-  cursor: pointer;
+  cursor: var(--pointer-cursor);
 }
 
 .primary-btn:after {
@@ -221,7 +222,7 @@ nav li a {
 }
 
 #menu-icon:hover {
-  cursor: pointer;
+  cursor: var(--pointer-cursor);
 }
 
 .bar1,
@@ -446,6 +447,7 @@ footer {
 /* footer styles */
 footer {
   padding-bottom: 50px;
+  display: none;
 }
 
 footer p {
@@ -454,4 +456,24 @@ footer p {
 
 footer a {
   text-decoration: underline;
+}
+
+/* references page styling */
+.reference-list {
+  padding: 200px 0 100px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.reference-list h2 {
+  padding-top: 40px;
+}
+
+.reference-list p {
+  padding-top: 20px;
+}
+
+.reference-list .note {
+  font-weight: bold;
+  color: var(--vita-watermelon);
 }

@@ -76,17 +76,16 @@ document.addEventListener("DOMContentLoaded", function () {
 // Set the current page nav link to active and hide footer for pages other than the homepage.
 if (url.substring(url.length - 1) == "/") {
   homeLink.forEach((element) => (element.className += " active"));
+  footer.style.display = "block";
 } else if (url.includes("about")) {
   aboutLink.forEach((element) => (element.className += " active"));
+  footer.style.display = "block";
 } else if (url.includes("quiz")) {
   quizLink.forEach((element) => (element.className += " active"));
-  footer.style.display = "none";
 } else if (url.includes("superfoodcircus")) {
   circusLink.forEach((element) => (element.className += " active"));
-  footer.style.display = "none";
 } else if (url.includes("recipes")) {
   recipesLink.forEach((element) => (element.className += " active"));
-  footer.style.display = "none";
 }
 
 // Open/Close dropdown menu.
@@ -242,3 +241,13 @@ setInterval(() => {
     isMouseMoving = false;
   }
 }, 70);
+
+// get steps for recipes
+const recipeSteps = document.querySelectorAll(".step");
+
+// toggle 'done' class for recipe steps to cross them out on click
+recipeSteps.forEach((element) =>
+  element.addEventListener("click", function () {
+    element.classList.toggle("done");
+  })
+);
