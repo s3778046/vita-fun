@@ -16,14 +16,23 @@
   padding: 1em 2.5em;
   margin: 0 auto;
   position: absolute;
-  top: 45%;
-  left: 38%;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .message-board h1,
 .message-board p {
   text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000,
     0 0 40px #2518bd, 0 0 50px #2518bd, 0 0 60px #2518bd, 0 0 70px #2518bd;
+}
+
+@media only screen and (max-width: 500px) {
+  .message-board {
+    width: 90%;
+    padding: 1em 2.5em;
+  }
 }
 
 /* animated spider styles inspired by and re-produced from: https://codepen.io/webcrafterscz/pen/EGYOxa  */
