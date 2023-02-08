@@ -3,6 +3,27 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 0;
+}
+
+#fourOfour-page h1 {
+  color: var(--vita-yellow);
+}
+
+.message-board {
+  width: 450px;
+  text-align: center;
+  padding: 1em 2.5em;
+  margin: 0 auto;
+  position: absolute;
+  top: 45%;
+  left: 38%;
+}
+
+.message-board h1,
+.message-board p {
+  text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000,
+    0 0 40px #2518bd, 0 0 50px #2518bd, 0 0 60px #2518bd, 0 0 70px #2518bd;
 }
 
 /* animated spider styles inspired by and re-produced from: https://codepen.io/webcrafterscz/pen/EGYOxa  */
@@ -11,7 +32,7 @@
   display: inline-block;
   top: 0;
   left: 30%;
-  animation: swing 2s infinite;
+  animation: bounce 2s infinite;
 }
 
 .spider:first-of-type {
@@ -133,7 +154,7 @@
   }
 }
 
-@keyframes swing {
+@keyframes bounce {
   0%,
   100% {
     transform: translateY(0);
