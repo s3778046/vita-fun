@@ -62,15 +62,25 @@ const glows = document.querySelectorAll(".circle-gradient");
 // get sparkles elements for cursor
 const sparkles = document.querySelector("#sparkles");
 
+// get steps for recipes
+const recipeSteps = document.querySelectorAll(".step");
+
+// get pop-up overlay elements
+const overlay = document.querySelector(".overlay");
+
+// Get loading and page content elements
+const loading = document.querySelector(".loading");
+const pageContent = document.querySelector(".page-content");
+
 // Get footer element and store in variable
 const footer = document.querySelector("footer");
 
 //show loading animation while content is loading
 document.addEventListener("DOMContentLoaded", function () {
-  const loading = document.querySelector(".loading");
-  const content = document.querySelector(".page-content");
-  content.style.display = "block";
-  loading.style.display = "none";
+  if (loading && pageContent) {
+    loading.style.display = "none";
+    pageContent.style.display = "block";
+  }
 });
 
 // Set the current page nav link to active and hide footer for pages other than the homepage.
@@ -211,9 +221,6 @@ function hideText(element) {
   icon.classList.remove("bx-tada");
 }
 
-// initialise AOS
-AOS.init();
-
 // get cursor position
 let cursorX = 0;
 let cursorY = 0;
@@ -242,8 +249,19 @@ setInterval(() => {
   }
 }, 70);
 
-// get steps for recipes
-const recipeSteps = document.querySelectorAll(".step");
+// closes pop-up dialog when the user clicks anywhere else on the screen, or on the button in the dialog
+if (overlay != null) {
+  const closeBtn = overlay.querySelector(".primary-btn");
+  overlay.addEventListener("click", function (event) {
+    if (event.target === overlay) {
+      overlay.style.display = "none";
+    }
+  });
+
+  closeBtn.addEventListener("click", function () {
+    overlay.style.display = "none";
+  });
+}
 
 // toggle 'done' class for recipe steps to cross them out on click
 recipeSteps.forEach((element) =>
@@ -251,3 +269,6 @@ recipeSteps.forEach((element) =>
     element.classList.toggle("done");
   })
 );
+
+// initialise AOS
+AOS.init();
