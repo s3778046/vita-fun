@@ -93,6 +93,22 @@ if (url.substring(url.length - 1) == "/") {
   recipesLink.forEach((element) => (element.className += " active"));
 }
 
+// add active class to 'about' links on scroll
+const aboutSection = document.querySelector("#about");
+window.addEventListener("scroll", function () {
+  const scrollPos = window.scrollY + window.innerHeight / 2;
+  if (
+    scrollPos > aboutSection.offsetTop &&
+    scrollPos < aboutSection.offsetTop + aboutSection.offsetHeight
+  ) {
+    aboutLink.forEach((element) => (element.className += " active"));
+    homeLink.forEach((element) => element.classList.remove("active"));
+  } else {
+    aboutLink.forEach((element) => element.classList.remove("active"));
+    homeLink.forEach((element) => (element.className += " active"));
+  }
+});
+
 // Open/Close dropdown menu.
 function toggleHamburgerMenu(menuButton) {
   menuButton.classList.toggle("expanded");
