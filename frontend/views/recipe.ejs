@@ -27,6 +27,16 @@ include('components/loading') %>
     <h1><%= recipe.name %></h1>
     <h2><%= recipe.description %></h2>
 
+    <!-- Back button -->
+    <div class="arrow-btn">
+      <a href="/recipes"
+        ><p>All Recipes</p>
+        <img
+          src="../public/img/this-way-left.png"
+          alt="arrow pointing to the left"
+      /></a>
+    </div>
+
     <!-- Post it note -->
     <div class="post-it">
       <img class="pin" src="../public/img/pin.png" alt="green-push-pin" />
@@ -74,14 +84,6 @@ include('components/loading') %>
       src="<%= recipe.characterImg %>"
       alt="Character image"
     />
-    <div class="arrow-btn">
-      <a href="/recipes"
-        ><p>All Recipes</p>
-        <img
-          src="../public/img/this-way-left.png"
-          alt="arrow pointing to the left"
-      /></a>
-    </div>
   </section>
 </div>
 
