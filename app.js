@@ -4,6 +4,7 @@ const colors = require("colors");
 const dotenv = require("dotenv").config();
 const Recipes = require("./backend/models/recipesModel");
 const Superfoods = require("./backend/models/superfoodsModel");
+const Characters = require("./backend/models/charactersModel");
 
 // Create database connection
 const connectDB = require("./backend/db/dbConnect");
@@ -52,10 +53,22 @@ app.get("/quiz", (req, res) => {
 
 // Get superfoodcircus url and render the response.
 app.get("/superfoodcircus", (req, res) => {
-  // Get recipe data and pass it to the recipe view.
+  // Get superfood data and pass it to the superfoodcircus view.
   Superfoods.find()
     .then((result) => {
       res.render("superfoodcircus", { superfoods: result });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+// Get characters url and render the response.
+app.get("/character", (req, res) => {
+  // Get characters data and pass it to the characters view.
+  Characters.find()
+    .then((result) => {
+      res.render("character", { character: result });
     })
     .catch((err) => {
       console.log(err);
@@ -94,6 +107,7 @@ app.get("/references", (req, res) => {
   res.render("references", { text: " - references" });
 });
 
+// Render the 404 page when a 404 status is received
 app.use(function (req, res, next) {
   res.status(404).render("fourOfour");
 });
