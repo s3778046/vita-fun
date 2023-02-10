@@ -28,13 +28,6 @@
     0 0 40px #2518bd, 0 0 50px #2518bd, 0 0 60px #2518bd, 0 0 70px #2518bd;
 }
 
-@media only screen and (max-width: 500px) {
-  .message-board {
-    width: 90%;
-    padding: 1em 2.5em;
-  }
-}
-
 /* animated spider styles inspired by and re-produced from: https://codepen.io/webcrafterscz/pen/EGYOxa  */
 .spider {
   position: absolute;
@@ -53,12 +46,12 @@
   height: 200px;
   margin-left: 49px;
   background: rgba(255, 255, 255, 0.7);
-  animation: slide 5s ease-out;
+  animation: slide200 5s ease-out;
 }
 
 .spider:first-of-type .spiderweb {
   height: 600px;
-  animation: slideLong 10s ease-out;
+  animation: slide600 10s ease-out;
 }
 
 .spider .body {
@@ -174,7 +167,16 @@
   }
 }
 
-@keyframes slide {
+@keyframes slide100 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100px;
+  }
+}
+
+@keyframes slide200 {
   0% {
     height: 0;
   }
@@ -183,11 +185,100 @@
   }
 }
 
-@keyframes slideLong {
+@keyframes slide600 {
   0% {
     height: 0;
   }
   100% {
     height: 600px;
+  }
+}
+
+@media only screen and (max-height: 730px) {
+  .spider .spiderweb {
+    height: 100px;
+    animation: slide100 5s ease-out;
+  }
+
+  .spider:first-of-type .spiderweb {
+    height: 200px;
+    animation: slide200 5s ease-out;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .spider {
+    left: 15%;
+  }
+
+  .spider:first-of-type {
+    left: 75%;
+  }
+}
+
+@media only screen and (max-width: 700px), only screen and (max-height: 450px) {
+  .spider .body {
+    width: 80px;
+    height: 60px;
+  }
+
+  .spider .spiderweb {
+    margin-left: 40px;
+  }
+
+  .spider .body .eye {
+    width: 15px;
+    height: 15px;
+    bottom: 15px;
+  }
+
+  .spider .body .eye:after {
+    width: 6px;
+    height: 6px;
+    margin: 45%;
+  }
+
+  .spider .legs .leg {
+    width: 40px;
+    height: 20px;
+    margin-top: -7px;
+    border: 3px solid transparent;
+    border-top-color: #333;
+  }
+
+  .spider .legs {
+    bottom: -3%;
+  }
+
+  .spider:first-of-type .legs {
+    bottom: -1%;
+  }
+
+  .spider .legs.left {
+    left: -60%;
+  }
+  .spider .legs.right {
+    right: -40%;
+  }
+
+  .legs.left .leg:nth-child(1),
+  .legs.left .leg:nth-child(2) {
+    margin-left: 20px;
+  }
+
+  .legs.right .leg:nth-child(1),
+  .legs.right .leg:nth-child(2) {
+    margin-left: -20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .message-board {
+    width: 90%;
+    padding: 1em 2.5em;
+  }
+
+  .spider:first-of-type {
+    display: none;
   }
 }
