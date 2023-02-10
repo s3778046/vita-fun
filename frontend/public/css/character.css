@@ -1,1 +1,13 @@
 /*  Character page styling */
+
+#single-character-page {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 15% auto 15%;
+
+}
+
+.char .char-image{
+    height: 300px;
+    grid-column: 2;
+}
