@@ -42,13 +42,8 @@ const menuButton = document.querySelector("#menu-icon");
 
 // Get primary button + other button elements and store in variables
 const primaryBtns = document.querySelectorAll(".primary-btn");
-const arrows = document.querySelectorAll(".arrow");
 const roundTexts = document.querySelectorAll(".text p");
 const socialMediaBtns = document.querySelectorAll(".circle");
-
-// Get answer elements and store in  variables
-const selectAnswerLeft = document.querySelector("#select-answer-left");
-const selectAnswerRight = document.querySelector("#select-answer-right");
 
 // Get url string
 const url = window.location.href;
@@ -106,7 +101,7 @@ function toggleHamburgerMenu(menuButton) {
 
 // Close opened dropdown menu if screen is enlargened
 let onresize = function (e) {
-  width = e.target.innerWidth;
+  let width = e.target.innerWidth;
   if (width >= 780) {
     menuLinks.classList.remove("expanded");
     menuButton.classList.remove("expanded");
