@@ -46,6 +46,12 @@
   text-decoration: line-through;
 }
 
+#single-recipe-page .arrow-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+}
+
 /* Post-it styles inspired by and re-produced from: https://codepen.io/jweden/pen/kGBBpM */
 .post-it {
   grid-column: 1;
