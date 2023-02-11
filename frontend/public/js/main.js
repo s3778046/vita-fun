@@ -42,13 +42,8 @@ const menuButton = document.querySelector("#menu-icon");
 
 // Get primary button + other button elements and store in variables
 const primaryBtns = document.querySelectorAll(".primary-btn");
-const arrows = document.querySelectorAll(".arrow");
 const roundTexts = document.querySelectorAll(".text p");
 const socialMediaBtns = document.querySelectorAll(".circle");
-
-// Get answer elements and store in  variables
-const selectAnswerLeft = document.querySelector("#select-answer-left");
-const selectAnswerRight = document.querySelector("#select-answer-right");
 
 // Get url string
 const url = window.location.href;
@@ -62,15 +57,25 @@ const glows = document.querySelectorAll(".circle-gradient");
 // get sparkles elements for cursor
 const sparkles = document.querySelector("#sparkles");
 
+// get steps for recipes
+const recipeSteps = document.querySelectorAll(".step");
+
+// get pop-up overlay elements
+const overlay = document.querySelector(".overlay");
+
+// Get loading and page content elements
+const loading = document.querySelector(".loading");
+const pageContent = document.querySelector(".page-content");
+
 // Get footer element and store in variable
 const footer = document.querySelector("footer");
 
 //show loading animation while content is loading
 document.addEventListener("DOMContentLoaded", function () {
-  const loading = document.querySelector(".loading");
-  const content = document.querySelector(".page-content");
-  content.style.display = "block";
-  loading.style.display = "none";
+  if (loading && pageContent) {
+    loading.style.display = "none";
+    pageContent.style.display = "block";
+  }
 });
 
 // Set the current page nav link to active and hide footer for pages other than the homepage.
@@ -88,6 +93,22 @@ if (url.substring(url.length - 1) == "/") {
   recipesLink.forEach((element) => (element.className += " active"));
 }
 
+// add active class to 'about' links on scroll
+const aboutSection = document.querySelector("#about");
+window.addEventListener("scroll", function () {
+  const scrollPos = window.scrollY + window.innerHeight / 2;
+  if (
+    scrollPos > aboutSection.offsetTop &&
+    scrollPos < aboutSection.offsetTop + aboutSection.offsetHeight
+  ) {
+    aboutLink.forEach((element) => (element.className += " active"));
+    homeLink.forEach((element) => element.classList.remove("active"));
+  } else {
+    aboutLink.forEach((element) => element.classList.remove("active"));
+    homeLink.forEach((element) => (element.className += " active"));
+  }
+});
+
 // Open/Close dropdown menu.
 function toggleHamburgerMenu(menuButton) {
   menuButton.classList.toggle("expanded");
@@ -96,7 +117,7 @@ function toggleHamburgerMenu(menuButton) {
 
 // Close opened dropdown menu if screen is enlargened
 let onresize = function (e) {
-  width = e.target.innerWidth;
+  let width = e.target.innerWidth;
   if (width >= 780) {
     menuLinks.classList.remove("expanded");
     menuButton.classList.remove("expanded");
@@ -211,9 +232,6 @@ function hideText(element) {
   icon.classList.remove("bx-tada");
 }
 
-// initialise AOS
-AOS.init();
-
 // get cursor position
 let cursorX = 0;
 let cursorY = 0;
@@ -242,8 +260,19 @@ setInterval(() => {
   }
 }, 70);
 
-// get steps for recipes
-const recipeSteps = document.querySelectorAll(".step");
+// closes pop-up dialog when the user clicks anywhere else on the screen, or on the button in the dialog
+if (overlay != null) {
+  const closeBtn = overlay.querySelector(".primary-btn");
+  overlay.addEventListener("click", function (event) {
+    if (event.target === overlay) {
+      overlay.style.display = "none";
+    }
+  });
+
+  closeBtn.addEventListener("click", function () {
+    overlay.style.display = "none";
+  });
+}
 
 // toggle 'done' class for recipe steps to cross them out on click
 recipeSteps.forEach((element) =>
@@ -251,3 +280,6 @@ recipeSteps.forEach((element) =>
     element.classList.toggle("done");
   })
 );
+
+// initialise AOS
+AOS.init();

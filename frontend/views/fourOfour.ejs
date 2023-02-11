@@ -1,4 +1,5 @@
-<%- include('components/header') %> <%- include('components/loading') %>
+<%- include('components/header', { header: false }) %> <%-
+include('components/loading') %>
 <div class="page-content" id="fourOfour-page">
   <!-- markup code for spiders inspired by and re-produced from: https://codepen.io/webcrafterscz/pen/EGYOxa  -->
   <div class="spider">
@@ -35,6 +36,18 @@
       <div class="leg"></div>
       <div class="leg"></div>
     </div>
+  </div>
+
+  <div class="message-board">
+    <h1>Yikes!</h1>
+    <p>
+      It looks like you've stumbled into the wrong tent. Quick, teleport back to
+      the main circus!
+    </p>
+    <a class="primary-btn btn" href="/"
+      >Go Back To Main Circus!
+      <div class="arrow-box"><span class="arrow">👉🏼</span></div>
+    </a>
   </div>
 </div>
 <%- include('components/footer') %>

@@ -51,6 +51,20 @@ a:hover {
   color: var(--vita-yellow);
 }
 
+.arrow-btn {
+  text-align: center;
+}
+
+.arrow-btn p {
+  font-family: var(--heading-font-family);
+  font-size: 1.4em;
+}
+
+.arrow-btn img {
+  width: 230px;
+  height: auto;
+}
+
 /* Primary button styles inspired by and re-produced from: https://codepen.io/kocsten/pen/rggjXp 
 and: https://codepen.io/foxeisen/pen/bqZxLa  */
 .primary-btn {
@@ -332,6 +346,44 @@ section {
 
   h1 {
     font-size: 35px;
+  }
+}
+
+/* Pop-up overlay dialog styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup {
+  text-align: center;
+  width: 550px;
+  height: auto;
+  background: var(--background-blue);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: var(--base-box-shadow);
+}
+
+.popup p {
+  padding: 20px 0;
+}
+
+.popup .primary-btn {
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 600px) {
+  .popup {
+    width: 90%;
   }
 }
 

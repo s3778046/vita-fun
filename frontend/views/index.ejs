@@ -1,4 +1,5 @@
-<%- include('components/header') %> <%- include('components/loading') %>
+<%- include('components/header', { header: true }) %> <%-
+include('components/loading') %>
 <div class="page-content">
   <section id="home">
     <div class="item1" data-aos="slide-right" data-aos-duration="1000">
@@ -22,21 +23,7 @@
       data-aos-duration="1500"
       data-aos-delay="400"
     >
-      <div class="circle-gradient watermelon">
-        <div class="text-bubble">
-          <img
-            class="left-bubble"
-            src="../public/img/bubble-left.png"
-            alt="text bubble that reads click me"
-          />
-          <img
-            class="right-bubble"
-            src="../public/img/bubble-right.png"
-            alt="text bubble that reads click me"
-          />
-          <span>Click Me!</span>
-        </div>
-      </div>
+      <div class="circle-gradient watermelon"></div>
       <div class="character-item">
         <div class="card character">
           <div class="face front"></div>
@@ -51,16 +38,7 @@
       data-aos-duration="1500"
       data-aos-delay="800"
     >
-      <div class="circle-gradient yellow">
-        <div class="text-bubble">
-          <img
-            class="right-bubble"
-            src="../public/img/bubble-right.png"
-            alt="text bubble that reads click me"
-          />
-          <span>Click Me!</span>
-        </div>
-      </div>
+      <div class="circle-gradient yellow"></div>
       <div class="food-item">
         <div class="card food">
           <div class="face front"></div>

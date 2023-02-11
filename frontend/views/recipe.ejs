@@ -1,5 +1,20 @@
-<%- include('components/header') %><%- include('components/loading') %>
+<%- include('components/header', { header: true }) %><%-
+include('components/loading') %>
 <div class="page-content" id="single-recipe-page">
+  <div class="overlay">
+    <div class="popup">
+      <h2>Hey there, Circus Chef!</h2>
+      <p>
+        Did you know you can cross out steps from the recipe method as you
+        complete them? Be sure to try it out. It'll help you keep track of where
+        you are and which steps you have already completed!
+      </p>
+      <div class="primary-btn btn">
+        Okay, Let's Get Cooking!
+        <div class="arrow-box"><span class="arrow">👉🏼</span></div>
+      </div>
+    </div>
+  </div>
   <!-- For loop to itereate all recipes -->
   <% recipes.forEach(function(recipe) { %>
 
@@ -11,6 +26,16 @@
     <!-- Name and description elements -->
     <h1><%= recipe.name %></h1>
     <h2><%= recipe.description %></h2>
+
+    <!-- Back button -->
+    <div class="arrow-btn">
+      <a href="/recipes"
+        ><p>All Recipes</p>
+        <img
+          src="../public/img/this-way-left.png"
+          alt="arrow pointing to the left"
+      /></a>
+    </div>
 
     <!-- Post it note -->
     <div class="post-it">
