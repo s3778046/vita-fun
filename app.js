@@ -107,7 +107,8 @@ app.get("/references", (req, res) => {
   res.render("references", { text: " - references" });
 });
 
-// Render the 404 page when a 404 status is received
+
+// show 404 page on a 404 error status
 app.use(function (req, res, next) {
   res.status(404).render("fourOfour");
 });
