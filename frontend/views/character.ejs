@@ -1,0 +1,19 @@
+<%- include('components/header') %><%- include('components/loading') %>
+<div class="page-content" id="single-character-page">
+  <!-- Name and description elements -->
+  <h2><%= character.intro %></h2>
+  <div class="char">
+    <img
+      class="char-image"
+      src="../public/img/tightrope-walker.png"
+      alt="cute tightrope walker"
+    />
+  </div>
+  <div class="food">
+    <img class="food-image" src="../public/img/eggs.png" alt="eggs superfood" />
+  </div>
+  <h1><%= character.name %></h1>
+  <h2><%= character.superfood %></h2>
+</div>
+
+<%- include('components/footer') %>
