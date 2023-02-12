@@ -94,20 +94,22 @@ if (url.substring(url.length - 1) == "/") {
 }
 
 // add active class to 'about' links on scroll
-const aboutSection = document.querySelector("#about");
-window.addEventListener("scroll", function () {
-  const scrollPos = window.scrollY + window.innerHeight / 2;
-  if (
-    scrollPos > aboutSection.offsetTop &&
-    scrollPos < aboutSection.offsetTop + aboutSection.offsetHeight
-  ) {
-    aboutLink.forEach((element) => (element.className += " active"));
-    homeLink.forEach((element) => element.classList.remove("active"));
-  } else {
-    aboutLink.forEach((element) => element.classList.remove("active"));
-    homeLink.forEach((element) => (element.className += " active"));
-  }
-});
+if (url.includes("about") || url.substring(url.length - 1) == "/") {
+  const aboutSection = document.querySelector("#about");
+  window.addEventListener("scroll", function () {
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+    if (
+      scrollPos > aboutSection.offsetTop &&
+      scrollPos < aboutSection.offsetTop + aboutSection.offsetHeight
+    ) {
+      aboutLink.forEach((element) => (element.className += " active"));
+      homeLink.forEach((element) => element.classList.remove("active"));
+    } else {
+      aboutLink.forEach((element) => element.classList.remove("active"));
+      homeLink.forEach((element) => (element.className += " active"));
+    }
+  });
+}
 
 // Open/Close dropdown menu.
 function toggleHamburgerMenu(menuButton) {
@@ -260,8 +262,22 @@ setInterval(() => {
   }
 }, 70);
 
-// closes pop-up dialog when the user clicks anywhere else on the screen, or on the button in the dialog
 if (overlay != null) {
+  // sets 'dontShowAgain' value to true when box is checked
+  document
+    .querySelector("#dont-show-again")
+    .addEventListener("click", function () {
+      localStorage.setItem("dontShowAgain", this.checked);
+    });
+
+  // hides overlay if 'dontShowAgain' value is true
+  document.addEventListener("DOMContentLoaded", function () {
+    if (localStorage.getItem("dontShowAgain") === "true") {
+      overlay.style.display = "none";
+    }
+  });
+
+  // closes pop-up dialog when the user clicks anywhere else on the screen, or on the button in the dialog
   const closeBtn = overlay.querySelector(".primary-btn");
   overlay.addEventListener("click", function (event) {
     if (event.target === overlay) {
