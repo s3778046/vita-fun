@@ -1,7 +1,7 @@
 /*  Character page styling */
 
 /* *********************************** Grid container ************************************** */
-.page-content {
+.character-page-content {
     margin: auto;
     padding-top: 180px ;
     display: grid;
