@@ -47,6 +47,11 @@ const recipeSchema = mongoose.Schema( {
         required: true,
     },
 
+    superfoodId: {
+        type: String,
+        required: true,
+    },
+
     character: {
         type: String,
         required: true,
