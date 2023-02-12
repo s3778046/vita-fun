@@ -65,6 +65,28 @@ a:hover {
   height: auto;
 }
 
+.arrow-btn:hover img {
+  animation: arrowBounce 2s infinite;
+}
+
+@keyframes arrowBounce {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 /* Primary button styles inspired by and re-produced from: https://codepen.io/kocsten/pen/rggjXp 
 and: https://codepen.io/foxeisen/pen/bqZxLa  */
 .primary-btn {
