@@ -22,11 +22,7 @@ function loadQuestions() {
         document.getElementById("answer-right").innerHTML =
           questionData[count]["answer2"];
         count++;
-      } else {
-        getAnswersList();
-        document.querySelector("#show-circus-character").style.display = "block";
-        document.querySelector(".question-wrapper").style.display = "none";
-      }
+      } 
     };
   
     // Work around for connection to API form either localhost or aws server.
@@ -38,15 +34,6 @@ function loadQuestions() {
       xhttp.open("GET", "https://vita-fun.onrender.com/api/questions", true);
     }
     xhttp.send();
-  }
-  
-  // Get all elements and change innerHTML to the answers from the quiz.
-  function getAnswersList() {
-    document.querySelector("#a1").innerHTML = "1: " + answerList[0];
-    document.querySelector("#a2").innerHTML = "2: " + answerList[1];
-    document.querySelector("#a3").innerHTML = "3: " + answerList[2];
-    document.querySelector("#a4").innerHTML = "4: " + answerList[3];
-    document.querySelector("#a5").innerHTML = "5: " + answerList[4];
   }
   
   // Get the value of the answer and add it to the array of answers.
@@ -78,28 +65,27 @@ function loadQuestions() {
         quizScore += Number(points[answerList[i]]);
       }
   
-      // Add score to page.
-      document.querySelector("#score").innerHTML = "Score: " + quizScore;
-  
       // Call add image function.
-      addCircusImage();
+      loadCharacterPage()
     }
   }
-  
+
   // Add circus image to page determined by quiz score.
-  function addCircusImage() {
-    let img = document.querySelector("#circus-img");
-    console.log(img);
+  function loadCharacterPage() {
   
     if (quizScore <= 18) {
-      img.setAttribute("src", "img/tightrope-walker.png");
+      window.location.href = "/character/63e84ec7d52e695f7e76f826";
     } else if (quizScore <= 24 && quizScore > 18) {
-      img.setAttribute("src", "img/magician.png");
+      window.location.href = "/character/63e84ee6d52e695f7e76f82a";
     } else if (quizScore <= 30 && quizScore > 24) {
-      img.setAttribute("src", "img/human-cannonball.png");
+      window.location.href = "/character/63e84edbd52e695f7e76f828";
     } else if (quizScore <= 36 && quizScore > 30) {
-      img.setAttribute("src", "img/acrobat.png");
+      window.location.href = "/character/63e84ef7d52e695f7e76f82e";
     } else if (quizScore > 36) {
-      img.setAttribute("src", "img/strongboy.png");
+      window.location.href = "/character/63e84eefd52e695f7e76f82c";
     }
   }
+
+
+
+  

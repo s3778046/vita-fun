@@ -27,10 +27,20 @@ const setCharacters = asyncHandler(async (req, res) => {
         res.status(400).json({message: "Please add an image"});
     }
 
+    if((!req.body.superfood)) {
+        res.status(400).json({message: "Please add an image"});
+    }
+
+    if((!req.body.superfoodImg)) {
+        res.status(400).json({message: "Please add an image"});
+    }
+
     const goal = await Characters.create({
         name: req.body.name,
         description: req.body.description,
         image: req.body.image,
+        superfood: req.body.superfood,
+        superfoodImg: req.body.superfoodImg,
     });
     res.status(200).json({message: "Character successfully added to the database"});
 })

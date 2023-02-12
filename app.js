@@ -64,11 +64,15 @@ app.get("/superfoodcircus", (req, res) => {
 });
 
 // Get characters url and render the response.
-app.get("/character", (req, res) => {
-  // Get characters data and pass it to the characters view.
+app.get("/character/:id", (req, res) => {
+
+  // Get Id parameter and store in variable
+  const characterId = req.params.id;
+
+  // Get characters data and pass it to the characters view with id for specific character.
   Characters.find()
     .then((result) => {
-      res.render("character", { character: result });
+      res.render("character", { characters: result,  id: characterId });
     })
     .catch((err) => {
       console.log(err);
@@ -106,7 +110,6 @@ app.get("/recipe/:id", (req, res) => {
 app.get("/references", (req, res) => {
   res.render("references", { text: " - references" });
 });
-
 
 // show 404 page on a 404 error status
 app.use(function (req, res, next) {
