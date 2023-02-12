@@ -20,6 +20,16 @@ const characterSchema = mongoose.Schema( {
     image: {
         type: String,
         required: true,
+    },
+
+    superfood: {
+        type: String,
+        required: true,
+    },
+
+    superfoodImg: {
+        type: String,
+        required: true,
     }
 });
 
