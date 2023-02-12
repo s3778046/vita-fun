@@ -409,31 +409,6 @@ section {
   }
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
-input[type="checkbox"] + label:before {
-  content: "";
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-right: 10px;
-  border: 1px solid var(--vita-yellow);
-  background-color: var(--vita-yellow);
-  border-radius: 2px;
-  vertical-align: middle;
-  text-align: center;
-  line-height: 15px;
-}
-
-input[type="checkbox"]:checked + label:before {
-  content: "\2713";
-  font-size: 14px;
-  color: var(--vita-yellow);
-  background-color: var(--vita-watermelon);
-}
-
 /*  glowing circles styling */
 .circle-gradient {
   width: 100%;
