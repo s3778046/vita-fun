@@ -3,64 +3,62 @@
 <!-- For loop to iterate characters -->
 <% characters.forEach(function(character) { %>
 
-  <!-- If id passed through is equal to id of current iterations display character data -->
-  <% if(id.trim() == character.id) { %>
+<!-- If id passed through is equal to id of current iterations display character data -->
+<% if(id.trim() == character.id) { %>
 
-      <!-- Grid container for page layout -->
-      <div class="character-page-content">
 
-          <!-- Grid column 1 - character section  -->
-          <div class="character-content">
-            
-               <!-- Title  -->
-              <div class="title">
-                  <!-- Name and description elements -->
-                  <h1>Your superpower is ....</h1>
-              </div>
+<!-- Grid container for page layout -->
+<div class="page-content" id="character-page">
+  <!-- Grid column 1 - character section  -->
+  <div class="character-content">
+    <!-- Title  -->
+    <div class="title">
+      <!-- Name and description elements -->
+      <h1>Your superpower is ....</h1>
+    </div>
 
-              <!--  Character image -->
-              <div class="character-img">
-                <img src="<%= character.image %>" alt="Character Image">
-              </div>
 
-              <!-- Superfood data -->
-              <div class="superfood-data">
+    <!--  Character image -->
+    <div class="character-img">
+      <img src="<%= character.image %>" alt="Character Image" />
+    </div>
 
-                <!-- superfood image -->
-                <img src="<%= character.superfoodImg %>" alt="Superfood Image">
+    <!-- Superfood data -->
+    <div class="superfood-data">
+      <!-- superfood image -->
+      <img src="<%= character.superfoodImg %>" alt="Superfood Image" />
 
-                <!-- Character & superfood names -->
-                <div class="text-data">
-                    <h1><%= character.name %></h1>
-                    <p>Your superfood is <%= character.superfood %></p>
-                </div>
-              </div>
-        </div>
-
-        <!-- Grid column 2 - Recipe link section  -->
-        <div class="recipe-content">
-          <div class="recipe-item">
-               <p><%= character.superfood %> Recipes</p>
-               <a href="/recipes"><img src="../public/img/this-way-right.png" alt="Recipe Arrow"></a>
-              
-          </div>
-        </div>
+      <!-- Character & superfood names -->
+      <div class="text-data">
+        <h1><%= character.name %></h1>
+        <p>Your superfood is <%= character.superfood %></p>
       </div>
-    <% } %>
-    <%}) %>
+    </div>
+  </div>
 
+  <!-- Grid column 2 - Recipe link section  -->
+  <div class="recipe-content">
+    <div class="recipe-item">
+      <p><%= character.superfood %> Recipes</p>
+      <a href="/recipes"
+        ><img src="../public/img/this-way-right.png" alt="Recipe Arrow"
+      /></a>
+    </div>
+  </div>
+</div>
+<% } %> <%}) %>
 
 <!-- <div class="page-content" id="single-character-page"> -->
-  <!-- Name and description elements -->
-  <!-- <h2><%= //character.description %></h2> -->
-  <!-- <div class="char">
+<!-- Name and description elements -->
+<!-- <h2><%= //character.description %></h2> -->
+<!-- <div class="char">
     <img
       class="char-image"
       src="../public/img/tightrope-walker.png"
       alt="cute tightrope walker"
     />
   </div> -->
-  <!-- <div class="food">
+<!-- <div class="food">
     <img class="food-image" src="../public/img/eggs.png" alt="eggs superfood" />
   </div>
   <h1><%= //character.name %></h1>

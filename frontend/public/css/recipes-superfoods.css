@@ -24,6 +24,12 @@
   position: relative;
   width: 300px;
   aspect-ratio: 1/1;
+  transition: all 1s ease-out;
+}
+
+.recipe-option:hover,
+.superfood-option:hover {
+  transform: scale(1.1) translateY(20px);
 }
 
 .recipe-option .circle-gradient,

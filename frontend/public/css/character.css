@@ -1,47 +1,50 @@
 /*  Character page styling */
 
 /* *********************************** Grid container ************************************** */
-.character-page-content {
-    margin: auto;
-    padding-top: 180px ;
-    display: grid;
-    width: 70%;
-    height: 100vh;
-    grid-template-columns: 70% 30%;
+
+#character-page.page-content {
+  margin: auto;
+  padding-top: 180px;
+  display: grid;
+  width: 70%;
+  height: 100vh;
+  grid-template-columns: 70% 30%;
+
 }
 
 /* *********************************** Grid items ******************************************* */
-.character-content, .recipe-content {
-    height: 100%;
+.character-content,
+.recipe-content {
+  height: 100%;
 }
 
 .title {
-    height: 5vh;
+  height: 5vh;
 }
 
 .character-img {
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-    height: 55vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  height: 55vh;
 }
 
 .superfood-data {
-    display: flex;
-    justify-content: left;
-    align-items: center;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .text-data {
-    padding-left: 20%;
+  padding-left: 20%;
 }
 
 .superfood-data img {
-    height: 100px;
+  height: 100px;
 }
 
 .character-img img {
-    height: 100%;
+  height: 100%;
 }
 
 .recipe-content {
@@ -50,10 +53,8 @@
   align-items: end;
 }
 
-.recipe-content img:hover  {
-    scale: 1.1;
-    opacity: .8;
-    cursor: pointer;
+.recipe-content img:hover {
+  scale: 1.1;
+  opacity: 0.8;
+  cursor: pointer;
 }
-
-

@@ -15,7 +15,8 @@ include('components/loading') %>
     <% superfoods.forEach(function(superfood) { %>
     <div class="superfood-option">
       <!-- Name and description elements -->
-      <a href="/">
+
+      <a href="/character/<%= superfood.character %>">
         <div class="superfood-image">
           <img
             class="superfood-option-img"
