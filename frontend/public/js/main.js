@@ -274,25 +274,6 @@ if (overlay != null) {
   });
 }
 
-// adds functionality for 'don't show again' checkbox in pop-up dialog
-document.addEventListener("DOMContentLoaded", function () {
-  if (localStorage.getItem("dontShowAgain") === "true") {
-    document.querySelector(".overlay").style.display = "none";
-  }
-});
-
-document
-  .querySelector("#dont-show-again")
-  .addEventListener("click", function () {
-    localStorage.setItem("dontShowAgain", this.checked);
-  });
-
-document.querySelector(".overlay").addEventListener("click", function (event) {
-  if (event.target === this) {
-    this.style.display = "none";
-  }
-});
-
 // toggle 'done' class for recipe steps to cross them out on click
 recipeSteps.forEach((element) =>
   element.addEventListener("click", function () {
