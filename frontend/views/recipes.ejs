@@ -1,5 +1,6 @@
 <%- include('components/header', { header: true }) %> <%-
 include('components/loading') %>
+
 <div class="page-content" id="recipes-page">
   <h1>Recipes</h1>
   <p>
@@ -10,29 +11,61 @@ include('components/loading') %>
   <div class="recipe-options">
     <!-- Dynamic content retrived from database-->
     <!-- Counter -->
-    <% let count = 1 %> <% let colors = ['blue','watermelon', 'yellow', 'green',
-    'purple'] %>
+    <% let count = 1 %> <% let colors = ['blue','watermelon', 'yellow', 'green', 'purple'] %>
+
+
+<!-- If superfood id has been passed through the URL  only -->
+<!-- display recipes that have the same superfood id -->
+<% if(superfood) { %>
 
     <!-- Loop to bring in content for all recipes -->
     <% recipes.forEach(function(recipe) { %>
-    <div class="recipe-option">
-      <!-- Name and description elements -->
-      <a href="/recipe/<%= recipe.id%>">
-        <div class="recipe-image">
-          <img
-            class="recipe-option-img"
-            src="<%= recipe.recipeImg %>"
-            alt="Recipe image"
-          />
-          <h2><%= recipe.name %></h2>
-        </div>
 
-        <div class="circle-gradient <%= colors[count % colors.length] %>"></div>
-      </a>
-    </div>
+      <!-- If recipe has superfood id display it -->
+      <% if(recipe.superfoodId == superfood) { %>
+          <div class="recipe-option">
+            <!-- Name and description elements -->
+            <a href="/recipe/<%= recipe.id%>">
+              <div class="recipe-image">
+                <img
+                  class="recipe-option-img"
+                  src="<%= recipe.recipeImg %>"
+                  alt="Recipe image"
+                />
+                <h2><%= recipe.name %></h2>
+              </div>
 
-    <!-- Increment counter -->
+              <div class="circle-gradient <%= colors[count % colors.length] %>"></div>
+            </a>
+          </div>
+      <% } %>
+      <!-- Increment counter -->
     <% count++ %> <% }); %>
+
+      <!-- If superfood id has not been passed through the URL -->
+      <!-- display all recipes within the database -->
+      <% } else {  %>
+
+          <!-- Loop to bring in content for all recipes -->
+          <% recipes.forEach(function(recipe) { %>
+            <div class="recipe-option">
+              <!-- Name and description elements -->
+              <a href="/recipe/<%= recipe.id%>">
+                <div class="recipe-image">
+                  <img
+                    class="recipe-option-img"
+                    src="<%= recipe.recipeImg %>"
+                    alt="Recipe image"
+                  />
+                  <h2><%= recipe.name %></h2>
+                </div>
+        
+                <div class="circle-gradient <%= colors[count % colors.length] %>"></div>
+              </a>
+            </div>
+            <!-- Increment counter -->
+          <% count++ %> <% }); %>
+      <% } %>
   </div>
 </div>
 <%- include('components/footer') %>

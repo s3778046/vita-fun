@@ -28,11 +28,15 @@ const setCharacters = asyncHandler(async (req, res) => {
     }
 
     if((!req.body.superfood)) {
-        res.status(400).json({message: "Please add an image"});
+        res.status(400).json({message: "Please add a superfood"});
     }
 
     if((!req.body.superfoodImg)) {
-        res.status(400).json({message: "Please add an image"});
+        res.status(400).json({message: "Please add a superfood image"});
+    }
+
+    if((!req.body.superfoodId)) {
+        res.status(400).json({message: "Please add a superfood id"});
     }
 
     const goal = await Characters.create({
@@ -41,6 +45,7 @@ const setCharacters = asyncHandler(async (req, res) => {
         image: req.body.image,
         superfood: req.body.superfood,
         superfoodImg: req.body.superfoodImg,
+        superfoodId: req.body.superfoodId,
     });
     res.status(200).json({message: "Character successfully added to the database"});
 })

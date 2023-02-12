@@ -89,7 +89,7 @@ app.get("/recipes", (req, res) => {
   // Get recipe data and pass it to the recipe view.
   Recipes.find()
     .then((result) => {
-      res.render("recipes", { recipes: result });
+      res.render("recipes", { recipes: result, superfood: null });
     })
     .catch((err) => {
       console.log(err);

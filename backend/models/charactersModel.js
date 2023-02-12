@@ -30,6 +30,11 @@ const characterSchema = mongoose.Schema( {
     superfoodImg: {
         type: String,
         required: true,
+    },
+
+    superfoodId: {
+        type: String,
+        required: true,
     }
 });
 
