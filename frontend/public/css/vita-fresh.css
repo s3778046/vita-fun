@@ -1,0 +1,10 @@
+.vitafresh-content {
+    width: 100vw;
+    height: 100vh;
+    padding: 200px;
+    text-align: center;
+}
+
+.vitafresh-content img {
+    height: 40vh;
+}
