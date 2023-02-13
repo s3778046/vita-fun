@@ -104,7 +104,7 @@
   top: 0;
 }
 
-.superfood-img {
+#single-recipe-page .superfood-img {
   position: absolute;
   width: 200px;
   right: -80px;
@@ -112,7 +112,7 @@
   z-index: 3;
 }
 
-.character-img {
+#single-recipe-page .character-img {
   grid-column: 3;
   grid-row: 3;
   height: 400px;
@@ -120,7 +120,7 @@
   justify-self: start;
 }
 
-.recipe-img {
+#single-recipe-page .recipe-img {
   position: absolute;
   width: 300px;
   bottom: 0;
@@ -183,18 +183,18 @@
     width: 550px;
   }
 
-  .superfood-img {
+  #single-recipe-page .superfood-img {
     width: 150px;
     top: -50px;
   }
 
-  .character-img {
+  #single-recipe-page .character-img {
     height: 300px;
   }
 
-  .recipe-img {
+  #single-recipe-page .recipe-img {
     width: 200px;
-    left: -100px;
+    left: -120px;
   }
 }
 
@@ -260,7 +260,7 @@
     grid-row: 4;
   }
 
-  .character-img {
+  #single-recipe-page .character-img {
     grid-column: 2;
     grid-row: 4;
   }
@@ -273,21 +273,21 @@
 }
 
 @media only screen and (max-width: 750px) {
-  .superfood-img {
+  #single-recipe-page .superfood-img {
     right: 0;
     top: 0;
   }
 
   .notebook-paper {
     width: 90%;
-    padding: 120px 30px 100px 30px;
+    padding: 120px 30px 120px 30px;
   }
 
   .notebook-paper::before {
     display: none;
   }
 
-  .recipe-img {
+  #single-recipe-page .recipe-img {
     left: 0;
   }
 }
@@ -323,10 +323,10 @@
 
   .notebook-paper {
     grid-column: 1;
-    grid-row: 4;
+    grid-row: 5;
   }
 
-  .character-img {
+  #single-recipe-page .character-img {
     display: none;
   }
 }
