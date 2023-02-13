@@ -6,9 +6,25 @@
 <!-- If id passed through is equal to id of current iterations display character data -->
 <% if(id.trim() == character.id) { %>
 
-
 <!-- Grid container for page layout -->
 <div class="page-content" id="character-page">
+  <div class="overlay">
+    <div class="popup">
+      <h2>Psst, heres a Tip...</h2>
+      <p>
+        Click on the stars to discover the different ways the circus character
+        benefits from their superfood!
+      </p>
+      <div class="primary-btn btn">
+        Okay, Start discovering!
+        <div class="arrow-box"><span class="arrow">👉🏼</span></div>
+      </div>
+      <div>
+        <input type="checkbox" id="dont-show-again" />
+        <label for="dont-show-again">Don't show again</label>
+      </div>
+    </div>
+  </div>
   <!-- Grid column 1 - character section  -->
   <div class="character-content">
     <!-- Title  -->
@@ -16,7 +32,6 @@
       <!-- Name and description elements -->
       <h1>Your superpower is ....</h1>
     </div>
-
 
     <!--  Character image -->
     <div class="character-img">

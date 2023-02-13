@@ -263,28 +263,36 @@ setInterval(() => {
 }, 70);
 
 if (overlay != null) {
-  // sets 'dontShowAgain' value to true when box is checked
-  document
-    .querySelector("#dont-show-again")
-    .addEventListener("click", function () {
-      localStorage.setItem("dontShowAgain", this.checked);
+  if (url.includes("recipe")) {
+    // sets 'dontShowAgainRecipe' value to true when box is checked
+    document
+      .querySelector("#dont-show-again")
+      .addEventListener("click", function () {
+        localStorage.setItem("dontShowAgainRecipe", this.checked);
+      });
+    // hides overlay if 'dontShowAgainRecipe' value is true
+    document.addEventListener("DOMContentLoaded", function () {
+      if (localStorage.getItem("dontShowAgainRecipe") === "true") {
+        overlay.style.display = "none";
+      }
     });
+  } else if (url.includes("character")) {
+    // sets 'dontShowAgainCharacter' value to true when box is checked
+    document
+      .querySelector("#dont-show-again")
+      .addEventListener("click", function () {
+        localStorage.setItem("dontShowAgainCharacter", this.checked);
+      });
+    // hides overlay if 'dontShowAgainCharacter' value is true
+    document.addEventListener("DOMContentLoaded", function () {
+      if (localStorage.getItem("dontShowAgainCharacter") === "true") {
+        overlay.style.display = "none";
+      }
+    });
+  }
 
-  // hides overlay if 'dontShowAgain' value is true
-  document.addEventListener("DOMContentLoaded", function () {
-    if (localStorage.getItem("dontShowAgain") === "true") {
-      overlay.style.display = "none";
-    }
-  });
-
-  // closes pop-up dialog when the user clicks anywhere else on the screen, or on the button in the dialog
+  // closes pop-up dialog when the user clicks on the button in the dialog
   const closeBtn = overlay.querySelector(".primary-btn");
-  overlay.addEventListener("click", function (event) {
-    if (event.target === overlay) {
-      overlay.style.display = "none";
-    }
-  });
-
   closeBtn.addEventListener("click", function () {
     overlay.style.display = "none";
   });

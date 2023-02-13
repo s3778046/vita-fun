@@ -10,38 +10,34 @@
 
 .question {
   flex-basis: 30%;
-  background-color: var(--background-blue);
-  min-height: 150px;
-  border-radius: 5px;
-  padding: 60px 10px;
-  color: white;
-  font-weight: bold;
-  box-shadow: 2px 2px 5px rgb(0, 0, 0);
-  text-transform: capitalize;
   text-align: center;
+}
+
+.question h1 {
+  margin-bottom: 20px;
 }
 
 .answer1,
 .answer2 {
   flex-basis: 20%;
-  text-align: center;
 }
 
-.answer1 p,
-.answer2 p {
-  padding: 15px;
-  background-color: white;
-  border-radius: 5px;
-  color: var(--background-blue);
-  font-weight: bold;
-  box-shadow: 2px 2px 5px rgb(0, 0, 0);
-  text-transform: capitalize;
+.answer1 {
+  text-align: right;
+}
+
+.answer2 {
+  text-align: left;
 }
 
 .answer1:hover,
 .answer2:hover {
-  opacity: 0.85;
   cursor: var(--pointer-cursor);
+}
+
+.answer1:hover p,
+.answer2:hover p {
+  color: var(--vita-yellow);
 }
 
 .restart-quiz {
