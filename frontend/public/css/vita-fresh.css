@@ -1,10 +1,27 @@
+.vitafresh-page {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(240, 240, 240);
+  cursor: auto;
+}
+
 .vitafresh-content {
-    width: 100vw;
-    height: 100vh;
-    padding: 200px;
-    text-align: center;
+  margin: 0 auto;
+  width: 70%;
+  padding: 10% 0;
 }
 
 .vitafresh-content img {
-    height: 40vh;
+  width: 207px;
+}
+
+.vitafresh-content p {
+  color: #000;
+  padding-top: 30px;
+}
+
+.vitafresh-content a {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
 }
