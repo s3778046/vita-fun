@@ -4,20 +4,29 @@ include('components/loading') %>
   <!-- Questions and answers  -->
   <div class="question-wrapper">
     <div id="questions-flex">
-      <div class="answer1">
-        <p
-          id="answer-left"
-          onclick="loadQuestions(), addAnswerToList('answer-left'), calculateQuizScore()"
-        ></p>
+      <div
+        class="answer1 arrow-btn"
+        onclick="loadQuestions(), addAnswerToList('answer-left'), calculateQuizScore()"
+      >
+        <p id="answer-left"></p>
+        <img
+          src="../public/img/this-way-left.png"
+          alt="arrow pointing to the left"
+        />
       </div>
       <div class="question">
-        <p id="question"></p>
+        <h1 id="question"></h1>
+        <img src="../public/img/unknown-character.png" alt="" />
       </div>
-      <div class="answer2">
-        <p
-          id="answer-right"
-          onclick="loadQuestions(), addAnswerToList('answer-right'), calculateQuizScore()"
-        ></p>
+      <div
+        class="answer2 arrow-btn"
+        onclick="loadQuestions(), addAnswerToList('answer-right'), calculateQuizScore()"
+      >
+        <p id="answer-right"></p>
+        <img
+          src="../public/img/this-way-right.png"
+          alt="arrow pointing to the left"
+        />
       </div>
     </div>
 

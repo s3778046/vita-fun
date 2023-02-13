@@ -58,6 +58,7 @@ a:hover {
 .arrow-btn p {
   font-family: var(--heading-font-family);
   font-size: 1.4em;
+  text-transform: uppercase;
 }
 
 .arrow-btn img {
