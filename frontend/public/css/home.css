@@ -208,11 +208,11 @@
 }
 
 #about h2 {
-  padding: 20px 0;
+  padding: 50px 0 20px 0;
 }
 
-.about-site {
-  margin-bottom: 50px;
+#about h2:first-of-type {
+  padding-top: 20px;
 }
 
 .about-org {
