@@ -52,6 +52,7 @@
   justify-self: start;
   align-self: end;
   margin-left: 50px;
+  text-align: right;
 }
 
 /* Post-it styles inspired by and re-produced from: https://codepen.io/jweden/pen/kGBBpM */
@@ -294,7 +295,7 @@
 
 @media only screen and (max-width: 600px) {
   .recipe {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
   }
 
   .recipe h1 {

@@ -67,20 +67,14 @@ a:hover {
 }
 
 .arrow-btn:hover img {
-  animation: arrowBounce 2s infinite;
+  animation: arrowBounce 1s infinite;
 }
 
 @keyframes arrowBounce {
   0% {
     transform: translateX(0);
   }
-  25% {
-    transform: translateX(10px);
-  }
   50% {
-    transform: translateX(-10px);
-  }
-  75% {
     transform: translateX(10px);
   }
   100% {
@@ -347,6 +341,10 @@ nav li a {
     top: 0;
     right: 0;
     border-radius: 0;
+  }
+
+  .hangings {
+    width: 200px;
   }
 }
 
