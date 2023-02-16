@@ -3,14 +3,10 @@
 /* *********************************** Grid container ************************************** */
 
 #character-page.page-content {
-  margin: auto;
+  margin: 0 5% 0 5%;
   padding-top: 180px;
   /*
-  display: grid;
-  width: 70%;
-  height: 100vh;
-  grid-template-columns: 70% 30%;
-  */
+  height: 100vh; */
 
 }
 
@@ -21,15 +17,16 @@
   display: grid;
   gap: 1rem;
   /*
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); */
-  grid-template-columns: repeat(5, minmax(360px, 1fr));
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(5, minmax(360px, 1fr)); */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1fr 2fr 1fr 1fr);
 }
 
 .title {
   /*
-  height: 5vh; */
-  grid-column: span;
+  grid-column: span;*/
+  grid-column: 1;
   grid-row: 1;
   font-size: 75%;
 
@@ -37,59 +34,28 @@
 
 .character-img {
   /*
-  display: flex;
-  justify-content: center;
-  padding-top: 30px;
-
-  max-height: 55vh; */
-  max-height: 80%;
-  width: auto;
+  display: flex; */
+  max-height: 150px;
+  max-width: auto;
   /* grid-column: span; */
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 2;
+  justify-content: center;
 }
-
-
-
-/*
-.character-img img {
-  max-height: 350px;
-  max-width: auto;
-} */
-
-/*
-.superfood-data {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-*/
 
 .superfood-image {
   max-width: 40px;
   max-height: auto;
-  /*
-  grid-column: span;
-  grid-row: 4/5; */
-  grid-row: 3;
+  grid-column: 1;
+  grid-row: 5;
+  justify-content: end;
 }
 
 .superfood-reveal {
   display: flex;
-  grid-row: 4;
+  grid-column: 3;
+  grid-row: 5;
 }
-
-/*
-.text-data {
-  padding-left: 20%;
-}
-
-.superfood-data img {
-  max-height: 100px;
-  width: auto;
-} */
-
-
 
 .recipe-item {
   padding: 30px 0;

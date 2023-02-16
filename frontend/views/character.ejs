@@ -8,17 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
 =======
-<%- include('components/header', { header: true }) %> <%-
-include('components/loading') %>
-<!--
->>>>>>> 36aee2ceb5cc23a4258e0c667abad966ced75f02 -->
+
 <!-- For loop to iterate characters -->
 <% characters.forEach(function(character) { %>
 
 <!-- If id passed through is equal to id of current iterations display character data -->
 <% if(id.trim() == character.id) { %>
 
-<!-- Grid container for page layout -->
+<!-- Grid container for page layout - THIS BIT IS THE POPUP TIP  -->
 <div class="page-content" id="character-page">
   <div class="overlay">
     <div class="popup">
