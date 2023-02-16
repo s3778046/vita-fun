@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%- include('components/header', { header: true }) %>
 
 <!-- Include components loading -->
@@ -6,6 +7,10 @@
 <!-- TRY A META TAG TO DEFINE VIEWPORT AS SAME AS SCREEN SIZE?????
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
+=======
+<%- include('components/header', { header: true }) %> <%-
+include('components/loading') %>
+>>>>>>> 36aee2ceb5cc23a4258e0c667abad966ced75f02
 <!-- For loop to iterate characters -->
 <% characters.forEach(function(character) { %>
 
@@ -47,17 +52,16 @@
     <!-- Superfood data 
     <div class="superfood-data"> -->
 
-      <!-- superfood image -->
-      <div class="superfood-image">
+    <!-- superfood image -->
+    <div class="superfood-image">
       <img src="<%= character.superfoodImg %>" alt="Superfood Image" />
-      </div>
+    </div>
 
-      <!-- Character & superfood names - ADD? -->
-      <div class="superfood-reveal">
-        <h1><%= character.name %></h1>
-        <p>Your superfood is <%= character.superfood %></p>
-      </div>
-    
+    <!-- Character & superfood names - ADD? -->
+    <div class="superfood-reveal">
+      <h1><%= character.name %></h1>
+      <p>Your superfood is <%= character.superfood %></p>
+    </div>
 
     <!-- Hotspot stars for nutrition info ...
 
@@ -71,8 +75,7 @@
       </map>
     -->
 
-
-  <!-- Recipe link section arrow
+    <!-- Recipe link section arrow
   <div class="recipe-content"> -->
     <div class="recipe-item">
       <p><%= character.superfood %> Recipes</p>
@@ -80,14 +83,8 @@
         ><img src="../public/img/this-way-right.png" alt="Recipe Arrow"
       /></a>
     </div>
-
   </div>
-
 </div>
-
-
-
-
 
 <% } %> <%}) %>
 
