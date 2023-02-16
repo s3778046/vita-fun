@@ -67,20 +67,14 @@ a:hover {
 }
 
 .arrow-btn:hover img {
-  animation: arrowBounce 2s infinite;
+  animation: arrowBounce 1s infinite;
 }
 
 @keyframes arrowBounce {
   0% {
     transform: translateX(0);
   }
-  25% {
-    transform: translateX(10px);
-  }
   50% {
-    transform: translateX(-10px);
-  }
-  75% {
     transform: translateX(10px);
   }
   100% {
@@ -235,6 +229,7 @@ nav img {
 nav li a {
   font-family: var(--heading-font-family);
   line-height: 72px;
+  font-size: 1.1em;
 }
 
 .active {
@@ -283,17 +278,17 @@ nav li a {
 }
 
 /*  Responsive - smaller (mobile/tablet) screens */
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 1060px) {
   nav {
     padding: 5px 50px;
   }
 
   nav li a {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 810px) {
   #menu {
     display: none;
   }
@@ -347,6 +342,10 @@ nav li a {
     top: 0;
     right: 0;
     border-radius: 0;
+  }
+
+  .hangings {
+    width: 200px;
   }
 }
 
