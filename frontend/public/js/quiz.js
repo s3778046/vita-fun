@@ -86,3 +86,24 @@ function loadCharacterPage() {
     window.location.href = "/character/63e84eefd52e695f7e76f82c";
   }
 }
+
+// Progress bar functionality
+const fruit = document.querySelector("#js-fruit");
+const progressBar = document.querySelector("#js-progressbar");
+const progressBarColors = [
+  "var(--vita-purple)",
+  "var(--vita-green)",
+  "#ff5964",
+  "var(--vita-yellow)",
+  "var(--vita-blue)",
+];
+
+function updateProgressBar() {
+  progressBar.value += progressBar.max * 0.2;
+  const currentColor = progressBarColors.shift();
+  progressBarColors.push(currentColor);
+  progressBar.style.setProperty("--vita-watermelon", currentColor);
+  console.log(progressBar.value);
+  fruit.style.left = `${parseInt(fruit.style.left || "0") + 100}px`;
+  console.log(fruit.style.left);
+}

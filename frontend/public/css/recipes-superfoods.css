@@ -12,7 +12,7 @@
 
 .recipe-options,
 .superfood-options {
-  margin-top: 100px;
+  margin: 100px 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 100px;
