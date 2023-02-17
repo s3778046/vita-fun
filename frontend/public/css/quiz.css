@@ -68,7 +68,8 @@
   text-transform: uppercase;
 }
 
-/* Progress bar styles */
+/* Progress bar styles inspired by and re-produced from: https://codepen.io/pierrinho/pen/VVGezJ 
+and: https://css-tricks.com/html5-progress-element/ */
 .progress-bar-wrapper {
   position: absolute;
   top: 60%;
