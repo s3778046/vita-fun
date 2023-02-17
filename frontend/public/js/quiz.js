@@ -20,7 +20,9 @@ function loadQuestions() {
       questionGrid.style.display = "none";
       let restartBtn = document.querySelector(".restart-quiz");
       restartBtn.style.display = "none";
-      loading.style.display = "block";
+      loading[1].classList.add("quiz-loading");
+      loading[1].classList.remove("loading");
+      loading[1].style.display = "block";
 
       document.getElementById("answer-left").innerHTML =
         questionData[count]["answer1"];
@@ -36,7 +38,7 @@ function loadQuestions() {
       questionImage.onload = function () {
         questionGrid.style.display = "grid";
         restartBtn.style.display = "block";
-        loading.style.display = "none";
+        loading[1].style.display = "none";
       };
 
       count++;
@@ -67,8 +69,8 @@ function calculateQuizScore() {
     "video games": 4,
     "real sports": 8,
     "movie star": 6,
-    astronaut: 2,
-    disneyland: 6,
+    "astronaut": 2,
+    "disneyland": 6,
     "snorkelling tropical islands": 10,
     "climb a mountain": 10,
     "go to a museum": 4,

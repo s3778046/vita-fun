@@ -64,7 +64,7 @@ const recipeSteps = document.querySelectorAll(".step");
 const overlay = document.querySelector(".overlay");
 
 // Get loading and page content elements
-const loading = document.querySelector(".loading");
+const loading = document.querySelectorAll(".loading");
 const pageContent = document.querySelector(".page-content");
 
 // Get footer element and store in variable
@@ -72,8 +72,8 @@ const footer = document.querySelector("footer");
 
 //show loading animation while content is loading
 document.addEventListener("DOMContentLoaded", function () {
-  if (loading && pageContent) {
-    loading.style.display = "none";
+  if (loading[0] && pageContent) {
+    loading[0].style.display = "none";
     pageContent.style.display = "block";
   }
 });

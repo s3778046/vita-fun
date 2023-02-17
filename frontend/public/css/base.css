@@ -575,6 +575,7 @@ footer {
 /* loading animation styles */
 .loading-anim {
   width: 500px;
+  margin: auto;
 }
 
 .loading-txt {
@@ -582,6 +583,7 @@ footer {
   letter-spacing: 10px;
   font-family: var(--heading-font-family);
   font-size: 30px;
+  text-align: center;
 }
 
 .loading {
