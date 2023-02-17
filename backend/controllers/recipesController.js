@@ -54,7 +54,7 @@ const setRecipes = asyncHandler(async (req, res) => {
     }
 
     // If no data is entered, display error message
-    if((!req.body.superfoodID)) {
+    if((!req.body.superfoodId)) {
         res.status(400).json({message: "Please add a superfood id"}); 
     }
 

@@ -71,18 +71,27 @@ app.get("/superfoodcircus", (req, res) => {
 // Get characters url and render the response -------------------------------------------------------
 app.get("/character/:id", (req, res) => {
 
-  // Get Id parameter and store in variable
-  const characterId = req.params.id;
+// Get Id parameter and store in variable
+const characterId = req.params.id;
 
-  // Get characters data and pass it to the characters view with id for specific character.
-  Characters.find()
-    .then((result) => {
-      res.render("character", { characters: result,  id: characterId });
+// Get characters data and pass it to the characters view with id for specific character.
+Characters.find()
+    .then((characterResult) => {
+
+        // Get superfood data and pass it to the superfoodcircus view.
+        Superfoods.find()
+            .then((superfoodResult) => {
+                res.render("character", { characters: characterResult,  superfoods: superfoodResult, id: characterId });
+            })
+            .catch((err) => {
+                console.log(err);
+        });
     })
     .catch((err) => {
-      console.log(err);
+        console.log(err);
     });
 });
+
 
 // Get recipes url and render the response -----------------------------------------------------------
 app.get("/recipes", (req, res) => {
