@@ -89,6 +89,8 @@ function loadCharacterPage() {
 
 // Progress bar functionality
 const fruit = document.querySelector("#js-fruit");
+const fruitArray = ["🍏", "🍇", "🍌", "🍓", "🍊"];
+let fruitIndex = 0;
 const progressBar = document.querySelector("#js-progressbar");
 const progressBarColors = [
   "var(--vita-purple)",
@@ -99,11 +101,22 @@ const progressBarColors = [
 ];
 
 function updateProgressBar() {
-  progressBar.value += progressBar.max * 0.2;
+  // update value of progress bar
+  const newValue = progressBar.value + progressBar.max * 0.2;
+  progressBar.value = newValue > 100 ? 0 : newValue;
+
+  // update colour of progress bar
   const currentColor = progressBarColors.shift();
   progressBarColors.push(currentColor);
   progressBar.style.setProperty("--vita-watermelon", currentColor);
-  console.log(progressBar.value);
-  fruit.style.left = `${parseInt(fruit.style.left || "0") + 100}px`;
-  console.log(fruit.style.left);
+
+  // update fruit of progress bar
+  fruit.innerHTML = fruitArray[fruitIndex];
+  fruitIndex = (fruitIndex + 1) % fruitArray.length;
+
+  // update position of progress bar's fruit
+  const percentComplete = progressBar.value / progressBar.max;
+  const progressWidth = progressBar.offsetWidth;
+  const fruitOffset = percentComplete * progressWidth - fruit.offsetWidth / 2;
+  fruit.style.left = `${fruitOffset}px`;
 }
