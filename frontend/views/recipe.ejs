@@ -2,21 +2,25 @@
 include('components/loading') %>
 <div class="page-content" id="single-recipe-page">
   <div class="overlay">
-    <div class="popup">
-      <h2>Hey there, Circus Chef!</h2>
-      <p>
-        Did you know you can cross out steps from the recipe method as you
-        complete them? Be sure to try it out. It'll help you keep track of where
-        you are and which steps you have already completed!
-      </p>
-      <div class="primary-btn btn">
-        Okay, Let's Get Cooking!
-        <div class="arrow-box"><span class="arrow">👉🏼</span></div>
+    <div class="popup-container">
+      <div class="popup">
+        <h2>Hey there, Circus Chef!</h2>
+        <p>
+          Did you know you can cross out steps from the recipe method as you
+          complete them? Be sure to try it out. It'll help you keep track of
+          where you are and which steps you have already completed!
+        </p>
+        <div class="primary-btn btn">
+          Okay, Let's Get Cooking!
+          <div class="arrow-box"><span class="arrow">👉🏼</span></div>
+        </div>
+        <div>
+          <input type="checkbox" id="dont-show-again" />
+          <label for="dont-show-again">Don't show again</label>
+        </div>
       </div>
-      <div>
-        <input type="checkbox" id="dont-show-again" />
-        <label for="dont-show-again">Don't show again</label>
-      </div>
+      <div class="line-background"></div>
+      <div class="line-border"></div>
     </div>
   </div>
   <!-- For loop to itereate all recipes -->
@@ -33,8 +37,8 @@ include('components/loading') %>
 
     <!-- Back button -->
     <div class="arrow-btn">
-      <a href="/recipes"
-        ><p>All Recipes</p>
+      <a href="javascript:history.back()"
+        ><p>Go Back</p>
         <img
           src="../public/img/this-way-left.png"
           alt="arrow pointing to the left"
