@@ -15,6 +15,9 @@ function loadQuestions() {
   xhttp.onload = function () {
     let questionData = JSON.parse(this.responseText);
     if (count < questionData.length) {
+      // Hide the #questions-grid element
+      document.getElementById("questions-grid").style.display = "none";
+
       document.getElementById("answer-left").innerHTML =
         questionData[count]["answer1"];
       document.getElementById("question").innerHTML =
@@ -24,6 +27,12 @@ function loadQuestions() {
       let questionImage = document.getElementById("question-img");
       questionImage.setAttribute("alt", questionData[count]["imageAlt"]);
       questionImage.setAttribute("src", questionData[count]["imageSrc"]);
+
+      // Wait for the image to load and then show the #questions-grid element again
+      questionImage.onload = function () {
+        document.getElementById("questions-grid").style.display = "grid";
+      };
+
       count++;
     }
   };
@@ -67,7 +76,7 @@ function calculateQuizScore() {
       quizScore += Number(points[answerList[i]]);
     }
 
-    // Call add image function.
+    // Call function.
     loadCharacterPage();
   }
 }

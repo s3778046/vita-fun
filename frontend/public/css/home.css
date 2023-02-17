@@ -153,10 +153,14 @@
     padding-top: 20px;
   }
 
-  .character-item,
   #home .circle-gradient {
     width: 100px;
     height: 100px;
+  }
+
+  .character-item {
+    width: 150px;
+    height: 150px;
   }
 }
 
