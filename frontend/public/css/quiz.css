@@ -19,7 +19,7 @@
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 20px;
 }
@@ -72,7 +72,7 @@
 .progress-bar-wrapper {
   position: absolute;
   top: 60%;
-  left: -5%;
+  left: -150px;
   transform: rotate(90deg);
 }
 
@@ -121,9 +121,7 @@ progress[value]::-webkit-progress-value {
     max-width: 300px;
     height: auto;
   }
-}
 
-@media only screen and (max-width: 1100px) {
   #quiz-page .arrow-btn img {
     width: 180px;
   }
@@ -131,13 +129,48 @@ progress[value]::-webkit-progress-value {
   #quiz-page .arrow-btn p {
     font-size: 1em;
   }
+}
 
+@media only screen and (max-width: 1000px) {
   #quiz-page h1 {
     font-size: 2em;
   }
+
+  #questions-grid {
+    justify-content: end;
+    margin-right: 50px;
+  }
+
+  .progress-bar-wrapper {
+    top: 60%;
+    left: -100px;
+  }
+
+  .progress {
+    width: 300px;
+  }
+
+  .progress progress {
+    height: 10px;
+    border-radius: 10px;
+  }
+
+  progress[value]::-webkit-progress-bar {
+    border-radius: 10px;
+  }
+
+  progress[value]::-webkit-progress-value {
+    border-radius: 10px;
+  }
+
+  .progress .fruit {
+    top: -15px;
+    left: -15px;
+    font-size: 40px;
+  }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .question-wrapper {
     min-height: calc(100vh - 280px);
     margin: 100px 0;
@@ -146,6 +179,7 @@ progress[value]::-webkit-progress-value {
   #questions-grid {
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(3, auto);
+    margin-right: auto;
   }
 
   #quiz-page h1 {
@@ -184,5 +218,25 @@ progress[value]::-webkit-progress-value {
   .question-wrapper {
     min-height: calc(100vh - 280px);
     margin: 100px 0;
+  }
+
+  .progress-bar-wrapper {
+    top: 500px;
+  }
+}
+
+@media only screen and (max-width: 470px),
+  only screen and (max-width: 470px) and (max-height: 730px) {
+  .progress-bar-wrapper {
+    position: relative;
+    top: 110px;
+    left: 0;
+    transform: rotate(0);
+  }
+  .progress {
+    margin: auto;
+  }
+  .progress progress {
+    width: 100%;
   }
 }
