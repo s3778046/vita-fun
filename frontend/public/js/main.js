@@ -320,6 +320,14 @@ stars.forEach((element) =>
     let benefit = element.nextElementSibling;
     benefit.classList.add("show-benefit");
 
+    // close benefit when user clicks 'close', and show star element
+    let closeBenefitBtn = benefit.querySelector(".close-benefit-btn");
+    console.log(closeBenefitBtn);
+    closeBenefitBtn.addEventListener("click", function () {
+      benefit.classList.remove("show-benefit");
+      element.classList.remove("hide-star");
+    });
+
     // show all star elements
     stars.forEach((element) => {
       element.classList.remove("hide-star");

@@ -78,7 +78,7 @@ path {
   transition: all 0.2s;
 }
 
-#star2 {
+.star2 {
   opacity: 0;
   filter: url(#glow);
   animation: glow 2s ease infinite;
@@ -89,18 +89,28 @@ path {
   margin: 50px;
 }
 
+.star-filter {
+  position: absolute;
+}
+
 .star {
   cursor: var(--pointer-cursor);
 }
+
 .benefit-dialog {
   max-width: 210px;
   height: fit-content;
   border-radius: 5px;
   padding: 20px 10px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #3a2ec0;
   box-shadow: var(--base-box-shadow);
-  backdrop-filter: blur(10px);
   display: none;
+}
+
+.close-benefit-btn {
+  color: var(--vita-yellow);
+  text-decoration: underline;
+  margin-top: 10px;
   cursor: var(--pointer-cursor);
 }
 
