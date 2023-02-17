@@ -307,12 +307,26 @@ recipeSteps.forEach((element) =>
 
 // hotspots functionality
 const stars = document.querySelectorAll(".star");
+const benefits = document.querySelectorAll(".benefit-dialog");
 
 stars.forEach((element) =>
   element.addEventListener("click", function () {
-    element.classList.add("hide-star");
+    // hide all benefits elements
+    benefits.forEach((element) => {
+      element.classList.remove("show-benefit");
+    });
+
+    // show the clicked benefit element
     let benefit = element.nextElementSibling;
     benefit.classList.add("show-benefit");
+
+    // show all star elements
+    stars.forEach((element) => {
+      element.classList.remove("hide-star");
+    });
+
+    // hide the clicked star element
+    element.classList.add("hide-star");
   })
 );
 

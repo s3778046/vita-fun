@@ -86,6 +86,7 @@ path {
 
 .hotspot {
   display: inline-block;
+  margin: 50px;
 }
 
 .star {
@@ -100,6 +101,7 @@ path {
   box-shadow: var(--base-box-shadow);
   backdrop-filter: blur(10px);
   display: none;
+  cursor: var(--pointer-cursor);
 }
 
 .hide-star {
