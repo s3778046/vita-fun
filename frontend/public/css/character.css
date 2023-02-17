@@ -15,12 +15,8 @@
   /*
   height: 100%; */
   display: grid;
-  gap: 1rem;
-  /*
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  grid-template-columns: repeat(5, minmax(360px, 1fr)); */
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1fr 2fr 1fr 1fr);
+  grid-template-columns: repeat(1fr 2fr 1fr 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
 
 .title {
@@ -29,32 +25,33 @@
   grid-column: 1;
   grid-row: 1;
   font-size: 75%;
-
 }
 
-.character-img {
+.character-content .character-img {
   /*
   display: flex; */
   max-height: 150px;
   max-width: auto;
+  
   /* grid-column: span; */
   grid-column: 2;
-  grid-row: 2;
-  justify-content: center;
+  grid-row: 1;
+  /*
+  justify-content: center; */
 }
 
 .superfood-image {
   max-width: 40px;
   max-height: auto;
   grid-column: 1;
-  grid-row: 5;
+  grid-row: 3;
   justify-content: end;
 }
 
 .superfood-reveal {
   display: flex;
   grid-column: 3;
-  grid-row: 5;
+  grid-row: 4;
 }
 
 .recipe-item {
@@ -71,9 +68,9 @@
   cursor: pointer;
 }
 
-/* Hover stars for nutrition info */
+/* Hover stars for nutrition info
 
 .recipe-content .hotspots {
   display: flex;
   padding-top: 50px;
-}
+} */

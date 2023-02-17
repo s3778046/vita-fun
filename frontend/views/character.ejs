@@ -17,6 +17,7 @@
 
 <!-- Grid container for page layout - THIS BIT IS THE POPUP TIP  -->
 <div class="page-content" id="character-page">
+  
   <div class="overlay">
     <div class="popup">
       <h2>Psst, heres a Tip...</h2>
@@ -33,7 +34,8 @@
         <label for="dont-show-again">Don't show again</label>
       </div>
     </div>
-  </div>
+  </div> 
+
   <!-- Grid container - character section  -->
   <div class="character-content">
     <!-- Title  -->
@@ -63,15 +65,7 @@
 
     <!-- Hotspot stars for nutrition info ...
 
-    <div class="hotspots">
-
-      <img src="../public/img/hotspot-stars.png" alt="hover over stars which appear randomly for information" 
-      usemap="#hotmap" width="350px" height="350px">
-      
-      <map name="nutrition-map">
-        <area shape="circle" coords="? ? ? ?" alt ="" href= (OR JUST SHOW CARD) >
-      </map>
-    -->
+    
 
     <!-- Recipe link section arrow
   <div class="recipe-content"> -->
@@ -86,21 +80,5 @@
 
 <% } %> <%}) %>
 
-<!-- <div class="page-content" id="single-character-page"> -->
-<!-- Name and description elements -->
-<!-- <h2><%= //character.description %></h2> -->
-<!-- <div class="char">
-    <img
-      class="char-image"
-      src="../public/img/tightrope-walker.png"
-      alt="cute tightrope walker"
-    />
-  </div> -->
-<!-- <div class="food">
-    <img class="food-image" src="../public/img/eggs.png" alt="eggs superfood" />
-  </div>
-  <h1><%= //character.name %></h1>
-  <h2><%= //character.superfood %></h2>
-</div> -->
 
 <%- include('components/footer') %>
