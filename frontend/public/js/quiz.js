@@ -89,7 +89,7 @@ function loadCharacterPage() {
 
 // Progress bar functionality
 const fruit = document.querySelector("#js-fruit");
-const fruitArray = ["🍏", "🍇", "🍌", "🍓", "🍊"];
+const fruitArray = ["🍏", "🍊", "🍌", "🍓", "🍈"];
 let fruitIndex = 0;
 const progressBar = document.querySelector("#js-progressbar");
 const progressBarColors = [
