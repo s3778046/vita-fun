@@ -305,5 +305,16 @@ recipeSteps.forEach((element) =>
   })
 );
 
+// hotspots functionality
+const stars = document.querySelectorAll(".star");
+
+stars.forEach((element) =>
+  element.addEventListener("click", function () {
+    element.classList.add("hide-star");
+    let benefit = element.nextElementSibling;
+    benefit.classList.add("show-benefit");
+  })
+);
+
 // initialise AOS
 AOS.init();

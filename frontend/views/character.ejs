@@ -84,28 +84,28 @@
   <h2><%= //character.superfood %></h2>
 </div> -->
 
-<!-- Loop through superfoods data -->  
+<!-- Loop through superfoods data -->
 <% superfoods.forEach(function(superfood) { %>
 
-    <!-- If id passed through is equal to id of current iterations display superfood data -->
-    <% if(id.trim() == superfood.character) { %>
-         
-          <!-- Display superfood name -->
-          <p ><%= superfood.name %></p>
-          
-          <!-- Conter for benifits -->
-          <%let count = 1; %>
+<!-- If id passed through is equal to id of current iterations display superfood data -->
+<% if(id.trim() == superfood.character) { %>
 
-          <!--  Loop through benefits -->
-          <% superfood.benefits.forEach(function(benefit) { %>
+<!-- Display superfood name -->
+<p><%= superfood.name %></p>
 
-              <!--  Display benefits -->
-              <p><%= "Benefit " + count + ": " + benefit %> </p>
+<!-- Conter for benifits -->
+<%let count = 1; %>
 
-              <!-- Increment benefits counter -->
-              <% count++; %>
-          <% }) %>
-    <% } %>
-<% }) %>
+<!--  Loop through benefits -->
+<% superfood.benefits.forEach(function(benefit) { %>
+<div class="hotspot">
+  <div class="star"><%-include('components/star.ejs') %></div>
 
-<%- include('components/footer') %>
+  <div class="benefit-dialog">
+    <!--  Display benefits -->
+    <p><%= "Benefit " + count + ": " + benefit %></p>
+  </div>
+</div>
+
+<!-- Increment benefits counter -->
+<% count++; %> <% }) %> <% } %> <% }) %> <%- include('components/footer') %>

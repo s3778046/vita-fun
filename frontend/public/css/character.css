@@ -9,7 +9,6 @@
   width: 70%;
   height: 100vh;
   grid-template-columns: 70% 30%;
-
 }
 
 /* *********************************** Grid items ******************************************* */
@@ -57,4 +56,56 @@
   scale: 1.1;
   opacity: 0.8;
   cursor: pointer;
+}
+
+/* hotspots styling */
+/* glowing stars styles Primary button styles inspired by and re-produced from: https://codepen.io/susan8098/pen/XOPvPR */
+svg {
+  width: 150px;
+}
+
+@keyframes glow {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+path {
+  fill: var(--vita-yellow);
+  transition: all 0.2s;
+}
+
+#star2 {
+  opacity: 0;
+  filter: url(#glow);
+  animation: glow 2s ease infinite;
+}
+
+.hotspot {
+  display: inline-block;
+}
+
+.star {
+  cursor: var(--pointer-cursor);
+}
+.benefit-dialog {
+  max-width: 210px;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 20px 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: var(--base-box-shadow);
+  backdrop-filter: blur(10px);
+  display: none;
+}
+
+.hide-star {
+  display: none;
+}
+
+.show-benefit {
+  display: block;
 }

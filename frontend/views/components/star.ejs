@@ -1,0 +1,31 @@
+<!-- Code reproduced from: https://codepen.io/susan8098/pen/XOPvPR -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 50 50">
+  <!-- Make filter and set the filter bounding region -->
+  <filter id="glow" x="-20%" y="-20%" width="150%" height="150%">
+    <!-- Blur the star / origin image input 'SourceAlpha' -->
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blurred" />
+    <!-- Flood / Fill with the desired color -->
+    <feFlood flood-color="#ebf0f6" result="colored" />
+    <!-- Composite (join) the 2 above together -->
+    <feComposite
+      in="colored"
+      in2="blurred"
+      operator="in"
+      result="softGlow_colored"
+    />
+
+    <feMerge>
+      <feMergeNode in="softGlow_colored" />
+      <feMergeNode in="SourceGraphic" />
+    </feMerge>
+  </filter>
+
+  <path
+    id="star1"
+    d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
+  />
+  <path
+    id="star2"
+    d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
+  />
+</svg>
