@@ -72,7 +72,7 @@ function calculateQuizScore() {
   }
 }
 
-// Add circus image to page determined by quiz score.
+// Load character page determined by quiz score.
 function loadCharacterPage() {
   if (quizScore <= 18) {
     window.location.href = "/character/63e84ec7d52e695f7e76f826";
