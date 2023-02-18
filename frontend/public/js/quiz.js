@@ -45,11 +45,13 @@ function loadQuestions() {
     }
   };
 
-  // Work around for connection to API form either localhost or aws server.
+  // Work around for connection to API from either localhost or render.com or heroku server.
   if (url.includes("localhost")) {
     xhttp.open("GET", "http://localhost:5000/api/questions", true);
   } else if (url.includes("vita-fun-a2")) {
     xhttp.open("GET", "https://vita-fun-a2.onrender.com/api/questions", true);
+  }   else if (url.includes("vita-fun.herokuapp.com")) {
+    xhttp.open("GET", "https://vita-fun.herokuapp.com/api/questions", true);
   } else {
     xhttp.open("GET", "https://vita-fun.onrender.com/api/questions", true);
   }
