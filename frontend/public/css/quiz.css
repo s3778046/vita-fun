@@ -68,7 +68,8 @@
   text-transform: uppercase;
 }
 
-/* Progress bar styles */
+/* Progress bar styles inspired by and re-produced from: https://codepen.io/pierrinho/pen/VVGezJ 
+and: https://css-tricks.com/html5-progress-element/ */
 .progress-bar-wrapper {
   position: absolute;
   top: 60%;
@@ -114,6 +115,14 @@ progress[value]::-webkit-progress-value {
   font-size: 70px;
   z-index: 1;
   transition: left 0.5s ease-in-out;
+}
+
+/* quiz question loading animation styles */
+.quiz-loading {
+  display: none;
+  position: absolute;
+  top: 30%;
+  left: 35%;
 }
 
 @media only screen and (max-width: 1200px) {

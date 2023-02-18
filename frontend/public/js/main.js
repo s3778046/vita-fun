@@ -64,7 +64,7 @@ const recipeSteps = document.querySelectorAll(".step");
 const overlay = document.querySelector(".overlay");
 
 // Get loading and page content elements
-const loading = document.querySelector(".loading");
+const loading = document.querySelectorAll(".loading");
 const pageContent = document.querySelector(".page-content");
 
 // Get footer element and store in variable
@@ -72,8 +72,8 @@ const footer = document.querySelector("footer");
 
 //show loading animation while content is loading
 document.addEventListener("DOMContentLoaded", function () {
-  if (loading && pageContent) {
-    loading.style.display = "none";
+  if (loading[0] && pageContent) {
+    loading[0].style.display = "none";
     pageContent.style.display = "block";
   }
 });
@@ -302,6 +302,39 @@ if (overlay != null) {
 recipeSteps.forEach((element) =>
   element.addEventListener("click", function () {
     element.classList.toggle("done");
+  })
+);
+
+// hotspots functionality
+const stars = document.querySelectorAll(".star");
+const benefits = document.querySelectorAll(".benefit-dialog");
+
+stars.forEach((element) =>
+  element.addEventListener("click", function () {
+    // hide all benefits elements
+    benefits.forEach((element) => {
+      element.classList.remove("show-benefit");
+    });
+
+    // show the clicked benefit element
+    let benefit = element.nextElementSibling;
+    benefit.classList.add("show-benefit");
+
+    // close benefit when user clicks 'close', and show star element
+    let closeBenefitBtn = benefit.querySelector(".close-benefit-btn");
+    console.log(closeBenefitBtn);
+    closeBenefitBtn.addEventListener("click", function () {
+      benefit.classList.remove("show-benefit");
+      element.classList.remove("hide-star");
+    });
+
+    // show all star elements
+    stars.forEach((element) => {
+      element.classList.remove("hide-star");
+    });
+
+    // hide the clicked star element
+    element.classList.add("hide-star");
   })
 );
 

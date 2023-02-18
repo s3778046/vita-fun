@@ -15,8 +15,14 @@ function loadQuestions() {
   xhttp.onload = function () {
     let questionData = JSON.parse(this.responseText);
     if (count < questionData.length) {
-      // Hide the #questions-grid element
-      document.getElementById("questions-grid").style.display = "none";
+      // Hide the question elements
+      let questionGrid = document.getElementById("questions-grid");
+      questionGrid.style.display = "none";
+      let restartBtn = document.querySelector(".restart-quiz");
+      restartBtn.style.display = "none";
+      loading[1].classList.add("quiz-loading");
+      loading[1].classList.remove("loading");
+      loading[1].style.display = "block";
 
       document.getElementById("answer-left").innerHTML =
         questionData[count]["answer1"];
@@ -28,9 +34,11 @@ function loadQuestions() {
       questionImage.setAttribute("alt", questionData[count]["imageAlt"]);
       questionImage.setAttribute("src", questionData[count]["imageSrc"]);
 
-      // Wait for the image to load and then show the #questions-grid element again
+      // Wait for the image to load and then show the question elements again
       questionImage.onload = function () {
-        document.getElementById("questions-grid").style.display = "grid";
+        questionGrid.style.display = "grid";
+        restartBtn.style.display = "block";
+        loading[1].style.display = "none";
       };
 
       count++;
