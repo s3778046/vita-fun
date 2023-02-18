@@ -35,8 +35,8 @@
       <div class="popup">
         <h2>Psst, heres a Tip...</h2>
         <p>
-          Click on the stars to discover the different ways the circus character
-          benefits from their superfood!
+          Click on the glowing stars to discover the different ways the circus
+          character benefits from their superfood!
         </p>
         <div class="primary-btn btn">
           Okay, Start discovering!
@@ -51,18 +51,53 @@
       <div class="line-border"></div>
     </div>
   </div>
+  <!-- Grid column 1 - SuperfoodCircus link section  -->
+  <div class="arrow-btn superfoodcircus-link">
+    <a href="/superfoodcircus"
+      ><p>superfood circus</p>
+      <img
+        src="../public/img/this-way-left.png"
+        alt="arrow pointing to the left"
+    /></a>
+  </div>
 
-  <!-- Grid column 1 - character section  -->
+  <!-- Grid column 2 - character section  -->
   <div class="character-content">
     <!-- Title  -->
     <div class="title">
       <!-- Name and description elements -->
-      <h1>Your superpower is ....</h1>
+      <h1>Your circus superpower is ....</h1>
     </div>
 
     <!--  Character image -->
     <div class="character-img">
       <img src="<%= character.image %>" alt="Character Image" />
+      <div class="hotspots-container">
+        <!-- Loop through superfoods data -->
+        <% superfoods.forEach(function(superfood) { %>
+
+        <!-- If id passed through is equal to id of current iterations display superfood data -->
+        <% if(id.trim() == superfood.character) { %>
+
+        <!-- Conter for benefits -->
+        <%let count = 1; %>
+
+        <!--  Loop through benefits -->
+        <% superfood.benefits.forEach(function(benefit) { %>
+        <div class="hotspot">
+          <div class="star"><%-include('components/star.ejs') %></div>
+
+          <div class="benefit-dialog">
+            <!--  Display benefits -->
+            <p><%= "Benefit " + count + ": " + benefit %></p>
+
+            <div class="close-benefit-btn">Close</div>
+          </div>
+        </div>
+
+        <!-- Increment benefits counter -->
+        <% count++; %> <% }) %> <% } %> <% }) %>
+      </div>
     </div>
 
     <!-- Superfood data -->
@@ -73,61 +108,19 @@
       <!-- Character & superfood names -->
       <div class="text-data">
         <h1><%= character.name %></h1>
-        <p>Your superfood is <%= character.superfood %></p>
+        <h3>Your superfood is <%= character.superfood %></h3>
       </div>
     </div>
   </div>
 
-  <!-- Grid column 2 - Recipe link section  -->
-  <div class="recipe-content">
-    <div class="recipe-item">
-      <p><%= character.superfood %> Recipes</p>
-      <a href="/recipes/<%= character.superfoodId %>"
-        ><img src="../public/img/this-way-right.png" alt="Recipe Arrow"
-      /></a>
-    </div>
+  <!-- Grid column 3 - Recipe link section  -->
+  <div class="arrow-btn recipe-link">
+    <a href="/recipes/<%= character.superfoodId %>"
+      ><p><%= character.superfood %> Recipes</p>
+      <img
+        src="../public/img/this-way-right.png"
+        alt="arrow pointing to the right"
+    /></a>
   </div>
 </div>
-<% } %> <%}) %>
-
-<!-- <div class="page-content" id="single-character-page"> -->
-<!-- Name and description elements -->
-<!-- <h2><%= //character.description %></h2> -->
-<!-- <div class="char">
-    <img
-      class="char-image"
-      src="../public/img/tightrope-walker.png"
-      alt="cute tightrope walker"
-    />
-  </div> -->
-<!-- <div class="food">
-    <img class="food-image" src="../public/img/eggs.png" alt="eggs superfood" />
-  </div>
-  <h1><%= //character.name %></h1>
-  <h2><%= //character.superfood %></h2>
-</div> -->
-
-<!-- Loop through superfoods data -->
-<% superfoods.forEach(function(superfood) { %>
-
-<!-- If id passed through is equal to id of current iterations display superfood data -->
-<% if(id.trim() == superfood.character) { %>
-
-<!-- Conter for benefits -->
-<%let count = 1; %>
-
-<!--  Loop through benefits -->
-<% superfood.benefits.forEach(function(benefit) { %>
-<div class="hotspot">
-  <div class="star"><%-include('components/star.ejs') %></div>
-
-  <div class="benefit-dialog">
-    <!--  Display benefits -->
-    <p><%= "Benefit " + count + ": " + benefit %></p>
-
-    <div class="close-benefit-btn">Close</div>
-  </div>
-</div>
-
-<!-- Increment benefits counter -->
-<% count++; %> <% }) %> <% } %> <% }) %> <%- include('components/footer') %>
+<% } %> <%}) %> <%- include('components/footer') %>

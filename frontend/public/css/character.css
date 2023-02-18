@@ -6,22 +6,21 @@
   margin: auto;
   padding-top: 180px;
   display: grid;
-  width: 70%;
+  width: 90%;
   height: 100vh;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 230px auto 230px;
+}
+
+#character-page h3 {
+  color: var(--vita-watermelon);
 }
 
 /* *********************************** Grid items ******************************************* */
-.character-content,
-.recipe-content {
+.character-content {
   height: 100%;
 }
 
-.title {
-  height: 5vh;
-}
-
-.character-img {
+#character-page .character-img {
   display: flex;
   justify-content: center;
   padding-top: 30px;
@@ -29,65 +28,57 @@
 }
 
 .superfood-data {
+  margin-top: 50px;
+  justify-self: end;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-}
-
-.text-data {
-  padding-left: 20%;
+  gap: 50px;
 }
 
 .superfood-data img {
-  height: 100px;
+  height: 150px;
 }
 
-.character-img img {
-  height: 100%;
-}
-
-.recipe-content {
+.recipe-link,
+.superfoodcircus-link {
   padding: 30px 0;
-  display: flex;
-  align-items: end;
+  justify-self: end;
+  align-self: end;
 }
 
-.recipe-content img:hover {
-  scale: 1.1;
-  opacity: 0.8;
-  cursor: pointer;
+.recipe-link {
+  text-align: left;
+}
+
+.superfoodcircus-link {
+  text-align: right;
 }
 
 /* hotspots styling */
-/* glowing stars styles Primary button styles inspired by and re-produced from: https://codepen.io/susan8098/pen/XOPvPR */
-svg {
-  width: 150px;
-}
-
-@keyframes glow {
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-path {
-  fill: var(--vita-yellow);
-  opacity: 0.6;
-  transition: all 0.2s;
-}
-
-.star2 {
-  opacity: 0;
-  filter: url(#glow);
-  animation: glow 2s ease infinite;
-}
-
 .hotspot {
   display: inline-block;
-  margin: 50px;
+  position: absolute;
+}
+
+.hotspot:nth-of-type(1) {
+  top: calc(55% - 25px);
+  left: calc(55% - 25px);
+}
+
+.hotspot:nth-of-type(2) {
+  top: calc(30% - 25px);
+  left: calc(35% - 25px);
+}
+
+.hotspot:nth-of-type(3) {
+  top: calc(23% - 25px);
+  left: calc(60% - 25px);
+}
+
+.hotspot:nth-of-type(4) {
+  top: calc(60% - 25px);
+  left: calc(40% - 25px);
 }
 
 .star-filter {
@@ -121,4 +112,30 @@ path {
 
 .show-benefit {
   display: block;
+}
+
+/* glowing stars styles inspired by and re-produced from: https://codepen.io/susan8098/pen/XOPvPR */
+svg {
+  width: 150px;
+}
+
+@keyframes glow {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+path {
+  fill: var(--vita-yellow);
+  opacity: 0.6;
+  transition: all 0.2s;
+}
+
+.star2 {
+  opacity: 0;
+  filter: url(#glow);
+  animation: glow 2s ease infinite;
 }
