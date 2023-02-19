@@ -1,6 +1,6 @@
 // Declare variables
 let count = 0;
-const answerList = [];
+let answerList = [];
 let quizScore = 0;
 
 // Load the question data into the correct fields on window load
@@ -88,6 +88,11 @@ function calculateQuizScore() {
 
     // Call function.
     loadCharacterPage();
+
+    // Restart variables at end of quiz.
+    count = 0;
+    answerList = [];
+    quizScore = 0;
   }
 }
 
