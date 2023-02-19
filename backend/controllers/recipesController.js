@@ -54,7 +54,7 @@ const setRecipes = asyncHandler(async (req, res) => {
     }
 
     // If no data is entered, display error message
-    if((!req.body.superfoodID)) {
+    if((!req.body.superfoodId)) {
         res.status(400).json({message: "Please add a superfood id"}); 
     }
 
@@ -68,7 +68,7 @@ const setRecipes = asyncHandler(async (req, res) => {
         res.status(400).json({message: "Please add a character image"}); 
     }
 
-
+    // Craete a recipe 
     const goal = await Recipes.create({
         name: req.body.name,
         description: req.body.description,

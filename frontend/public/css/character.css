@@ -5,67 +5,311 @@
 #character-page.page-content {
   margin: 0 5% 0 5%;
   padding-top: 180px;
-  /*
-  height: 100vh; */
+  display: grid;
+  width: 90%;
+  min-height: 100vh;
+  grid-template-columns: 230px auto 230px;
+}
 
+#character-page h3 {
+  color: var(--vita-watermelon);
 }
 
 /* *********************************** Grid items ******************************************* */
 .character-content {
-  /*
-  height: 100%; */
-  display: grid;
-  grid-template-columns: repeat(1fr 2fr 1fr 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  height: 100%;
 }
 
-.title {
-  /*
-  grid-column: span;*/
-  grid-column: 1;
-  grid-row: 1;
-  font-size: 75%;
-}
-
-.character-content .character-img {
-  /*
-  display: flex; */
-  max-height: 150px;
-  max-width: auto;
-  
-  /* grid-column: span; */
-  grid-column: 2;
-  grid-row: 1;
-  /*
-  justify-content: center; */
-}
-
-.superfood-image {
-  max-width: 40px;
-  max-height: auto;
-  grid-column: 1;
-  grid-row: 3;
-  justify-content: end;
-}
-
-.superfood-reveal {
+#character-page .character-img {
   display: flex;
-  grid-column: 3;
-  grid-row: 4;
+  justify-content: center;
+  padding-top: 30px;
+  height: 55vh;
 }
 
-.recipe-item {
+.superfood-data {
+  margin: 50px 50px 0 50px;
+  justify-self: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.superfood-data img {
+  height: 150px;
+}
+
+.recipe-link,
+.superfoodcircus-link {
   padding: 30px 0;
-  display: flex;
-  align-items: end;
-  grid-column: 3;
-  grid-row: 5;
+  justify-self: end;
+  align-self: end;
 }
 
-.recipe-item img:hover {
-  scale: 1.1;
-  opacity: 0.8;
-  cursor: pointer;
+.recipe-link {
+  text-align: left;
+}
+
+.superfoodcircus-link {
+  text-align: right;
+}
+
+/* hotspots styling */
+.hotspot {
+  display: inline-block;
+  position: absolute;
+}
+
+.hotspot:nth-of-type(1) {
+  top: calc(55% - 25px);
+  left: calc(55% - 25px);
+}
+
+.hotspot:nth-of-type(2) {
+  top: calc(30% - 25px);
+  left: calc(35% - 25px);
+}
+
+.hotspot:nth-of-type(3) {
+  top: calc(23% - 25px);
+  left: calc(60% - 25px);
+}
+
+.hotspot:nth-of-type(4) {
+  top: calc(60% - 25px);
+  left: calc(40% - 25px);
+}
+
+.star-filter {
+  position: absolute;
+}
+
+.benefit-dialog {
+  max-width: 210px;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 20px 10px;
+  background-color: #3a2ec0;
+  box-shadow: var(--base-box-shadow);
+  display: none;
+  position: relative;
+  z-index: 2;
+}
+
+.close-benefit-btn {
+  color: var(--vita-yellow);
+  text-decoration: underline;
+  margin-top: 10px;
+  cursor: var(--pointer-cursor);
+}
+
+.hide-star {
+  display: none;
+}
+
+.show-benefit {
+  display: block;
+}
+
+/* glowing stars styles inspired by and re-produced from: https://codepen.io/susan8098/pen/XOPvPR */
+svg {
+  width: 100px;
+  cursor: var(--pointer-cursor);
+  margin: 5px;
+}
+
+@keyframes glow {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+path {
+  fill: var(--vita-yellow);
+  opacity: 0.6;
+  transition: all 0.2s;
+}
+
+.star2 {
+  opacity: 0;
+  filter: url(#glow);
+  animation: glow 2s ease infinite;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+  #character-page.page-content {
+    grid-template-columns: 180px auto 180px;
+  }
+}
+
+@media only screen and (max-width: 1070px) {
+  #character-page.page-content {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    padding-top: 210px;
+  }
+
+  .character-content {
+    grid-column: 1/3;
+    grid-row: 1;
+  }
+
+  .recipe-link {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .superfoodcircus-link {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .superfood-data {
+    margin: 50px 0 0 0;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .character-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  #character-page .character-img {
+    height: auto;
+  }
+
+  .superfood-data img {
+    width: 100px;
+    height: auto;
+  }
+
+  #character-page h1 {
+    font-size: 2em;
+  }
+
+  #character-page h3 {
+    font-size: 1em;
+  }
+
+  svg {
+    width: 70px;
+  }
+}
+
+@media only screen and (max-height: 1000px) {
+  .character-img img {
+    height: 400px;
+    width: auto;
+  }
+
+  #character-page .character-img {
+    height: auto;
+  }
+
+  .hotspot:nth-of-type(1) {
+    top: 400px;
+  }
+
+  .hotspot:nth-of-type(2) {
+    top: 300px;
+  }
+
+  .hotspot:nth-of-type(3) {
+    top: 240px;
+  }
+
+  .hotspot:nth-of-type(4) {
+    top: 500px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #character-page.page-content {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .character-content {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .recipe-link {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .superfoodcircus-link {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 0;
+  }
+
+  .superfood-data {
+    display: block;
+    text-align: center;
+  }
+
+  .superfood-data img {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #character-page h1 {
+    text-align: center;
+  }
+
+  .hotspot:nth-of-type(1) {
+    top: 550px;
+  }
+
+  .hotspot:nth-of-type(2) {
+    top: 450px;
+  }
+
+  .hotspot:nth-of-type(3) {
+    top: 400px;
+  }
+
+  .hotspot:nth-of-type(4) {
+    top: 600px;
+  }
+
+  .benefit-dialog {
+    max-width: 180px;
+  }
+}
+
+@media only screen and (max-height: 1000px) and (max-width: 550px) {
+  .character-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  #character-page .character-img {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  svg {
+    width: 50px;
+  }
+
+  .hotspot:nth-of-type(1) {
+    top: 500px;
+  }
+
+  .hotspot:nth-of-type(4) {
+    top: 550px;
+  }
 }
 
 /* Hover stars for nutrition info

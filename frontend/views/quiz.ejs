@@ -1,25 +1,38 @@
 <%- include('components/header', { header: true }) %> <%-
-include('components/loading') %>
-<div class="page-content">
+include('components/loading') %> <%- include('components/loading') %>
+<div class="page-content" id="quiz-page">
   <!-- Questions and answers  -->
   <div class="overlay">
-    <div class="popup">
-      <h2>Welcome Amazing guest!</h2>
-      <p>
-        Take our quiz to discover which circus character you most resemble, and
-        uncover the secret to their superpowers - their favorite superfood!
-      </p>
-      <div class="primary-btn btn">
-        Start the Quiz!
-        <div class="arrow-box"><span class="arrow">👉🏼</span></div>
+    <div class="popup-container">
+      <div class="popup">
+        <h2>Welcome Amazing guest!</h2>
+        <p>
+          Take our quiz to discover which circus character you most resemble,
+          and uncover the secret to their superpowers - their favorite
+          superfood!
+        </p>
+        <div class="primary-btn btn">
+          Start the Quiz!
+          <div class="arrow-box"><span class="arrow">👉🏼</span></div>
+        </div>
       </div>
+      <div class="line-background"></div>
+      <div class="line-border"></div>
     </div>
   </div>
+  <!-- Progress Bar -->
+  <div class="progress-bar-wrapper">
+    <div class="progress">
+      <progress id="js-progressbar" value="0" max="100"></progress>
+      <span id="js-fruit" class="fruit">🍉</span>
+    </div>
+  </div>
+
   <div class="question-wrapper">
-    <div id="questions-flex">
+    <div id="questions-grid">
       <div
         class="answer1 arrow-btn"
-        onclick="loadQuestions(), addAnswerToList('answer-left'), calculateQuizScore()"
+        onclick="loadQuestions(), addAnswerToList('answer-left'), calculateQuizScore(), updateProgressBar()"
       >
         <p id="answer-left"></p>
         <img
@@ -27,13 +40,17 @@ include('components/loading') %>
           alt="arrow pointing to the left"
         />
       </div>
+      <h1 id="question"></h1>
       <div class="question">
-        <h1 id="question"></h1>
-        <img src="../public/img/unknown-character.png" alt="" />
+        <img
+          id="question-img"
+          src="../public/img/unknown-character.png"
+          alt=""
+        />
       </div>
       <div
         class="answer2 arrow-btn"
-        onclick="loadQuestions(), addAnswerToList('answer-right'), calculateQuizScore()"
+        onclick="loadQuestions(), addAnswerToList('answer-right'), calculateQuizScore(), updateProgressBar()"
       >
         <p id="answer-right"></p>
         <img

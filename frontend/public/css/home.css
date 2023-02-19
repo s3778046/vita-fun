@@ -148,6 +148,22 @@
   }
 }
 
+@media only screen and (max-width: 400px) {
+  #home {
+    padding-top: 20px;
+  }
+
+  #home .circle-gradient {
+    width: 100px;
+    height: 100px;
+  }
+
+  .character-item {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 @media only screen and (max-width: 1000px) and (max-height: 540px) {
   #home {
     padding-top: 20px;
@@ -196,11 +212,11 @@
 }
 
 #about h2 {
-  padding: 20px 0;
+  padding: 50px 0 20px 0;
 }
 
-.about-site {
-  margin-bottom: 50px;
+#about h2:first-of-type {
+  padding-top: 20px;
 }
 
 .about-org {
