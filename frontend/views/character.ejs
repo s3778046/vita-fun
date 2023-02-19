@@ -1,13 +1,4 @@
-<<<<<<< HEAD
 <%- include('components/header', { header: true }) %>
-
-<!-- Include components loading -->
-<%- include('components/loading') %> 
-
-<!-- TRY A META TAG TO DEFINE VIEWPORT AS SAME AS SCREEN SIZE?????
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-
-=======
 
 <!-- For loop to iterate characters -->
 <% characters.forEach(function(character) { %>
@@ -39,7 +30,6 @@
 
 <!-- Grid container for page layout -->
 <div class="page-content" id="character-page">
-  
   <div class="overlay">
     <div class="popup-container">
       <div class="popup">
@@ -110,13 +100,10 @@
       </div>
     </div>
 
-    <!-- Superfood data 
-    <div class="superfood-data"> -->
-
-    <!-- superfood image -->
-    <div class="superfood-image">
+    <!-- Superfood data -->
+    <div class="superfood-data">
+      <!-- superfood image -->
       <img src="<%= character.superfoodImg %>" alt="Superfood Image" />
-    </div>
 
       <!-- Character & superfood names -->
       <div class="text-data">

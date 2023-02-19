@@ -3,7 +3,7 @@
 /* *********************************** Grid container ************************************** */
 
 #character-page.page-content {
-  margin: 0 5% 0 5%;
+  margin: auto;
   padding-top: 180px;
   display: grid;
   width: 90%;
@@ -311,10 +311,3 @@ path {
     top: 550px;
   }
 }
-
-/* Hover stars for nutrition info
-
-.recipe-content .hotspots {
-  display: flex;
-  padding-top: 50px;
-} */
