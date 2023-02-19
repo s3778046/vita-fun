@@ -6,7 +6,7 @@
 <!-- If id passed through is equal to id of current iterations display character data -->
 <% if(id.trim() == character.id) { %>
 
-<svg class="star-filter">
+<svg class="star-filter" viewBox="-5 -5 34 34">
   <!-- filter element's code reproduced from: https://codepen.io/susan8098/pen/XOPvPR -->
   <filter id="glow" x="-20%" y="-20%" width="150%" height="150%">
     <!-- Blur the star / origin image input 'SourceAlpha' -->
@@ -89,7 +89,7 @@
 
           <div class="benefit-dialog">
             <!--  Display benefits -->
-            <p><%= "Benefit " + count + ": " + benefit %></p>
+            <p><%= benefit %></p>
 
             <div class="close-benefit-btn">Close</div>
           </div>

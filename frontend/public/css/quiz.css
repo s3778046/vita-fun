@@ -130,14 +130,6 @@ progress[value]::-webkit-progress-value {
     max-width: 300px;
     height: auto;
   }
-
-  #quiz-page .arrow-btn img {
-    width: 180px;
-  }
-
-  #quiz-page .arrow-btn p {
-    font-size: 1em;
-  }
 }
 
 @media only screen and (max-width: 1000px) {

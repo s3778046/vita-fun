@@ -329,3 +329,9 @@
     display: none;
   }
 }
+
+@media only screen and (max-width: 350px) {
+  .recipe {
+    padding-top: 150px;
+  }
+}
