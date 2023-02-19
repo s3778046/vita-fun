@@ -38,6 +38,7 @@ const setSuperfoods = asyncHandler(async (req, res) => {
         res.status(400).json({message: "Please add character"}); 
     }
 
+    // Create a superfood
     const goal = await Superfoods.create({
         name: req.body.name,
         description: req.body.description,

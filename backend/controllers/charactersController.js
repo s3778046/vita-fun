@@ -23,22 +23,27 @@ const setCharacters = asyncHandler(async (req, res) => {
         res.status(400).json({message: "Please add a description"});
     }
 
+    // If no data is entered, display error message
     if((!req.body.image)) {
         res.status(400).json({message: "Please add an image"});
     }
 
+    // If no data is entered, display error message
     if((!req.body.superfood)) {
         res.status(400).json({message: "Please add a superfood"});
     }
 
+    // If no data is entered, display error message
     if((!req.body.superfoodImg)) {
         res.status(400).json({message: "Please add a superfood image"});
     }
 
+    // If no data is entered, display error message
     if((!req.body.superfoodId)) {
         res.status(400).json({message: "Please add a superfood id"});
     }
 
+    // Create character
     const goal = await Characters.create({
         name: req.body.name,
         description: req.body.description,
@@ -47,6 +52,8 @@ const setCharacters = asyncHandler(async (req, res) => {
         superfoodImg: req.body.superfoodImg,
         superfoodId: req.body.superfoodId,
     });
+
+    // Display success message
     res.status(200).json({message: "Character successfully added to the database"});
 })
 

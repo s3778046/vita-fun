@@ -68,7 +68,7 @@ const setRecipes = asyncHandler(async (req, res) => {
         res.status(400).json({message: "Please add a character image"}); 
     }
 
-
+    // Craete a recipe 
     const goal = await Recipes.create({
         name: req.body.name,
         description: req.body.description,
