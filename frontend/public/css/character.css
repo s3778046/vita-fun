@@ -7,7 +7,7 @@
   padding-top: 180px;
   display: grid;
   width: 90%;
-  height: 100vh;
+  min-height: 100vh;
   grid-template-columns: 230px auto 230px;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .superfood-data {
-  margin-top: 50px;
+  margin: 50px 50px 0 50px;
   justify-self: end;
   display: flex;
   justify-content: center;
@@ -85,10 +85,6 @@
   position: absolute;
 }
 
-.star {
-  cursor: var(--pointer-cursor);
-}
-
 .benefit-dialog {
   max-width: 210px;
   height: fit-content;
@@ -97,6 +93,8 @@
   background-color: #3a2ec0;
   box-shadow: var(--base-box-shadow);
   display: none;
+  position: relative;
+  z-index: 2;
 }
 
 .close-benefit-btn {
@@ -116,7 +114,9 @@
 
 /* glowing stars styles inspired by and re-produced from: https://codepen.io/susan8098/pen/XOPvPR */
 svg {
-  width: 150px;
+  width: 100px;
+  cursor: var(--pointer-cursor);
+  margin: 5px;
 }
 
 @keyframes glow {
@@ -138,4 +138,100 @@ path {
   opacity: 0;
   filter: url(#glow);
   animation: glow 2s ease infinite;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+  #character-page.page-content {
+    grid-template-columns: 180px auto 180px;
+  }
+}
+
+@media only screen and (max-width: 1070px) {
+  #character-page.page-content {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    padding-top: 210px;
+  }
+
+  .character-content {
+    grid-column: 1/3;
+    grid-row: 1;
+  }
+
+  .recipe-link {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .superfoodcircus-link {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .superfood-data {
+    margin: 50px 0 0 0;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .character-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  #character-page .character-img {
+    height: auto;
+  }
+
+  .superfood-data img {
+    width: 100px;
+    height: auto;
+  }
+
+  #character-page h1 {
+    font-size: 2em;
+  }
+
+  #character-page h3 {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #character-page.page-content {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .character-content {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .recipe-link {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .superfoodcircus-link {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 0;
+  }
+
+  .superfood-data {
+    display: block;
+    text-align: center;
+  }
+
+  .superfood-data img {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #character-page h1 {
+    text-align: center;
+  }
 }
