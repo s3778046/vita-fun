@@ -74,7 +74,11 @@ const footer = document.querySelector("footer");
 document.addEventListener("DOMContentLoaded", function () {
   if (loading[0] && pageContent) {
     loading[0].style.display = "none";
-    pageContent.style.display = "block";
+    if (url.includes("character")) {
+      pageContent.style.display = "grid";
+    } else {
+      pageContent.style.display = "block";
+    }
   }
 });
 
