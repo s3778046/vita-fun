@@ -31,6 +31,7 @@
   margin: 50px 50px 0 50px;
   justify-self: end;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   gap: 50px;
