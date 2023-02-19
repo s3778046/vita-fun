@@ -10,7 +10,7 @@ const Characters = require("./backend/models/charactersModel");
 const connectDB = require("./backend/db/dbConnect");
 connectDB();
 
-// Create variaple and store port
+// Create variable and store port
 const port = process.env.PORT || 3000;
 
 // Create instance of express
@@ -78,7 +78,7 @@ const characterId = req.params.id;
 Characters.find()
     .then((characterResult) => {
 
-        // Get superfood data and pass it to the superfoodcircus view.
+        // Get superfood data and pass it to the character view.
         Superfoods.find()
             .then((superfoodResult) => {
                 res.render("character", { characters: characterResult,  superfoods: superfoodResult, id: characterId });
@@ -95,6 +95,7 @@ Characters.find()
 
 // Get recipes url and render the response -----------------------------------------------------------
 app.get("/recipes", (req, res) => {
+  
   // Get recipe data and pass it to the recipe view.
   Recipes.find()
     .then((result) => {

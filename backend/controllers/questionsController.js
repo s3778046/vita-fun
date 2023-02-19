@@ -28,7 +28,7 @@ const setQuestions = asyncHandler(async (req, res) => {
         res.status(400).json({message: "Please add second answer option"});  
     }
 
-    // If no data is entered, display error message
+    // Create question
     const goal = await Questions.create({
         question: req.body.question,
         answer1: req.body.answer1,
