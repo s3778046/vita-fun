@@ -50,7 +50,7 @@ function loadQuestions() {
     xhttp.open("GET", "http://localhost:5000/api/questions", true);
   } else if (url.includes("vita-fun-a2")) {
     xhttp.open("GET", "https://vita-fun-a2.onrender.com/api/questions", true);
-  }   else if (url.includes("vita-fun.herokuapp.com")) {
+  } else if (url.includes("vita-fun.herokuapp.com")) {
     xhttp.open("GET", "https://vita-fun.herokuapp.com/api/questions", true);
   } else {
     xhttp.open("GET", "https://vita-fun.onrender.com/api/questions", true);
@@ -126,8 +126,13 @@ const progressBarColors = [
 
 function updateProgressBar() {
   // update value of progress bar
-  const newValue = progressBar.value + progressBar.max * 0.2;
-  progressBar.value = newValue > 100 ? 0 : newValue;
+  progressBar.value += progressBar.max * 0.2;
+  if (progressBar.value >= progressBar.max) {
+    setTimeout(() => {
+      progressBar.value = 0;
+      fruit.style.left = `-15px`;
+    }, 200);
+  }
 
   // update colour of progress bar
   const currentColor = progressBarColors.shift();
