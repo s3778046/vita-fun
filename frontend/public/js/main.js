@@ -326,7 +326,6 @@ stars.forEach((element) =>
 
     // close benefit when user clicks 'close', and show star element
     let closeBenefitBtn = benefit.querySelector(".close-benefit-btn");
-    console.log(closeBenefitBtn);
     closeBenefitBtn.addEventListener("click", function () {
       benefit.classList.remove("show-benefit");
       element.classList.remove("hide-star");
