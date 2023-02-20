@@ -53,7 +53,7 @@ a {
 }
 
 a:hover {
-  color: var(--vita-yellow);
+  color: var(--vita-green);
 }
 
 .arrow-btn {
@@ -248,7 +248,7 @@ nav li a {
 }
 
 .active {
-  color: var(--vita-watermelon);
+  color: var(--vita-yellow);
 }
 
 /* Menu-icon styling */
@@ -261,7 +261,7 @@ nav li a {
 }
 
 #menu-icon div {
-  background-color: var(--vita-yellow);
+  background-color: var(--vita-green);
   width: 38px;
   height: 5px;
   border-radius: 30px;
@@ -408,7 +408,6 @@ section {
   text-align: center;
   width: 550px;
   height: auto;
-
   padding: 40px;
   clip-path: polygon(
     0 30px,
@@ -422,6 +421,10 @@ section {
   );
   border: 6px dotted var(--vita-yellow);
   background: transparent;
+}
+
+.overlay .primary-btn:hover {
+  color: var(--vita-green);
 }
 
 .line-border {
@@ -652,5 +655,5 @@ footer a {
 
 .reference-list .note {
   font-weight: bold;
-  color: var(--vita-watermelon);
+  color: var(--vita-green);
 }

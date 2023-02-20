@@ -27,6 +27,16 @@
   transition: all 1s ease-out;
 }
 
+.recipe-option h2,
+.superfood-option h2 {
+  color: white;
+}
+
+.recipe-option:hover h2,
+.superfood-option:hover h2 {
+  color: var(--vita-green);
+}
+
 .recipe-option:hover,
 .superfood-option:hover {
   transform: scale(1.1) translateY(20px);

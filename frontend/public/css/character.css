@@ -12,7 +12,8 @@
 }
 
 #character-page h3 {
-  color: var(--vita-watermelon);
+  color: var(--vita-yellow);
+  font-weight: bold;
 }
 
 /* *********************************** Grid items ******************************************* */
@@ -99,7 +100,7 @@
 }
 
 .close-benefit-btn {
-  color: var(--vita-yellow);
+  color: var(--vita-green);
   text-decoration: underline;
   margin-top: 10px;
   cursor: var(--pointer-cursor);

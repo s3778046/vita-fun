@@ -50,7 +50,7 @@
 
 .answer1:hover p,
 .answer2:hover p {
-  color: var(--vita-yellow);
+  color: var(--vita-green);
 }
 
 .restart-quiz {
