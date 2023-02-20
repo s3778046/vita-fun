@@ -119,10 +119,8 @@ progress[value]::-webkit-progress-value {
 
 /* quiz question loading animation styles */
 .quiz-loading {
-  display: none;
   position: absolute;
-  top: 30%;
-  left: 35%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 1200px) {
