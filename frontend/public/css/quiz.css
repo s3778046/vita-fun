@@ -222,6 +222,10 @@ progress[value]::-webkit-progress-value {
   .progress-bar-wrapper {
     top: 500px;
   }
+
+  #question-img {
+    max-height: 300px;
+  }
 }
 
 @media only screen and (max-width: 470px),
@@ -232,10 +236,17 @@ progress[value]::-webkit-progress-value {
     left: 0;
     transform: rotate(0);
   }
+
   .progress {
     margin: auto;
+    width: 250px;
   }
+
   .progress progress {
     width: 100%;
+  }
+
+  #question-img {
+    height: 200px;
   }
 }
