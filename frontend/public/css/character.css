@@ -289,6 +289,12 @@ path {
   }
 }
 
+@media only screen and (max-height: 1000px) and (max-width: 1690px) {
+  .hotspot:nth-of-type(3) {
+    left: 52%;
+  }
+}
+
 @media only screen and (max-height: 1000px) and (max-width: 550px) {
   .character-img img {
     width: 100%;
