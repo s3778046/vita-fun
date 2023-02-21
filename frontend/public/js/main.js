@@ -121,6 +121,17 @@ function toggleHamburgerMenu(menuButton) {
   menuLinks.classList.toggle("expanded");
 }
 
+// Close dropdown menu when about link is clicked on the home page.
+function closeDropdownMenu() {
+  // Get menu-icon and toggle class
+  const menuButton = document.querySelector('#menu-icon');
+  menuButton.classList.toggle("expanded");
+
+  // Get dropdown-menu and toggle class
+  const dropdownMenu = document.querySelector('#dropdown-menu');
+  dropdownMenu.classList.toggle("expanded");
+}
+
 // Close opened dropdown menu if screen is enlargened
 let onresize = function (e) {
   let width = e.target.innerWidth;
