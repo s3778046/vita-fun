@@ -115,21 +115,14 @@ if (url.includes("about") || url.substring(url.length - 1) == "/") {
   });
 }
 
-// Open/Close dropdown menu.
-function toggleHamburgerMenu(menuButton) {
-  menuButton.classList.toggle("expanded");
-  menuLinks.classList.toggle("expanded");
-}
-
-// Close dropdown menu when about link is clicked on the home page.
+// Open/Close dropdown menu when about link is clicked on the home page.
 function closeDropdownMenu() {
   // Get menu-icon and toggle class
-  const menuButton = document.querySelector('#menu-icon');
+  const menuButton = document.querySelector("#menu-icon");
   menuButton.classList.toggle("expanded");
 
-  // Get dropdown-menu and toggle class
-  const dropdownMenu = document.querySelector('#dropdown-menu');
-  dropdownMenu.classList.toggle("expanded");
+  // toggle class for dropdown-menu
+  menuLinks.classList.toggle("expanded");
 }
 
 // Close opened dropdown menu if screen is enlargened
